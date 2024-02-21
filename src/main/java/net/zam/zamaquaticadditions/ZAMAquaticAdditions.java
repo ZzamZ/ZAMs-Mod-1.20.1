@@ -7,11 +7,13 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.zam.zamaquaticadditions.registry.ZAMBlocks;
+import net.zam.zamaquaticadditions.registry.ZAMEnchantments;
+import net.zam.zamaquaticadditions.registry.ZAMItems;
+import net.zam.zamaquaticadditions.registry.ZAMSounds;
 import org.slf4j.Logger;
 
 @Mod(ZAMAquaticAdditions.MOD_ID)
@@ -21,6 +23,11 @@ public class ZAMAquaticAdditions {
 
     public ZAMAquaticAdditions() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ZAMItems.register(modEventBus);
+        ZAMBlocks.register(modEventBus);
+        ZAMSounds.register(modEventBus);
+        ZAMEnchantments.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
