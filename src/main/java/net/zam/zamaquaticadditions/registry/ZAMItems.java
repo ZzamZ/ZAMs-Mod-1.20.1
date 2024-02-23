@@ -1,15 +1,14 @@
 package net.zam.zamaquaticadditions.registry;
 
-import net.minecraft.world.item.HorseArmorItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.RecordItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zam.zamaquaticadditions.ZAMAquaticAdditions;
 import net.zam.zamaquaticadditions.item.MarlinLanceItem;
+import net.zam.zamaquaticadditions.item.ZAMArmorItem;
+import net.zam.zamaquaticadditions.item.ZAMArmorMaterials;
 
 import javax.annotation.Nonnull;
 import java.util.ArrayList;
@@ -31,6 +30,17 @@ public class ZAMItems {
     public static final RegistryObject<Item> SILVER_MEDAL = ITEMS.register("silver_medal", () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> GOLD_MEDAL = ITEMS.register("gold_medal", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> LEGENDARY_MEDAL = ITEMS.register("legendary_medal", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
+
+
+    //Armor
+    public static final RegistryObject<Item> GUARDIAN_HELMET = ITEMS.register("guardian_helmet",
+            () -> new ZAMArmorItem(ZAMArmorMaterials.GUARDIAN, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> GUARDIAN_CHESTPLATE = ITEMS.register("guardian_chestplate",
+            () -> new ZAMArmorItem(ZAMArmorMaterials.GUARDIAN, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> GUARDIAN_LEGGING = ITEMS.register("guardian_leggings",
+            () -> new ZAMArmorItem(ZAMArmorMaterials.GUARDIAN, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+    public static final RegistryObject<Item> GUARDIAN_BOOTS = ITEMS.register("guardian_boots",
+            () -> new ZAMArmorItem(ZAMArmorMaterials.GUARDIAN, ArmorItem.Type.BOOTS, new Item.Properties()));
 
 
     //Horse Armor
@@ -75,7 +85,7 @@ public class ZAMItems {
     public static final RegistryObject<Item> POKEMON_VIRBANK_CITY = ITEMS.register("pokemon_virbank_city", () -> new RecordItem(4, ZAMSounds.POKEMON_VIRBANK_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3800));
     public static final RegistryObject<Item> POKEMON_HUMILAU_CITY = ITEMS.register("pokemon_humilau_city", () -> new RecordItem(4, ZAMSounds.POKEMON_HUMILAU_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3520));
     public static final RegistryObject<Item> POKEMON_GEAR_STATION = ITEMS.register("pokemon_gear_station", () -> new RecordItem(4, ZAMSounds.POKEMON_GEAR_STATION, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3520));
-    public static final RegistryObject<Item> POKEMON_HUMILAU_CITY_GYM = ITEMS.register("pokemon_humilau_city", () -> new RecordItem(4, ZAMSounds.POKEMON_HUMILAU_CITY_GYM, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3520));
+    public static final RegistryObject<Item> POKEMON_HUMILAU_CITY_GYM = ITEMS.register("pokemon_humilau_city_gym", () -> new RecordItem(4, ZAMSounds.POKEMON_HUMILAU_CITY_GYM, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3520));
     public static final RegistryObject<Item> HOLLOW_KNIGHT_CITY_OF_TEARS = ITEMS.register("hollow_knight_city_of_tears", () -> new RecordItem(4, ZAMSounds.HOLLOW_KNIGHT_CITY_OF_TEARS, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4600));
     public static final RegistryObject<Item> HOLLOW_KNIGHT_GREENPATH = ITEMS.register("hollow_knight_greenpath", () -> new RecordItem(4, ZAMSounds.HOLLOW_KNIGHT_GREENPATH, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3400));
     public static final RegistryObject<Item> HOLLOW_KNIGHT_DIRTMOUTH = ITEMS.register("hollow_knight_dirtmouth", () -> new RecordItem(4, ZAMSounds.HOLLOW_KNIGHT_DIRTMOUTH, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4600));

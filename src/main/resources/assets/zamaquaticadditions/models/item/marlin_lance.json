@@ -1,0 +1,6 @@
+{
+  "parent": "zamaquaticadditions:item/custom/lance",
+  "textures": {
+    "layer0": "zamaquaticadditions:item/marlin_lance"
+  }
+}

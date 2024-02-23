@@ -42,7 +42,7 @@ public class ZAMSounds {
     public static RegistryObject<SoundEvent> MARIO_PIRANHA_PLANT_LULLABY = registerSoundEvent("mario_piranha_plants_lullaby");
     public static RegistryObject<SoundEvent> MARIO_STEAM_GARDENS = registerSoundEvent("mario_steam_gardens");
     public static RegistryObject<SoundEvent> MARIO_DIRE_DIRE_DOCKS = registerSoundEvent("mario_dire_dire_docks");
-    public static RegistryObject<SoundEvent> MARIO_BUBBLAINE = registerSoundEvent("castle_crashers_dark_skies");
+    public static RegistryObject<SoundEvent> MARIO_BUBBLAINE = registerSoundEvent("mario_bubblaine");
     public static RegistryObject<SoundEvent> CASTLE_CRASHERS_RAGE_OF_THE_CHAMPION = registerSoundEvent("castle_crashers_rage_of_the_champion");
     public static RegistryObject<SoundEvent> CASTLE_CRASHERS_WINTER_BLISS = registerSoundEvent("castle_crashers_winter_bliss");
     public static RegistryObject<SoundEvent> CASTLE_CRASHERS_SPACE_PIRATES = registerSoundEvent("castle_crashers_space_pirates");

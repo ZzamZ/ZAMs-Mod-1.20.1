@@ -15,9 +15,16 @@ public class ZAMCreativeModeTab {
 
 
     public static RegistryObject<CreativeModeTab> AQUATIC_TAB = CREATIVE_MODE_TABS.register("aquatic_tab", () ->
-            CreativeModeTab.builder().icon(() -> new ItemStack(ZAMItems.C418_DOG.get())).title(Component.literal("ZAM Aquatic Additions")).displayItems((displayParameters, output) -> {
+            CreativeModeTab.builder().icon(() -> new ItemStack(ZAMItems.GUARDIAN_CHESTPLATE.get())).title(Component.literal("ZAM Aquatic Additions")).displayItems((displayParameters, output) -> {
+
                 output.accept(ZAMBlocks.LOST_BOUNTY.get());
+                output.accept(ZAMBlocks.SCAFFINITY.get());
                 output.accept(ZAMItems.MARLIN_LANCE.get());
+                output.accept(ZAMItems.GUARDIAN_HELMET.get());
+                output.accept(ZAMItems.GUARDIAN_CHESTPLATE.get());
+                output.accept(ZAMItems.GUARDIAN_LEGGING.get());
+                output.accept(ZAMItems.GUARDIAN_BOOTS.get());
+
 
                 output.accept(ZAMItems.WOOD_MEDAL.get());
                 output.accept(ZAMItems.BRONZE_MEDAL.get());

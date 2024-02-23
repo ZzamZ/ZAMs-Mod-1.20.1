@@ -1,0 +1,5 @@
+{
+    "sources": [
+        { "type": "single", "resource": "zamaquaticadditions:entity/tileentity/lost_bounty" }
+    ]
+}

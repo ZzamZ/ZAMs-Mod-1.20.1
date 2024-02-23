@@ -5,15 +5,13 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.brewing.BrewingRecipe;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.zam.zamaquaticadditions.block.lostbounty.ClientHandler;
 import net.zam.zamaquaticadditions.potion.BetterBrewingRecipe;
 import net.zam.zamaquaticadditions.registry.*;
 import org.slf4j.Logger;
@@ -28,17 +26,19 @@ public class ZAMAquaticAdditions {
 
         ZAMItems.register(modEventBus);
         ZAMBlocks.register(modEventBus);
+        ZAMBlockEntities.register(modEventBus);
         ZAMSounds.register(modEventBus);
         ZAMEnchantments.register(modEventBus);
         ZAMPotions.register(modEventBus);
         ZAMCreativeModeTab.register(modEventBus);
+        ZAMEffects.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::setup);
+        modEventBus.addListener(this::setupClient);
 
         MinecraftForge.EVENT_BUS.register(this);
 
-        modEventBus.addListener(this::addCreative);
 
     }
 
@@ -46,12 +46,8 @@ public class ZAMAquaticAdditions {
 
     }
 
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
-    }
-
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event) {
+    private void setupClient(FMLClientSetupEvent event) {
+        event.enqueueWork(ClientHandler::setupClient);
     }
 
 
