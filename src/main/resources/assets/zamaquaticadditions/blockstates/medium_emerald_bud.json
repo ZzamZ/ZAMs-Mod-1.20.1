@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "zamaquaticadditions:block/medium_emerald_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "zamaquaticadditions:block/medium_emerald_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "zamaquaticadditions:block/medium_emerald_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "zamaquaticadditions:block/medium_emerald_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "zamaquaticadditions:block/medium_emerald_bud"
+    },
+    "facing=west": {
+      "model": "zamaquaticadditions:block/medium_emerald_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

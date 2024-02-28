@@ -24,6 +24,21 @@ public class ZAMCreativeModeTab {
                 output.accept(ZAMItems.GUARDIAN_CHESTPLATE.get());
                 output.accept(ZAMItems.GUARDIAN_LEGGING.get());
                 output.accept(ZAMItems.GUARDIAN_BOOTS.get());
+                output.accept(ZAMItems.KOI_BUCKET.get());
+                output.accept(ZAMItems.KOI.get());
+                output.accept(ZAMItems.KOI_SPAWN_EGG.get());
+
+                output.accept(ZAMItems.POKEMON_ALBUM_CASE.get());
+                output.accept(ZAMItems.POKEMON_NIMBASA_CITY.get());
+                output.accept(ZAMItems.POKEMON_DRIFTVEIL_CITY.get());
+                output.accept(ZAMItems.POKEMON_ICIRRUS_CITY.get());
+                output.accept(ZAMItems.POKEMON_VIRBANK_CITY.get());
+                output.accept(ZAMItems.POKEMON_HUMILAU_CITY.get());
+                output.accept(ZAMItems.POKEMON_EAST_PROVINCE.get());
+                output.accept(ZAMItems.POKEMON_GEAR_STATION.get());
+                output.accept(ZAMItems.POKEMON_VOLO.get());
+                output.accept(ZAMItems.POKEMON_NS_CASTLE.get());
+                output.accept(ZAMItems.POKEMON_ALBUM_CASE.get());
 
 
                 output.accept(ZAMItems.WOOD_MEDAL.get());
@@ -50,48 +65,91 @@ public class ZAMCreativeModeTab {
                 output.accept(ZAMItems.KNUCKLE_BADGE.get());
                 output.accept(ZAMItems.HEAT_BADGE.get());
                 output.accept(ZAMItems.BOULDER_BADGE.get());
-                output.accept(ZAMItems.MELODY_BADGE.get());
-                output.accept(ZAMItems.SHADOW_BADGE.get());
-                output.accept(ZAMItems.COSMIC_BADGE.get());
-                output.accept(ZAMItems.VOID_BADGE.get());
-                output.accept(ZAMItems.PIXIE_BADGE.get());
 
 
-                output.accept(ZAMItems.C418_DOG.get());
-                output.accept(ZAMItems.LUPUS_NOCTE_HOWLING.get());
-                output.accept(ZAMItems.CAT_INDEV.get());
-                output.accept(ZAMItems.HALO_MASHUP.get());
-                output.accept(ZAMItems.STAR_WARS.get());
-                output.accept(ZAMItems.CALL_OF_DUTY.get());
-                output.accept(ZAMItems.POKEMON_EAST_PROVINCE.get());
-                output.accept(ZAMItems.POKEMON_NIMBASA_CITY.get());
-                output.accept(ZAMItems.POKEMON_DRIFTVEIL_CITY.get());
-                output.accept(ZAMItems.POKEMON_VIRBANK_CITY.get());
-                output.accept(ZAMItems.POKEMON_HUMILAU_CITY.get());
-                output.accept(ZAMItems.POKEMON_GEAR_STATION.get());
-                output.accept(ZAMItems.POKEMON_HUMILAU_CITY_GYM.get());
-                output.accept(ZAMItems.HOLLOW_KNIGHT_CITY_OF_TEARS.get());
-                output.accept(ZAMItems.HOLLOW_KNIGHT_GREENPATH.get());
-                output.accept(ZAMItems.HOLLOW_KNIGHT_DIRTMOUTH.get());
-                output.accept(ZAMItems.HOLLOW_KNIGHT_QUEENS_GARDEN.get());
-                output.accept(ZAMItems.HOLLOW_KNIGHT_NIGHMARE_GRIMM.get());
-                output.accept(ZAMItems.HOLLOW_KNIGHT_PURE_VESSEL.get());
-                output.accept(ZAMItems.MARIO_INSIDE_THE_CASTLE_WALLS.get());
-                output.accept(ZAMItems.MARIO_PIRANHA_PLANTS_LULLABY.get());
-                output.accept(ZAMItems.MARIO_STEAM_GARDENS.get());
-                output.accept(ZAMItems.MARIO_DIRE_DIRE_DOCKS.get());
-                output.accept(ZAMItems.MARIO_BUBBLAINE.get());
-                output.accept(ZAMItems.CASTLE_CRASHERS_DARK_SKIES.get());
-                output.accept(ZAMItems.CASTLE_CRASHERS_RAGE_OF_THE_CHAMPION.get());
-                output.accept(ZAMItems.CASTLE_CRASHERS_WINTER_BLISS.get());
-                output.accept(ZAMItems.CASTLE_CRASHERS_SPACE_PIRATES.get());
-                output.accept(ZAMItems.ZELDA_DRAGON_ROOST.get());
-                output.accept(ZAMItems.ZELDA_GERUDO_VALLEY.get());
-                output.accept(ZAMItems.ZELDA_RITO_VILLAGE.get());
-                output.accept(ZAMItems.ZELDA_ZORA_DOMAIN.get());
-                output.accept(ZAMItems.SPONGEBOB.get());
-                output.accept(ZAMItems.UNO.get());
-                output.accept(ZAMItems.JJK.get());
+
+                output.accept(ZAMBlocks.EMERALD_CRYSTAL_BLOCK.get());
+                output.accept(ZAMBlocks.BUDDING_EMERALD.get());
+                output.accept(ZAMBlocks.EMERALD_CLUSTER.get());
+                output.accept(ZAMBlocks.LARGE_EMERALD_BUD.get());
+                output.accept(ZAMBlocks.MEDIUM_EMERALD_BUD.get());
+                output.accept(ZAMBlocks.SMALL_EMERALD_BUD.get());
+
+                output.accept(ZAMBlocks.AZURE_FROGLIGHT.get());
+                output.accept(ZAMBlocks.RUDDY_FROGLIGHT.get());
+                output.accept(ZAMBlocks.EBON_FROGLIGHT.get());
+
+                output.accept(ZAMBlocks.AZURE_FROGLIGHT.get());
+                output.accept(ZAMBlocks.RUDDY_FROGLIGHT.get());
+                output.accept(ZAMBlocks.EBON_FROGLIGHT.get());
+
+                output.accept(ZAMBlocks.WHITE_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.LIGHT_GRAY_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.GRAY_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.BLACK_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.BROWN_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.RED_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.ORANGE_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.YELLOW_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.LIME_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.GREEN_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.CYAN_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.LIGHT_BLUE_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.BLUE_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.PURPLE_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.MAGENTA_CONCRETE_SLAB.get());
+                output.accept(ZAMBlocks.PINK_CONCRETE_SLAB.get());
+
+                output.accept(ZAMBlocks.WHITE_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.GRAY_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.BLACK_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.BROWN_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.RED_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.ORANGE_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.YELLOW_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.LIME_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.GREEN_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.CYAN_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.BLUE_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.PURPLE_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.MAGENTA_CONCRETE_STAIRS.get());
+                output.accept(ZAMBlocks.PINK_CONCRETE_STAIRS.get());
+
+                output.accept(ZAMBlocks.PACKED_ICE_SLAB.get());
+                output.accept(ZAMBlocks.PACKED_ICE_STAIRS.get());
+                output.accept(ZAMBlocks.GRASS_SLAB.get());
+                output.accept(ZAMBlocks.GRASS_STAIRS.get());
+                output.accept(ZAMBlocks.DIRT_SLAB.get());
+                output.accept(ZAMBlocks.DIRT_STAIRS.get());
+                output.accept(ZAMBlocks.COARSE_DIRT_SLAB.get());
+                output.accept(ZAMBlocks.COARSE_DIRT_STAIRS.get());
+                output.accept(ZAMBlocks.SAND_SLAB.get());
+                output.accept(ZAMBlocks.SAND_STAIRS.get());
+
+                output.accept(ZAMBlocks.GYM_SIGN1.get());
+                output.accept(ZAMBlocks.GYM_SIGN2.get());
+                output.accept(ZAMBlocks.GYM_SIGN3.get());
+                output.accept(ZAMBlocks.GYM_SIGN4.get());
+                output.accept(ZAMBlocks.GYM_SIGN5.get());
+                output.accept(ZAMBlocks.GYM_SIGN6.get());
+                output.accept(ZAMBlocks.GYM_SIGN7.get());
+                output.accept(ZAMBlocks.GYM_SIGN8.get());
+                output.accept(ZAMBlocks.GYM_SIGN9.get());
+                output.accept(ZAMBlocks.GYM_SIGN10.get());
+                output.accept(ZAMBlocks.GYM_SIGN11.get());
+                output.accept(ZAMBlocks.GYM_SIGN12.get());
+                output.accept(ZAMBlocks.GYM_SIGN13.get());
+                output.accept(ZAMBlocks.GYM_SIGN14.get());
+                output.accept(ZAMBlocks.GYM_SIGN15.get());
+                output.accept(ZAMBlocks.GYM_SIGN16.get());
+
+                output.accept(ZAMBlocks.SUS.get());
+
+
+
+
             }).build());
 
 

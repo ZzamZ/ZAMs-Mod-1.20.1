@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=west": {
+      "model": "zamaquaticadditions:block/gym_sign8"
+    },
+    "facing=east": {
+      "model": "zamaquaticadditions:block/gym_sign8",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "zamaquaticadditions:block/gym_sign8",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "zamaquaticadditions:block/gym_sign8",
+      "y": 90
+    }
+  }
+}

@@ -12,8 +12,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
-import net.zam.zamaquaticadditions.block.lostbounty.LostBounty;
-import net.zam.zamaquaticadditions.block.lostbounty.LostBountyBlockEntity;
+import net.zam.zamaquaticadditions.block.chest.LostBounty;
+import net.zam.zamaquaticadditions.block.chest.LostBountyBlockEntity;
 import net.zam.zamaquaticadditions.registry.ZAMBlocks;
 
 import javax.annotation.Nonnull;
