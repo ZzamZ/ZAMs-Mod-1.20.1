@@ -28,6 +28,7 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.zam.zamaquaticadditions.registry.ZAMBlocks;
 import net.zam.zamaquaticadditions.registry.ZAMTags;
 
 public class ScaffinityBlock extends Block implements SimpleWaterloggedBlock {
@@ -140,7 +141,7 @@ public class ScaffinityBlock extends Block implements SimpleWaterloggedBlock {
         BlockPos.MutableBlockPos blockpos$mutableblockpos = pPos.mutable().move(Direction.DOWN);
         BlockState blockstate = pLevel.getBlockState(blockpos$mutableblockpos);
         int i = 7;
-        if (blockstate.is(Blocks.SCAFFOLDING)) {
+        if (blockstate.is(ZAMBlocks.SCAFFINITY.get())) {
             i = blockstate.getValue(DISTANCE);
         } else if (blockstate.isFaceSturdy(pLevel, blockpos$mutableblockpos, Direction.UP)) {
             return 0;
@@ -148,7 +149,7 @@ public class ScaffinityBlock extends Block implements SimpleWaterloggedBlock {
 
         for(Direction direction : Direction.Plane.HORIZONTAL) {
             BlockState blockstate1 = pLevel.getBlockState(blockpos$mutableblockpos.setWithOffset(pPos, direction));
-            if (blockstate1.is(Blocks.SCAFFOLDING)) {
+            if (blockstate1.is(ZAMBlocks.SCAFFINITY.get())) {
                 i = Math.min(i, blockstate1.getValue(DISTANCE) + 1);
                 if (i == 1) {
                     break;

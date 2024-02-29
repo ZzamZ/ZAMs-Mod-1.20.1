@@ -1,0 +1,22 @@
+{
+
+  "pokemon_driftveil_city": {"sounds": [{"name": "zamaquaticadditions:pokemon_driftveil_city", "stream": true}]},
+  "pokemon_nimbasa_city": {"sounds": [{"name": "zamaquaticadditions:pokemon_nimbasa_city", "stream": true}]},
+  "pokemon_accumula_town": {"sounds": [{"name": "zamaquaticadditions:pokemon_accumula_town", "stream": true}]},
+  "pokemon_humilau_city": {"sounds": [{"name": "zamaquaticadditions:pokemon_humilau_city", "stream": true}]},
+  "pokemon_virbank_city": {"sounds": [{"name": "zamaquaticadditions:pokemon_virbank_city", "stream": true}]},
+  "pokemon_unova_road": {"sounds": [{"name": "zamaquaticadditions:pokemon_unova_road", "stream": true}]},
+  "pokemon_hoenn_road": {"sounds": [{"name": "zamaquaticadditions:pokemon_hoenn_road", "stream": true}]},
+  "pokemon_lumiose_city": {"sounds": [{"name": "zamaquaticadditions:pokemon_lumiose_city", "stream": true}]},
+  "pokemon_gear_station": {"sounds": [{"name": "zamaquaticadditions:pokemon_gear_station", "stream": true}]},
+  "pokemon_ns_castle": {"sounds": [{"name": "zamaquaticadditions:pokemon_ns_castle", "stream": true}]},
+  "pokemon_volo": {"sounds": [{"name": "zamaquaticadditions:pokemon_volo", "stream": true}]},
+  "pokemon_water": {"sounds": [{"name": "zamaquaticadditions:pokemon_water", "stream": true}]},
+  "pokemon_ground": {"sounds": [{"name": "zamaquaticadditions:pokemon_ground", "stream": true}]},
+  "pokemon_striaton_city": {"sounds": [{"name": "zamaquaticadditions:pokemon_striaton_city", "stream": true}]},
+  "pokemon_skyarrow_bridge": {"sounds": [{"name": "zamaquaticadditions:pokemon_skyarrow_bridge", "stream": true}]},
+  "pokemon_east_province": {"sounds": [{"name": "zamaquaticadditions:pokemon_east_province", "stream": true}]},
+  "pokemon_icirrus_city": {"sounds": [{"name": "zamaquaticadditions:pokemon_icirrus_city", "stream": true}]}
+
+}
+

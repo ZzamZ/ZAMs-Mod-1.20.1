@@ -20,23 +20,33 @@ public class ZAMSounds {
 
 
     //Music Tracks
-    public static RegistryObject<SoundEvent> C418_DOG = registerSoundEvent("c418_dog");
-    public static RegistryObject<SoundEvent> LUPUS_NOCTE_HOWLING = registerSoundEvent("lupus_nocte_howling");
-    public static RegistryObject<SoundEvent> CAT_INDEV = registerSoundEvent("cat_indev");
-
-    public static RegistryObject<SoundEvent> HALO_MASHUP = registerSoundEvent("halo_mashup");
-    public static RegistryObject<SoundEvent> SMASH_BRAWL = registerSoundEvent("smash_brawl");
     public static RegistryObject<SoundEvent> POKEMON_EAST_PROVINCE = registerSoundEvent("pokemon_east_province");
     public static RegistryObject<SoundEvent> POKEMON_NIMBASA_CITY = registerSoundEvent("pokemon_nimbasa_city");
     public static RegistryObject<SoundEvent> POKEMON_DRIFTVEIL_CITY = registerSoundEvent("pokemon_driftveil_city");
+    public static RegistryObject<SoundEvent> POKEMON_STRIATON_CITY = registerSoundEvent("pokemon_striaton_city");
+    public static RegistryObject<SoundEvent> POKEMON_ACCUMULA_TOWN = registerSoundEvent("pokemon_accumula_town");
     public static RegistryObject<SoundEvent> POKEMON_VIRBANK_CITY = registerSoundEvent("pokemon_virbank_city");
+    public static RegistryObject<SoundEvent> POKEMON_ICIRRUS_CITY = registerSoundEvent("pokemon_icirrus_city");
+    public static RegistryObject<SoundEvent> POKEMON_LUMIOSE_CITY = registerSoundEvent("pokemon_lumiose_city");
     public static RegistryObject<SoundEvent> POKEMON_HUMILAU_CITY = registerSoundEvent("pokemon_humilau_city");
     public static RegistryObject<SoundEvent> POKEMON_GEAR_STATION = registerSoundEvent("pokemon_gear_station");
     public static RegistryObject<SoundEvent> POKEMON_NS_CASTLE = registerSoundEvent("pokemon_ns_castle");
-    public static RegistryObject<SoundEvent> POKEMON_GYM = registerSoundEvent("pokemon_gym");
-    public static RegistryObject<SoundEvent> POKEMON_DIVE = registerSoundEvent("pokemon_dive");
+    public static RegistryObject<SoundEvent> POKEMON_WATER = registerSoundEvent("pokemon_water");
+    public static RegistryObject<SoundEvent> POKEMON_GROUND = registerSoundEvent("pokemon_dive");
     public static RegistryObject<SoundEvent> POKEMON_UNOVA_ROAD = registerSoundEvent("pokemon_unova_road");
     public static RegistryObject<SoundEvent> POKEMON_HOENN_ROAD = registerSoundEvent("pokemon_hoenn_road");
+    public static RegistryObject<SoundEvent> POKEMON_VOLO = registerSoundEvent("pokemon_volo");
+    public static RegistryObject<SoundEvent> POKEMON_SKYARROW_BRIDGE = registerSoundEvent("pokemon_skyarrow_bridge");
+    public static RegistryObject<SoundEvent> POKEMON_CASTELIA_CITY = registerSoundEvent("pokemon_castelia_city");
+    public static RegistryObject<SoundEvent> POKEMON_MISTRALTON_CITY = registerSoundEvent("pokemon_mistralton_city");
+    public static RegistryObject<SoundEvent> POKEMON_MISTRALTON_GYM = registerSoundEvent("pokemon_mistralton_gym");
+    public static RegistryObject<SoundEvent> POKEMON_BLACK_TOWER = registerSoundEvent("pokemon_black_tower");
+    public static RegistryObject<SoundEvent> POKEMON_LOREKEERER_ZINNIA = registerSoundEvent("pokemon_lorekeeper_zinnia");
+    public static RegistryObject<SoundEvent> POKEMON_ALDER_THEME = registerSoundEvent("pokemon_alder_theme");
+    public static RegistryObject<SoundEvent> POKEMON_NIMBASA_JAZZ = registerSoundEvent("pokemon_nimbasa_jazz");
+
+
+
     public static RegistryObject<SoundEvent> HOLLOW_KNIGHT_CITY_OF_TEARS = registerSoundEvent("hollow_knight_city_of_tears");
     public static RegistryObject<SoundEvent> HOLLOW_KNIGHT_GREENPATH = registerSoundEvent("hollow_knight_greenpath");
     public static RegistryObject<SoundEvent> HOLLOW_KNIGHT_DIRTMOUTH = registerSoundEvent("hollow_knight_dirtmouth");

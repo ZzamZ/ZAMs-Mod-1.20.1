@@ -8,6 +8,7 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -33,7 +34,6 @@ import java.util.stream.Stream;
 public class PokemonAlbumCase extends Item {
     private static final String TAG_ITEMS = "Items";
     public static final int MAX_RECORDS = 9;
-    private static final int BUNDLE_IN_BUNDLE_WEIGHT = 4;
     private static Set<Item> ALLOWED_ITEMS;
 
     public PokemonAlbumCase(Item.Properties pProperties) {
@@ -89,6 +89,46 @@ public class PokemonAlbumCase extends Item {
         return true;
     }
 
+    @Override
+    public void inventoryTick(ItemStack stack, Level world, Entity entity, int itemSlot, boolean isSelected) {
+        if (world.isClientSide) {
+            return; // Ensure logic runs only on the server side.
+        }
+
+        if (entity instanceof Player player && isSelected) {
+            String translationKey = stack.getItem().getDescriptionId(); // Use the translation key as a unique identifier.
+            CompoundTag playerData = player.getPersistentData();
+            final String key = "ZAMCrouchState" + translationKey; // Construct a unique key for persistent data.
+
+            boolean wasCrouching = playerData.getBoolean(key);
+
+            if (player.isCrouching() && !wasCrouching) {
+                cycleRecords(stack, player);
+                playerData.putBoolean(key, true);
+            } else if (!player.isCrouching()) {
+                playerData.putBoolean(key, false);
+            }
+        }
+    }
+
+    private void cycleRecords(ItemStack stack, Player player) {
+        CompoundTag compoundTag = stack.getOrCreateTag();
+        if (!compoundTag.contains(TAG_ITEMS, Tag.TAG_LIST)) return;
+
+        ListTag recordsListTag = compoundTag.getList(TAG_ITEMS, 10);
+        if (recordsListTag.size() <= 1) return; // No need to cycle for one or no records
+
+        // Cycle the records
+        CompoundTag firstRecord = recordsListTag.getCompound(0);
+        recordsListTag.remove(0);
+        recordsListTag.add(firstRecord);
+
+        compoundTag.put(TAG_ITEMS, recordsListTag);
+        stack.setTag(compoundTag);
+
+        // Optional: provide feedback to the player
+        player.level().playSound(null, player.blockPosition(), SoundEvents.ITEM_FRAME_ROTATE_ITEM, SoundSource.PLAYERS, 0.5F, 1.0F);
+    }
     @Override
     public boolean overrideStackedOnOther(ItemStack caseStack, Slot slot, ClickAction action, Player player) {
         if (action != ClickAction.SECONDARY || caseStack.getCount() != 1) {
