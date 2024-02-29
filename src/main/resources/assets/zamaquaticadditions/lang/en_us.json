@@ -1,0 +1,22 @@
+{
+  "enchantment.ZAMAquaticAdditions.soulbound": "SoulBound",
+  "enchantment.ZAMAquaticAdditions.soulbound.desc": "The item is automatically retained upon death and randomly damaged",
+  "config.ZAMAquaticAdditions.conflictWithVanishingCurse": "Conflict with the Disappearance Curse",
+  "config.ZAMAquaticAdditions.isTreasure": "Treasure enchantment (i.e. the enchantment table cannot be swiped)",
+  "config.ZAMAquaticAdditions.allowBreakItem": "Damage to items is allowed",
+  "config.ZAMAquaticAdditions.maxDamagePercent": "Max percentage of damage",
+  "config.ZAMAquaticAdditions.minPower": "Min power",
+  "config.ZAMAquaticAdditions.powerRange": "Power range",
+  "config.ZAMAquaticAdditions.blacklist": "Blacklist",
+  "config.ZAMAquaticAdditions.whitelist": "Whitelist",
+  "config.ZAMAquaticAdditions.listExample": "Example:(Only vanilla items support omitting prefixes)",
+
+
+
+
+  "block.ZAMAquaticAdditions.neptunes_bounty": "Treasure of the Deep",
+  "item.ZAMAquaticAdditions.guardian_helmet": "Ancient Helmet",
+  "item.ZAMAquaticAdditions.guardian_chestplate": "Ancient Chestplate",
+  "item.ZAMAquaticAdditions.guardian_leggings": "Ancient leggings",
+  "item.ZAMAquaticAdditions.guardian_boots": "Ancient Boots"
+}

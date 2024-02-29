@@ -1,6 +1,7 @@
 package net.zam.zamaquaticadditions.registry;
 
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.material.Fluids;
@@ -27,7 +28,16 @@ public class ZAMItems {
     public static final RegistryObject<Item> KOI_BUCKET = ITEMS.register("koi_bucket", () -> new ZAMMobBucketItem(ZAMEntities.KOI, () -> Fluids.WATER, () -> SoundEvents.BUCKET_EMPTY_FISH, new Item.Properties().stacksTo(1)));
     public static final RegistryObject<Item> KOI = ITEMS.register("koi", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).build())));
     public static final RegistryObject<Item> KOI_SPAWN_EGG = ITEMS.register("koi_spawn_egg", () -> new ForgeSpawnEggItem(ZAMEntities.KOI, 5392966, 1675494, new Item.Properties()));
+    public static final RegistryObject<Item> BUBBLE_BUDDY = ITEMS.register("bubble_buddy", () -> new BubbleBuddyItem(new Item.Properties()));
 
+    //Food
+    public static final RegistryObject<Item> GRILLED_CHEESE = ITEMS.register("grilled_cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(7).saturationMod(0.7F).build())));
+    public static final RegistryObject<Item> CORAL_FRUIT = ITEMS.register("coral_fruit", () -> new CoralFruitItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.0F).alwaysEat().build()), true));
+    public static final RegistryObject<Item> CHEESE = ITEMS.register("cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> BLUE_CHEESE = ITEMS.register("blue_cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).build())));
+    public static final RegistryObject<Item> NETHER_CHEESE = ITEMS.register("nether_cheese", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.5F).build()).fireResistant()));
+    public static final RegistryObject<Item> CONFIT_BYALDI = ITEMS.register("confit_byaldi", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationMod(0.5F).effect(() -> new MobEffectInstance(ZAMEffects.SYNESTHESIA.get(), 2400), 1.0F).build())));
+ //   public static final RegistryObject<Item> GUM_GUM = ITEMS.register("gum_gum", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationMod(0.1F).effect(() -> new MobEffectInstance(ZAMEffects.GUM_GUM_CURSE.get(), MobEffectInstance.INFINITE_DURATION), 1.0F).build())));
 
 
     //Fishing Medals

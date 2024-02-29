@@ -1,5 +1,11 @@
 {
-
+  "block.zamaquaticadditions.cheese_cauldron.blue_cheese_made": {"sounds": ["mob/zombie/infect"], "subtitle": "subtitles.zamaquaticadditions.cheese_cauldron.blue_cheese_made"},
+  "block.zamaquaticadditions.cheese_cauldron.empty": {"sounds": ["mob/slime/big1", "mob/slime/big2", "mob/slime/big3", "mob/slime/big4"], "subtitle": "subtitles.zamaquaticadditions.cheese_cauldron.empty"},
+  "block.zamaquaticadditions.cheese_cauldron.cheese_made": {"sounds": ["block/brewing_stand/brew1", "block/brewing_stand/brew2"], "subtitle": "subtitles.zamaquaticadditions.cheese_cauldron.cheese_made"},
+  "block.zamaquaticadditions.cheese_cauldron.nether_cheese_made": {"sounds": ["random/fizz"], "subtitle": "subtitles.zamaquaticadditions.cheese_cauldron.nether_cheese_made"},
+  "effect.zamaquaticadditions.potion_effect.begin": {"sounds": ["zamaquaticadditions:effect/potion_effect_begin"], "subtitle": "subtitles.zamaquaticadditions.effect.potion_effect.begin"},
+  "effect.zamaquaticadditions.potion_effect.end": {"sounds": ["zamaquaticadditions:effect/potion_effect_end"], "subtitle": "subtitles.zamaquaticadditions.effect.potion_effect.end"},
+  "boing": {"sounds": [{"name": "zamaquaticadditions:boing", "stream": true}]},
   "pokemon_driftveil_city": {"sounds": [{"name": "zamaquaticadditions:pokemon_driftveil_city", "stream": true}]},
   "pokemon_nimbasa_city": {"sounds": [{"name": "zamaquaticadditions:pokemon_nimbasa_city", "stream": true}]},
   "pokemon_accumula_town": {"sounds": [{"name": "zamaquaticadditions:pokemon_accumula_town", "stream": true}]},

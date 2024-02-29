@@ -11,6 +11,8 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.zam.zamaquaticadditions.enchantment.SoulboundEnchantment;
+import net.zam.zamaquaticadditions.util.config.ConfigHolder;
+import net.zam.zamaquaticadditions.util.config.ServerConfig;
 import org.apache.commons.lang3.tuple.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,9 +20,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ZAMConfig {
+
+    public static ServerConfig server;
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
+    public static int milkCauldronTime = 150;
+    public static boolean cheesemaking = true;
+    public static boolean synesthesiaShader = true;
+
+
+    public static void bakeClient() {
+        try {
+            synesthesiaShader = ConfigHolder.CLIENT.synesthesiaShader.get();
+        } catch (Exception e) {
+            ZAMAquaticAdditions.LOGGER.warn("An exception was caused trying to load the config for Rats.");
+            e.printStackTrace();
+        }
+    }
+
+    public static void bakeServer() {
+        try {
+        } catch (Exception e) {
+            ZAMAquaticAdditions.LOGGER.warn("An exception was caused trying to load the config for Rats.");
+            e.printStackTrace();
+        }
+    }
+
     public static final LostOptions LOST_OPTIONS = new LostOptions(BUILDER);
+
 
 
     public static class Common {

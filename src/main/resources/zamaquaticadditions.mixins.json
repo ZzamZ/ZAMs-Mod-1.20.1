@@ -1,10 +1,13 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.ronny.zamaquaticadditions.mixin",
+  "package": "net.zam.zamaquaticadditions.mixin",
   "refmap": "zamaquaticadditions.refmap.json",
   "compatibilityLevel": "JAVA_17",
     "mixins": [
+      "ServerPlayerMixin",
+      "InventoryMixin",
+      "FrogVariantsMixin"
     ],
   "injectors": {
     "defaultRequire": 1

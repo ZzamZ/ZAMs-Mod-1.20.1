@@ -16,6 +16,9 @@ import net.zam.zamaquaticadditions.block.GymSignBlock;
 import net.zam.zamaquaticadditions.block.ScaffinityBlock;
 import net.zam.zamaquaticadditions.block.ScaffinityBlockItem;
 import net.zam.zamaquaticadditions.block.chest.LostBounty;
+import net.zam.zamaquaticadditions.block.milk.CheeseCauldronBlock;
+import net.zam.zamaquaticadditions.block.milk.MilkCauldronBlock;
+import net.zam.zamaquaticadditions.block.milk.SetupHorizontalBlock;
 import net.zam.zamaquaticadditions.item.renderer.BlockItemWithoutLevelRenderer;
 
 import javax.annotation.Nonnull;
@@ -40,7 +43,7 @@ public class ZAMBlocks {
 
     //Froglights
     public static final RegistryObject<Block> RUDDY_FROGLIGHT = registerBlock("ruddy_froglight", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OCHRE_FROGLIGHT).mapColor(MapColor.COLOR_RED).strength(0.3f).lightLevel(b -> 15).sound(SoundType.FROGLIGHT)));
-    public static final RegistryObject<Block> AZURE_FROGLIGHT = registerBlock("azure_froglight", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OCHRE_FROGLIGHT).mapColor(MapColor.COLOR_LIGHT_BLUE).strength(0.3f).lightLevel(b -> 15).sound(SoundType.FROGLIGHT)));
+    public static final RegistryObject<Block> AZURE_FROGLIGHT = registerBlock("azure_froglight", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OCHRE_FROGLIGHT).mapColor(MapColor.COLOR_BLUE).strength(0.3f).lightLevel(b -> 15).sound(SoundType.FROGLIGHT)));
     public static final RegistryObject<Block> EBON_FROGLIGHT = registerBlock("ebon_froglight", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OCHRE_FROGLIGHT).mapColor(MapColor.COLOR_BLACK).strength(0.3f).lightLevel(b -> 15).sound(SoundType.FROGLIGHT)));
 
 
@@ -111,6 +114,20 @@ public class ZAMBlocks {
     public static RegistryObject<Block> GYM_SIGN14 = registerBlock("gym_sign14", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
     public static RegistryObject<Block> GYM_SIGN15 = registerBlock("gym_sign15", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
     public static RegistryObject<Block> GYM_SIGN16 = registerBlock("gym_sign16", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
+
+
+    //Cheese
+    public static final RegistryObject<Block> BLOCK_OF_CHEESE = registerBlock("block_of_cheese", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.SLIME_BLOCK).strength(0.6F, 0.0F)));
+    public static final RegistryObject<Block> MILK_CAULDRON = registerBlock("cauldron_milk", () -> new MilkCauldronBlock(Block.Properties.copy(Blocks.CAULDRON)));
+    public static final RegistryObject<Block> CHEESE_CAULDRON = registerBlock("cauldron_cheese", () -> new CheeseCauldronBlock(Block.Properties.copy(Blocks.CAULDRON), ZAMBlocks.BLOCK_OF_CHEESE, ZAMCauldronRegistry.CHEESE));
+    public static final RegistryObject<Block> BLUE_CHEESE_CAULDRON = registerBlock("cauldron_blue_cheese", () -> new CheeseCauldronBlock(Block.Properties.copy(Blocks.CAULDRON), ZAMBlocks.BLOCK_OF_BLUE_CHEESE, ZAMCauldronRegistry.BLUE_CHEESE));
+    public static final RegistryObject<Block> NETHER_CHEESE_CAULDRON = registerBlock("cauldron_nether_cheese", () -> new CheeseCauldronBlock(Block.Properties.copy(Blocks.CAULDRON), ZAMBlocks.BLOCK_OF_NETHER_CHEESE, ZAMCauldronRegistry.NETHER_CHEESE));
+    public static final RegistryObject<Block> BLOCK_OF_BLUE_CHEESE = registerBlock("block_of_blue_cheese", () -> new Block(Block.Properties.of().strength(0.6F, 0.0F).sound(SoundType.SLIME_BLOCK)));
+    public static final RegistryObject<Block> BLOCK_OF_NETHER_CHEESE = registerBlock("block_of_nether_cheese", () -> new Block(Block.Properties.of().strength(0.6F, 0.0F).sound(SoundType.SLIME_BLOCK)));
+    public static final RegistryObject<Block> JACK_O_RATERN = registerBlock("jack_o_ratern", () -> new SetupHorizontalBlock(Block.Properties.of().sound(SoundType.WOOD).strength(1.0F, 0).lightLevel(value -> 15)));
+    public static final RegistryObject<Block> FISH_BARREL = registerBlock("fish_barrel", () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 10.0F).sound(SoundType.WOOD)));
+
+
     public static final RegistryObject<Block> SUS = registerBlock("sus", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).strength(0.3f).sound(SoundType.SLIME_BLOCK)));
 
 

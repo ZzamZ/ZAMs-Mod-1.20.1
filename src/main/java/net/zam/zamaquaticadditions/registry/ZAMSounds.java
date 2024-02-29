@@ -12,11 +12,22 @@ public class ZAMSounds {
     public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, ZAMAquaticAdditions.MOD_ID);
 
 
-
+    //Koi
     public static final RegistryObject<SoundEvent> KOI_FLOP = registerSoundEvent("entity.koi.flop");
 
 
+    //Cheese
+    public static final RegistryObject<SoundEvent> BLUE_CHEESE_MADE = registerSoundEvent("block.zamaquaticadditions.cheese_cauldron.blue_cheese_made");
+    public static final RegistryObject<SoundEvent> CHEESE_CAULDRON_EMPTY = registerSoundEvent("block.zamaquaticadditions.cheese_cauldron.empty");
+    public static final RegistryObject<SoundEvent> CHEESE_MADE = registerSoundEvent("block.zamaquaticadditions.cheese_cauldron.cheese_made");
+    public static final RegistryObject<SoundEvent> NETHER_CHEESE_MADE = registerSoundEvent("block.zamaquaticadditions.cheese_cauldron.nether_cheese_made");
+    public static final RegistryObject<SoundEvent> POTION_EFFECT_BEGIN = registerSoundEvent("effect.zamaquaticadditions.potion_effect.begin");
+    public static final RegistryObject<SoundEvent> POTION_EFFECT_END = registerSoundEvent("effect.zamaquaticadditions.potion_effect.end");
 
+
+
+    //Devil Fruits
+    public static RegistryObject<SoundEvent> BOING = registerSoundEvent("boing");
 
 
     //Music Tracks

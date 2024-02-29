@@ -26,6 +26,7 @@ public class DataGenerators {
         BlockTagsProvider blockTagsProvider = new ZAMBlockTags(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ZAMItemTags(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeClient(), new ZAMBlockModelGenerator(packOutput, existingFileHelper));
 
 
 

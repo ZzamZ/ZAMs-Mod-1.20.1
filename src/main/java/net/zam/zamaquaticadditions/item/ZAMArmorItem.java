@@ -9,6 +9,7 @@ import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import net.zam.zamaquaticadditions.registry.ZAMEffects;
 import net.zam.zamaquaticadditions.registry.ZAMItems;
 
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class ZAMArmorItem extends ArmorItem {
 
     static {
         MATERIAL_TO_EFFECT_MAP.put(ZAMArmorMaterials.GUARDIAN, new MobEffectInstance[]{
-                new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 0, 0),
+                new MobEffectInstance(ZAMEffects.MIPHAS_GRACE_EFFECT.get(), 0, 0),
 
         });
     }
@@ -73,15 +74,19 @@ public class ZAMArmorItem extends ArmorItem {
     }
 
     private void removeArmorEffects(Player player) {
-        List<MobEffectInstance> effectsToRemove = new ArrayList<>();
+        // First, identify all the custom effects that should be removed
+        // Assuming Mipha's Grace Effect grants extra hearts or similar
+        MobEffect miphasGraceEffect = ZAMEffects.MIPHAS_GRACE_EFFECT.get();
 
-        for (MobEffectInstance effectInstance : player.getActiveEffects()) {
-            if (  effectInstance.getEffect() == MobEffects.DOLPHINS_GRACE) {
-                effectsToRemove.add(effectInstance);
-            }
+        // Directly remove the specific effect if present
+        if (player.hasEffect(miphasGraceEffect)) {
+            player.removeEffect(miphasGraceEffect);
         }
-        for (MobEffectInstance effectInstance : effectsToRemove) {
-            player.removeEffect(effectInstance.getEffect());
+
+        // Optionally, reset health to max if it exceeds due to removal of extra hearts
+        float maxHealth = player.getMaxHealth();
+        if (player.getHealth() > maxHealth) {
+            player.setHealth(maxHealth);
         }
     }
 
