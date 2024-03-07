@@ -12,13 +12,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zam.zamaquaticadditions.ZAMAquaticAdditions;
 import net.zam.zamaquaticadditions.block.BuddingEmeraldBlock;
-import net.zam.zamaquaticadditions.block.GymSignBlock;
 import net.zam.zamaquaticadditions.block.ScaffinityBlock;
 import net.zam.zamaquaticadditions.block.ScaffinityBlockItem;
 import net.zam.zamaquaticadditions.block.chest.LostBounty;
-import net.zam.zamaquaticadditions.block.milk.CheeseCauldronBlock;
-import net.zam.zamaquaticadditions.block.milk.MilkCauldronBlock;
-import net.zam.zamaquaticadditions.block.milk.SetupHorizontalBlock;
 import net.zam.zamaquaticadditions.item.renderer.BlockItemWithoutLevelRenderer;
 
 import javax.annotation.Nonnull;
@@ -86,49 +82,8 @@ public class ZAMBlocks {
     //Slab & Stair Misc
     public static final RegistryObject<Block> PACKED_ICE_SLAB = registerBlock("packed_ice_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.PACKED_ICE)));
     public static final RegistryObject<Block> PACKED_ICE_STAIRS = registerBlock("packed_ice_stairs", () -> new StairBlock(Blocks.PACKED_ICE::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.PACKED_ICE)));
-    public static final RegistryObject<Block> DIRT_SLAB = registerBlock("dirt_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.DIRT)));
-    public static final RegistryObject<Block> DIRT_STAIRS = registerBlock("dirt_stairs", () -> new StairBlock(Blocks.DIRT::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.DIRT)));
-    public static final RegistryObject<Block> GRASS_SLAB = registerBlock("grass_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
-    public static final RegistryObject<Block> GRASS_STAIRS = registerBlock("grass_stairs", () -> new StairBlock(Blocks.GRASS_BLOCK::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK)));
-    public static final RegistryObject<Block> COARSE_DIRT_SLAB = registerBlock("coarse_dirt_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.COARSE_DIRT)));
-    public static final RegistryObject<Block> COARSE_DIRT_STAIRS = registerBlock("coarse_dirt_stairs", () -> new StairBlock(Blocks.COARSE_DIRT::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.COARSE_DIRT)));
     public static final RegistryObject<Block> SAND_SLAB = registerBlock("sand_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SAND)));
     public static final RegistryObject<Block> SAND_STAIRS = registerBlock("sand_stairs", () -> new StairBlock(Blocks.SAND::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.SAND)));
-
-
-
-    //Gym Signs
-    public static RegistryObject<Block> GYM_SIGN1 = registerBlock("gym_sign1", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN2 = registerBlock("gym_sign2", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN3 = registerBlock("gym_sign3", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN4 = registerBlock("gym_sign4", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN5 = registerBlock("gym_sign5", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN6 = registerBlock("gym_sign6", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN7 = registerBlock("gym_sign7", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN8 = registerBlock("gym_sign8", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN9 = registerBlock("gym_sign9", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN10 = registerBlock("gym_sign10", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN11 = registerBlock("gym_sign11", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN12 = registerBlock("gym_sign12", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN13 = registerBlock("gym_sign13", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN14 = registerBlock("gym_sign14", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN15 = registerBlock("gym_sign15", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-    public static RegistryObject<Block> GYM_SIGN16 = registerBlock("gym_sign16", () -> new GymSignBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).strength(5.0f).requiresCorrectToolForDrops().noOcclusion()));
-
-
-    //Cheese
-    public static final RegistryObject<Block> BLOCK_OF_CHEESE = registerBlock("block_of_cheese", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_YELLOW).sound(SoundType.SLIME_BLOCK).strength(0.6F, 0.0F)));
-    public static final RegistryObject<Block> MILK_CAULDRON = registerBlock("cauldron_milk", () -> new MilkCauldronBlock(Block.Properties.copy(Blocks.CAULDRON)));
-    public static final RegistryObject<Block> CHEESE_CAULDRON = registerBlock("cauldron_cheese", () -> new CheeseCauldronBlock(Block.Properties.copy(Blocks.CAULDRON), ZAMBlocks.BLOCK_OF_CHEESE, ZAMCauldronRegistry.CHEESE));
-    public static final RegistryObject<Block> BLUE_CHEESE_CAULDRON = registerBlock("cauldron_blue_cheese", () -> new CheeseCauldronBlock(Block.Properties.copy(Blocks.CAULDRON), ZAMBlocks.BLOCK_OF_BLUE_CHEESE, ZAMCauldronRegistry.BLUE_CHEESE));
-    public static final RegistryObject<Block> NETHER_CHEESE_CAULDRON = registerBlock("cauldron_nether_cheese", () -> new CheeseCauldronBlock(Block.Properties.copy(Blocks.CAULDRON), ZAMBlocks.BLOCK_OF_NETHER_CHEESE, ZAMCauldronRegistry.NETHER_CHEESE));
-    public static final RegistryObject<Block> BLOCK_OF_BLUE_CHEESE = registerBlock("block_of_blue_cheese", () -> new Block(Block.Properties.of().strength(0.6F, 0.0F).sound(SoundType.SLIME_BLOCK)));
-    public static final RegistryObject<Block> BLOCK_OF_NETHER_CHEESE = registerBlock("block_of_nether_cheese", () -> new Block(Block.Properties.of().strength(0.6F, 0.0F).sound(SoundType.SLIME_BLOCK)));
-    public static final RegistryObject<Block> JACK_O_RATERN = registerBlock("jack_o_ratern", () -> new SetupHorizontalBlock(Block.Properties.of().sound(SoundType.WOOD).strength(1.0F, 0).lightLevel(value -> 15)));
-    public static final RegistryObject<Block> FISH_BARREL = registerBlock("fish_barrel", () -> new Block(BlockBehaviour.Properties.of().strength(2.0F, 10.0F).sound(SoundType.WOOD)));
-
-
-    public static final RegistryObject<Block> SUS = registerBlock("sus", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK).strength(0.3f).sound(SoundType.SLIME_BLOCK)));
 
 
     public static RegistryObject<Block> registerWithRenderer(Supplier<Block> supplier, @Nonnull String name, @Nullable Item.Properties properties) {

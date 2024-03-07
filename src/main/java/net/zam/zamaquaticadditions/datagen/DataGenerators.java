@@ -3,6 +3,7 @@ package net.zam.zamaquaticadditions.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.tags.BiomeTagsProvider;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -27,6 +28,10 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new ZAMItemTags(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
         generator.addProvider(event.includeClient(), new ZAMBlockModelGenerator(packOutput, existingFileHelper));
+        BiomeTagsProvider biomeTagsProvider = new ZAMBiomeTagsProvider(packOutput, lookupProvider, existingFileHelper);
+        generator.addProvider(event.includeServer(), biomeTagsProvider);
+        generator.addProvider(event.includeServer(), new ZAMWorldGenProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), ZAMLootTableProvider.create(packOutput));
 
 
 

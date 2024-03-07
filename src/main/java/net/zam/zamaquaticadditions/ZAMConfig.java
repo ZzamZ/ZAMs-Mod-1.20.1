@@ -24,28 +24,6 @@ public class ZAMConfig {
     public static ServerConfig server;
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-    public static int milkCauldronTime = 150;
-    public static boolean cheesemaking = true;
-    public static boolean synesthesiaShader = true;
-
-
-    public static void bakeClient() {
-        try {
-            synesthesiaShader = ConfigHolder.CLIENT.synesthesiaShader.get();
-        } catch (Exception e) {
-            ZAMAquaticAdditions.LOGGER.warn("An exception was caused trying to load the config for Rats.");
-            e.printStackTrace();
-        }
-    }
-
-    public static void bakeServer() {
-        try {
-        } catch (Exception e) {
-            ZAMAquaticAdditions.LOGGER.warn("An exception was caused trying to load the config for Rats.");
-            e.printStackTrace();
-        }
-    }
-
     public static final LostOptions LOST_OPTIONS = new LostOptions(BUILDER);
 
 
@@ -61,6 +39,9 @@ public class ZAMConfig {
             serenityEffect = builder.comment("If Koi exude Serenity as a potion effect").define("Serenity potion effect", true);
         }
     }
+
+    public static ForgeConfigSpec spec = BUILDER.build();
+
 
     public static final ForgeConfigSpec COMMON_SPEC;
     public static final Common COMMON;

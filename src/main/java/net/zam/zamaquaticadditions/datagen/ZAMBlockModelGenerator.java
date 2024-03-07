@@ -22,52 +22,15 @@ public class ZAMBlockModelGenerator extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
 
-        this.simpleBlock(ZAMBlocks.SUS.get());
-        this.simpleBlock(ZAMBlocks.BLOCK_OF_BLUE_CHEESE.get());
-        this.simpleBlock(ZAMBlocks.BLOCK_OF_NETHER_CHEESE.get());
-        this.simpleBlock(ZAMBlocks.BLOCK_OF_CHEESE.get());
-        this.simpleBlock(ZAMBlocks.CHEESE_CAULDRON.get(), this.models().withExistingParent("cauldron_cheese", new ResourceLocation(ZAMAquaticAdditions.MOD_ID, "block/template_cauldron_with_transforms"))
-                .texture("bottom", new ResourceLocation("block/cauldron_bottom"))
-                .texture("content", this.blockPrefix("block_of_cheese"))
-                .texture("inside", new ResourceLocation("block/cauldron_inner"))
-                .texture("particle", new ResourceLocation("block/cauldron_side"))
-                .texture("side", new ResourceLocation("block/cauldron_side"))
-                .texture("top", new ResourceLocation("block/cauldron_top")));
-        this.simpleBlock(ZAMBlocks.BLUE_CHEESE_CAULDRON.get(), this.models().withExistingParent("cauldron_blue_cheese", new ResourceLocation(ZAMAquaticAdditions.MOD_ID, "block/template_cauldron_with_transforms"))
-                .texture("bottom", new ResourceLocation("block/cauldron_bottom"))
-                .texture("content", this.blockPrefix("block_of_blue_cheese"))
-                .texture("inside", new ResourceLocation("block/cauldron_inner"))
-                .texture("particle", new ResourceLocation("block/cauldron_side"))
-                .texture("side", new ResourceLocation("block/cauldron_side"))
-                .texture("top", new ResourceLocation("block/cauldron_top")));
-        this.simpleBlock(ZAMBlocks.NETHER_CHEESE_CAULDRON.get(), this.models().withExistingParent("cauldron_nether_cheese", new ResourceLocation(ZAMAquaticAdditions.MOD_ID, "block/template_cauldron_with_transforms"))
-                .texture("bottom", new ResourceLocation("block/cauldron_bottom"))
-                .texture("content", this.blockPrefix("block_of_nether_cheese"))
-                .texture("inside", new ResourceLocation("block/cauldron_inner"))
-                .texture("particle", new ResourceLocation("block/cauldron_side"))
-                .texture("side", new ResourceLocation("block/cauldron_side"))
-                .texture("top", new ResourceLocation("block/cauldron_top")));
-        this.simpleBlock(ZAMBlocks.MILK_CAULDRON.get(), this.models().withExistingParent("cauldron_milk", new ResourceLocation(ZAMAquaticAdditions.MOD_ID, "block/template_cauldron_with_transforms"))
-                .texture("bottom", new ResourceLocation("block/cauldron_bottom"))
-                .texture("content", new ResourceLocation("forge", "block/milk_still"))
-                .texture("inside", new ResourceLocation("block/cauldron_inner"))
-                .texture("particle", new ResourceLocation("block/cauldron_side"))
-                .texture("side", new ResourceLocation("block/cauldron_side"))
-                .texture("top", new ResourceLocation("block/cauldron_top")));
-        this.simpleBlock(ZAMBlocks.FISH_BARREL.get(), this.models().cube("fish_barrel",
-                        new ResourceLocation("block/barrel_bottom"), this.blockPrefix("fish_barrel_top"),
-                        new ResourceLocation("block/barrel_side"), new ResourceLocation("block/barrel_side"),
-                        new ResourceLocation("block/barrel_side"), new ResourceLocation("block/barrel_side"))
-                .texture("particle", new ResourceLocation("block/barrel_side")));
-        this.horizontalBlock(ZAMBlocks.JACK_O_RATERN.get(), this.models().orientable("jack_o_ratern",
-                new ResourceLocation("block/pumpkin_side"),
-                this.blockPrefix("jack_o_ratern"),
-                new ResourceLocation("block/pumpkin_top")));
-
         stairsBlock((StairBlock) ZAMBlocks.PACKED_ICE_STAIRS.get(), blockTexture(Blocks.PACKED_ICE));
         slabBlock((SlabBlock) ZAMBlocks.PACKED_ICE_SLAB.get(), blockTexture(Blocks.PACKED_ICE), blockTexture(Blocks.PACKED_ICE));
         blockItem(ZAMBlocks.PACKED_ICE_SLAB);
         blockItem(ZAMBlocks.PACKED_ICE_STAIRS);
+
+        stairsBlock((StairBlock) ZAMBlocks.SAND_STAIRS.get(), blockTexture(Blocks.SAND));
+        slabBlock((SlabBlock) ZAMBlocks.SAND_SLAB.get(), blockTexture(Blocks.SAND), blockTexture(Blocks.SAND));
+        blockItem(ZAMBlocks.SAND_SLAB);
+        blockItem(ZAMBlocks.SAND_STAIRS);
 
         stairsBlock((StairBlock) ZAMBlocks.WHITE_CONCRETE_STAIRS.get(), blockTexture(Blocks.WHITE_CONCRETE));
         slabBlock((SlabBlock) ZAMBlocks.WHITE_CONCRETE_SLAB.get(), blockTexture(Blocks.WHITE_CONCRETE), blockTexture(Blocks.WHITE_CONCRETE));
@@ -133,10 +96,7 @@ public class ZAMBlockModelGenerator extends BlockStateProvider {
         blockItem(ZAMBlocks.MAGENTA_CONCRETE_SLAB);
         blockItem(ZAMBlocks.PINK_CONCRETE_SLAB);
         blockItem(ZAMBlocks.PINK_CONCRETE_STAIRS);
-        
-        
-        
-        
+
     }
 
     private void blockItem(RegistryObject<Block> blockRegistryObject) {

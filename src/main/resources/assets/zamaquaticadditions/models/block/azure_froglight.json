@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "zamaquaticadditions:block/azure_froglight_top",
+    "side": "zamaquaticadditions:block/azure_froglight_side"
+  }
+}

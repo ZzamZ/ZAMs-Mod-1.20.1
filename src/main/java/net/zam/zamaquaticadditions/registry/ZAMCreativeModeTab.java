@@ -18,28 +18,15 @@ public class ZAMCreativeModeTab {
             CreativeModeTab.builder().icon(() -> new ItemStack(ZAMItems.GUARDIAN_CHESTPLATE.get())).title(Component.literal("ZAM Aquatic Additions")).displayItems((displayParameters, output) -> {
 
                 output.accept(ZAMBlocks.LOST_BOUNTY.get());
+                output.accept(ZAMItems.OLD_RECORD_BOX.get());
                 output.accept(ZAMBlocks.SCAFFINITY.get());
                 output.accept(ZAMItems.MARLIN_LANCE.get());
+                output.accept(ZAMItems.PRISON_BUBBLE.get());
                 output.accept(ZAMItems.GUARDIAN_HELMET.get());
                 output.accept(ZAMItems.GUARDIAN_CHESTPLATE.get());
                 output.accept(ZAMItems.GUARDIAN_LEGGING.get());
                 output.accept(ZAMItems.GUARDIAN_BOOTS.get());
-                output.accept(ZAMItems.KOI_BUCKET.get());
-                output.accept(ZAMItems.KOI.get());
-                output.accept(ZAMItems.KOI_SPAWN_EGG.get());
-
-                output.accept(ZAMItems.POKEMON_ALBUM_CASE.get());
-                output.accept(ZAMItems.POKEMON_NIMBASA_CITY.get());
-                output.accept(ZAMItems.POKEMON_DRIFTVEIL_CITY.get());
-                output.accept(ZAMItems.POKEMON_ICIRRUS_CITY.get());
-                output.accept(ZAMItems.POKEMON_VIRBANK_CITY.get());
-                output.accept(ZAMItems.POKEMON_HUMILAU_CITY.get());
-                output.accept(ZAMItems.POKEMON_EAST_PROVINCE.get());
-                output.accept(ZAMItems.POKEMON_GEAR_STATION.get());
-                output.accept(ZAMItems.POKEMON_VOLO.get());
-                output.accept(ZAMItems.POKEMON_NS_CASTLE.get());
-                output.accept(ZAMItems.POKEMON_ALBUM_CASE.get());
-
+                output.accept(ZAMItems.CORAL_FRUIT.get());
 
                 output.accept(ZAMItems.WOOD_MEDAL.get());
                 output.accept(ZAMItems.BRONZE_MEDAL.get());
@@ -50,21 +37,21 @@ public class ZAMCreativeModeTab {
                 output.accept(ZAMItems.EMERALD_HORSE_ARMOR.get());
                 output.accept(ZAMItems.NETHERITE_HORSE_ARMOR.get());
 
-                output.accept(ZAMItems.BASIC_BADGE.get());
-                output.accept(ZAMItems.TRIO_BADGE.get());
-                output.accept(ZAMItems.INSECT_BADGE.get());
-                output.accept(ZAMItems.BOLT_BADGE.get());
-                output.accept(ZAMItems.QUAKE_BADGE.get());
-                output.accept(ZAMItems.JET_BADGE.get());
-                output.accept(ZAMItems.FREEZE_BADGE.get());
-                output.accept(ZAMItems.LEGEND_BADGE.get());
-                output.accept(ZAMItems.TOXIC_BADGE.get());
-                output.accept(ZAMItems.WAVE_BADGE.get());
-                output.accept(ZAMItems.GEAR_BADGE.get());
-                output.accept(ZAMItems.NATURE_BADGE.get());
-                output.accept(ZAMItems.KNUCKLE_BADGE.get());
-                output.accept(ZAMItems.HEAT_BADGE.get());
-                output.accept(ZAMItems.BOULDER_BADGE.get());
+             //   output.accept(ZAMItems.BASIC_BADGE.get());
+              //  output.accept(ZAMItems.TRIO_BADGE.get());
+              //  output.accept(ZAMItems.INSECT_BADGE.get());
+              //  output.accept(ZAMItems.BOLT_BADGE.get());
+              //  output.accept(ZAMItems.QUAKE_BADGE.get());
+              //  output.accept(ZAMItems.JET_BADGE.get());
+              //  output.accept(ZAMItems.FREEZE_BADGE.get());
+              //  output.accept(ZAMItems.LEGEND_BADGE.get());
+               // output.accept(ZAMItems.TOXIC_BADGE.get());
+              //  output.accept(ZAMItems.WAVE_BADGE.get());
+              //  output.accept(ZAMItems.GEAR_BADGE.get());
+              //  output.accept(ZAMItems.NATURE_BADGE.get());
+             //   output.accept(ZAMItems.KNUCKLE_BADGE.get());
+             //   output.accept(ZAMItems.HEAT_BADGE.get());
+             //   output.accept(ZAMItems.BOULDER_BADGE.get());
 
 
 
@@ -119,35 +106,40 @@ public class ZAMCreativeModeTab {
 
                 output.accept(ZAMBlocks.PACKED_ICE_SLAB.get());
                 output.accept(ZAMBlocks.PACKED_ICE_STAIRS.get());
-                output.accept(ZAMBlocks.GRASS_SLAB.get());
-                output.accept(ZAMBlocks.GRASS_STAIRS.get());
-                output.accept(ZAMBlocks.DIRT_SLAB.get());
-                output.accept(ZAMBlocks.DIRT_STAIRS.get());
-                output.accept(ZAMBlocks.COARSE_DIRT_SLAB.get());
-                output.accept(ZAMBlocks.COARSE_DIRT_STAIRS.get());
+
                 output.accept(ZAMBlocks.SAND_SLAB.get());
                 output.accept(ZAMBlocks.SAND_STAIRS.get());
 
-                output.accept(ZAMBlocks.GYM_SIGN1.get());
-                output.accept(ZAMBlocks.GYM_SIGN2.get());
-                output.accept(ZAMBlocks.GYM_SIGN3.get());
-                output.accept(ZAMBlocks.GYM_SIGN4.get());
-                output.accept(ZAMBlocks.GYM_SIGN5.get());
-                output.accept(ZAMBlocks.GYM_SIGN6.get());
-                output.accept(ZAMBlocks.GYM_SIGN7.get());
-                output.accept(ZAMBlocks.GYM_SIGN8.get());
-                output.accept(ZAMBlocks.GYM_SIGN9.get());
-                output.accept(ZAMBlocks.GYM_SIGN10.get());
-                output.accept(ZAMBlocks.GYM_SIGN11.get());
-                output.accept(ZAMBlocks.GYM_SIGN12.get());
-                output.accept(ZAMBlocks.GYM_SIGN13.get());
-                output.accept(ZAMBlocks.GYM_SIGN14.get());
-                output.accept(ZAMBlocks.GYM_SIGN15.get());
-                output.accept(ZAMBlocks.GYM_SIGN16.get());
 
-                output.accept(ZAMBlocks.SUS.get());
+                output.accept(ZAMItems.POKEMON_ALBUM_CASE.get());
+                output.accept(ZAMItems.POKEMON_STRIATON_CITY.get());
+                output.accept(ZAMItems.POKEMON_CASTELIA_CITY.get());
+                output.accept(ZAMItems.POKEMON_NIMBASA_CITY.get());
+                output.accept(ZAMItems.POKEMON_DRIFTVEIL_CITY.get());
+                output.accept(ZAMItems.POKEMON_MISTRALTON_CITY.get());
+                output.accept(ZAMItems.POKEMON_ICIRRUS_CITY.get());
+                output.accept(ZAMItems.POKEMON_VIRBANK_CITY.get());
+                output.accept(ZAMItems.POKEMON_HUMILAU_CITY.get());
+                output.accept(ZAMItems.POKEMON_GEAR_STATION.get());
+                output.accept(ZAMItems.POKEMON_EAST_PROVINCE.get());
+                output.accept(ZAMItems.POKEMON_NS_CASTLE.get());
+                output.accept(ZAMItems.POKEMON_VOLO.get());
 
-
+                output.accept(ZAMItems.POKEMON_ALBUM_CASE.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_DARK_SKIES.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_RAGE_OF_THE_CHAMPION.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_WINTER_BLISS.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_SPACE_PIRATES.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_PIERCING_LAZER.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_SPANISH_WALTZ.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_JUMPER.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_THE_SHOW.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_THE_FINAL_CONFRONTATION.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_MUDHOLES.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_FLUTEY.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_FOUR_BRAVE_CHAMPIONS.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_PLEASE_DONT.get());
+                output.accept(ZAMItems.CASTLE_CRASHERS_RACE_AROUND_THE_WORLD.get());
 
 
             }).build());

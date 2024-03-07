@@ -7,10 +7,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zam.zamaquaticadditions.ZAMAquaticAdditions;
-import net.zam.zamaquaticadditions.effect.ConfitByaldiEffect;
 //import net.zam.zamaquaticadditions.effect.GumGumCurseEffect;
 import net.zam.zamaquaticadditions.effect.MiphasGraceEffect;
-import net.zam.zamaquaticadditions.effect.SerenityEffect;
 
 public class ZAMEffects {
 
@@ -20,13 +18,11 @@ public class ZAMEffects {
    // public static final RegistryObject<MobEffect> GUM_GUM_CURSE = MOB_EFFECTS.register("gum_gum_curse",
    //         () -> new GumGumCurseEffect(MobEffectCategory.NEUTRAL, 0x36ebab));
 
-    public static final RegistryObject<MobEffect> SERENITY = MOB_EFFECTS.register("serenity",
-            () -> new SerenityEffect(MobEffectCategory.BENEFICIAL, 15494786));
+
 
     public static final RegistryObject<MobEffect> MIPHAS_GRACE_EFFECT = MOB_EFFECTS.register("miphas_grace",
             () -> new MiphasGraceEffect(MobEffectCategory.BENEFICIAL, 0xADD8E6));
 
-    public static final RegistryObject<MobEffect> SYNESTHESIA = MOB_EFFECTS.register("synesthesia", ConfitByaldiEffect::new);
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

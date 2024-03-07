@@ -3,6 +3,7 @@ package net.zam.zamaquaticadditions.datagen;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.zam.zamaquaticadditions.ZAMAquaticAdditions;
@@ -22,6 +23,9 @@ public class ZAMBlockTags extends BlockTagsProvider {
         this.tag(BlockTags.CLIMBABLE)
                 .add(ZAMBlocks.SCAFFINITY.get());
 
+        this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(ZAMBlocks.SAND_STAIRS.get())
+                .add(ZAMBlocks.SAND_SLAB.get());
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 ZAMBlocks.WHITE_CONCRETE_SLAB.get(),
@@ -40,6 +44,10 @@ public class ZAMBlockTags extends BlockTagsProvider {
                 ZAMBlocks.PURPLE_CONCRETE_SLAB.get(),
                 ZAMBlocks.MAGENTA_CONCRETE_SLAB.get(),
                 ZAMBlocks.PINK_CONCRETE_SLAB.get(),
+
+                ZAMBlocks.LOST_BOUNTY.get(),
+
+                ZAMBlocks.EMERALD_CRYSTAL_BLOCK.get(),
 
                 ZAMBlocks.WHITE_CONCRETE_STAIRS.get(),
                 ZAMBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get(),

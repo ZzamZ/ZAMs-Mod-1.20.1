@@ -17,31 +17,32 @@ public class ZAMItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        simpleItem(ZAMItems.CORAL_FRUIT);
+        simpleItem(ZAMItems.PRISON_BUBBLE);
+        simpleItem(ZAMItems.OLD_RECORD_BOX);
         caseItem(ZAMItems.POKEMON_ALBUM_CASE);
-        pokemonMusicItem(ZAMItems.POKEMON_ACCUMULA_TOWN);
+        pokemonMusicItem(ZAMItems.POKEMON_STRIATON_CITY);
+        pokemonMusicItem(ZAMItems.POKEMON_CASTELIA_CITY);
         pokemonMusicItem(ZAMItems.POKEMON_NIMBASA_CITY);
         pokemonMusicItem(ZAMItems.POKEMON_DRIFTVEIL_CITY);
+        pokemonMusicItem(ZAMItems.POKEMON_MISTRALTON_CITY);
         pokemonMusicItem(ZAMItems.POKEMON_ICIRRUS_CITY);
-        pokemonMusicItem(ZAMItems.POKEMON_GROUND);
         pokemonMusicItem(ZAMItems.POKEMON_VIRBANK_CITY);
         pokemonMusicItem(ZAMItems.POKEMON_HUMILAU_CITY);
-        pokemonMusicItem(ZAMItems.POKEMON_WATER);
-        pokemonMusicItem(ZAMItems.POKEMON_NS_CASTLE);
-        pokemonMusicItem(ZAMItems.POKEMON_VOLO);
-        pokemonMusicItem(ZAMItems.POKEMON_SKYARROW_BRIDGE);
         pokemonMusicItem(ZAMItems.POKEMON_GEAR_STATION);
-        pokemonMusicItem(ZAMItems.POKEMON_STRIATON_CITY);
         pokemonMusicItem(ZAMItems.POKEMON_EAST_PROVINCE);
-        pokemonMusicItem(ZAMItems.POKEMON_HOENN_ROAD);
-        pokemonMusicItem(ZAMItems.POKEMON_UNOVA_ROAD);
-        pokemonMusicItem(ZAMItems.POKEMON_LUMIOSE_CITY);
-        pokemonMusicItem(ZAMItems.POKEMON_CASTELIA_CITY);
-        pokemonMusicItem(ZAMItems.POKEMON_MISTRALTON_CITY);
-        pokemonMusicItem(ZAMItems.POKEMON_MISTRALTON_GYM);
+        pokemonMusicItem(ZAMItems.POKEMON_VOLO);
+        pokemonMusicItem(ZAMItems.POKEMON_NS_CASTLE);
 
     }
 
 
+
+    private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                new ResourceLocation("item/generated")).texture("layer0",
+                new ResourceLocation(ZAMAquaticAdditions.MOD_ID,"item/" + item.getId().getPath()));
+    }
     private ItemModelBuilder caseItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),
                 new ResourceLocation("item/generated")).texture("layer0",

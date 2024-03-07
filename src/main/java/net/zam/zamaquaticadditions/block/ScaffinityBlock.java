@@ -29,7 +29,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.zam.zamaquaticadditions.registry.ZAMBlocks;
-import net.zam.zamaquaticadditions.registry.ZAMTags;
 
 public class ScaffinityBlock extends Block implements SimpleWaterloggedBlock {
     private static final VoxelShape STABLE_SHAPE;
