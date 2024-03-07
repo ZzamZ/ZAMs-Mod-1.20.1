@@ -32,6 +32,7 @@ public class DataGenerators {
         generator.addProvider(event.includeServer(), biomeTagsProvider);
         generator.addProvider(event.includeServer(), new ZAMWorldGenProvider(packOutput, lookupProvider));
         generator.addProvider(event.includeServer(), ZAMLootTableProvider.create(packOutput));
+        generator.addProvider(event.includeServer(), new ZAMRecipeProvider(packOutput));
 
 
 

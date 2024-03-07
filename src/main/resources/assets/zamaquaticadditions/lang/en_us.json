@@ -20,8 +20,6 @@
   "item.minecraft.lingering_potion.effect.long_mining_fatigue_potion": "Lingering Potion of Mining Fatigue",
   "item.minecraft.tipped_arrow.effect.long_mining_fatigue_potion": "Lingering Potion of Mining Fatigue",
 
-
-  "block.zamaquaticadditions.neptunes_bounty": "Treasure of the Deep",
   "item.zamaquaticadditions.guardian_helmet": "Ancient Helmet",
   "item.zamaquaticadditions.guardian_chestplate": "Ancient Chestplate",
   "item.zamaquaticadditions.guardian_leggings": "Ancient leggings",
@@ -31,8 +29,23 @@
   "item.zamaquaticadditions.emerald_horse_armor": "Emerald Horse Armor",
 
   "block.zamaquaticadditions.lost_bounty": "Lost Bounty",
+  "item.zamaquaticadditions.marlin_lance": "Marlin Lance",
   "item.zamaquaticadditions.secret_formula": "Secret Formula",
   "item.zamaquaticadditions.krabby_patty": "Krabby Patty",
+  "block.zamaquaticadditions.scaffinity": "Scaffinity",
+  "item.zamaquaticadditions.prison_bubble": "Prison Bubble",
+  "info.zamaquaticadditions.noentity": "Held Entity: Nothing",
+  "info.zamaquaticadditions.containedentity": "Held Entity: %s",
+  "info.zamaquaticadditions.prison_bubble": "The Prison Bubble is an item that can be used to move animals around. Punch an animal to capture, and right click to release it. The Prison Bubble will not work on other types of entities.",
+  "tooltip.zamaquaticadditions.press_shift": "Press Shift For Info",
+  "item.zamaquaticadditions.coral_fruit": "Coral Fruit",
+  "block.zamaquaticadditions.emerald_crystal_block": "Emerald Crystal Block",
+  "block.zamaquaticadditions.budding_emerald": "Budding Emerald",
+  "block.zamaquaticadditions.emerald_cluster": "Emerald Cluster",
+  "block.zamaquaticadditions.large_emerald_bud": "Large Emerald Bud",
+  "block.zamaquaticadditions.medium_emerald_bud": "Medium Emerald Bud",
+  "block.zamaquaticadditions.small_emerald_bud": "Small Emerald Bud",
+
 
   "item.zamaquaticadditions.wood_medal": "Wood Medal",
   "item.zamaquaticadditions.bronze_medal": "Bronze Medal",
@@ -46,6 +59,8 @@
 
   "block.zamaquaticadditions.packed_ice_slab": "Packed Ice Slab",
   "block.zamaquaticadditions.packed_ice_stairs": "Packed Ice Stairs",
+  "block.zamaquaticadditions.sand_slab": "Sand Slab",
+  "block.zamaquaticadditions.sand_stairs": "Sand Stairs",
 
   "block.zamaquaticadditions.white_concrete_slab": "White Concrete Slab",
   "block.zamaquaticadditions.light_gray_concrete_slab": "Light Gray Concrete Slab",

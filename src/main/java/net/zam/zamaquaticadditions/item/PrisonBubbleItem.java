@@ -1,6 +1,7 @@
 package net.zam.zamaquaticadditions.item;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -86,12 +87,21 @@ public class PrisonBubbleItem extends Item {
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
+        super.appendHoverText(stack, worldIn, tooltip, flagIn); // Call to the super method if needed
+
         if (stack.hasTag()) {
             CompoundTag tag = stack.getOrCreateTagElement("entity_data");
-            if (tag.isEmpty()) tooltip.add(Component.translatable("info.zamaquaticadditions.noentity").withStyle(ChatFormatting.GRAY));
-            else {
+            if (tag.isEmpty()) {
+                tooltip.add(Component.translatable("info.zamaquaticadditions.noentity").withStyle(ChatFormatting.GRAY));
+            } else {
                 tooltip.add(Component.translatable("info.zamaquaticadditions.containedentity", stack.getTag().getString("name")).withStyle(ChatFormatting.GRAY));
             }
+        }
+
+        if (Screen.hasShiftDown()) {
+            tooltip.add(Component.translatable("info.zamaquaticadditions.prison_bubble").withStyle(ChatFormatting.DARK_AQUA));
+        } else {
+            tooltip.add(Component.translatable("tooltip.zamaquaticadditions.press_shift").withStyle(ChatFormatting.AQUA));
         }
     }
 
