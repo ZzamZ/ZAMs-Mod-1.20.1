@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.zam.zammod.mixin",
+  "refmap": "zammod.refmap.json",
+  "compatibilityLevel": "JAVA_17",
+    "mixins": [
+      "ServerPlayerMixin",
+      "InventoryMixin",
+      "FrogVariantsMixin",
+      "BlocksMixin",
+      "MixinLivingEntity",
+      "gamerule.BooleanValueInvoker",
+      "gamerule.IntegerValueInvoker"
+    ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

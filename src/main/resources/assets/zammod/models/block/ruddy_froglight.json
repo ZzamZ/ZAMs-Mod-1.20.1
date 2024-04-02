@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "zammod:block/ruddy_froglight_top",
+    "side": "zammod:block/ruddy_froglight_side"
+  }
+}

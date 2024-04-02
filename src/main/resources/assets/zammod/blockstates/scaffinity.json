@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "bottom=false": {
+      "model": "zammod:block/scaffinity_stable"
+    },
+    "bottom=true": {
+      "model": "zammod:block/scaffinity_unstable"
+    }
+  }
+}

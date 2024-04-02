@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:block/cube_all",
+    "textures": {
+        "all": "zammod:block/emerald_crystal_block"
+    }
+}

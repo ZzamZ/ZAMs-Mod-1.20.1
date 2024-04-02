@@ -1,0 +1,16 @@
+{
+  "boing": {"sounds": [{"name": "zammod:boing", "stream": true}]},
+  "pokemon_driftveil_city": {"sounds": [{"name": "zammod:pokemon/pokemon_driftveil_city", "stream": true}]},
+  "pokemon_nimbasa_city": {"sounds": [{"name": "zammod:pokemon/pokemon_nimbasa_city", "stream": true}]},
+  "pokemon_humilau_city": {"sounds": [{"name": "zammod:pokemon/pokemon_humilau_city", "stream": true}]},
+  "pokemon_virbank_city": {"sounds": [{"name": "zammod:pokemon/pokemon_virbank_city", "stream": true}]},
+  "pokemon_gear_station": {"sounds": [{"name": "zammod:pokemon/pokemon_gear_station", "stream": true}]},
+  "pokemon_ns_castle": {"sounds": [{"name": "zammod:pokemon/pokemon_ns_castle", "stream": true}]},
+  "pokemon_volo": {"sounds": [{"name": "zammod:pokemon/pokemon_volo", "stream": true}]},
+  "pokemon_striaton_city": {"sounds": [{"name": "zammod:pokemon/pokemon_striaton_city", "stream": true}]},
+  "pokemon_east_province": {"sounds": [{"name": "zammod:pokemon/pokemon_east_province", "stream": true}]},
+  "pokemon_icirrus_city": {"sounds": [{"name": "zammod:pokemon/pokemon_icirrus_city", "stream": true}]},
+  "pokemon_castelia_city": {"sounds": [{"name": "zammod:pokemon/pokemon_castelia_city", "stream": true}]},
+  "pokemon_mistralton_city": {"sounds": [{"name": "zammod:pokemon/pokemon_mistralton_city", "stream": true}]}
+}
+

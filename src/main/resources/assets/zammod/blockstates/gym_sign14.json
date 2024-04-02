@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=west": {
+      "model": "zammod:block/gym_sign14"
+    },
+    "facing=east": {
+      "model": "zammod:block/gym_sign14",
+      "y": 180
+    },
+    "facing=north": {
+      "model": "zammod:block/gym_sign14",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "zammod:block/gym_sign14",
+      "y": 90
+    }
+  }
+}
