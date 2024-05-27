@@ -2,10 +2,7 @@ package net.zam.zammod.datagen;
 
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -97,8 +94,22 @@ public class ZAMBlockModelGenerator extends BlockStateProvider {
         blockItem(ZAMBlocks.PINK_CONCRETE_SLAB);
         blockItem(ZAMBlocks.PINK_CONCRETE_STAIRS);
 
-        blockWithItem(ZAMBlocks.AVOCADO_PLANKS);
-
+   //     logBlock(((RotatedPillarBlock) ZAMBlocks.AVOCADO_LOG.get()));
+   //     axisBlock(((RotatedPillarBlock) ZAMBlocks.AVOCADO_WOOD.get()), blockTexture(ZAMBlocks.AVOCADO_LOG.get()), blockTexture(ZAMBlocks.AVOCADO_LOG.get()));
+   //     axisBlock((RotatedPillarBlock) ZAMBlocks.STRIPPED_AVOCADO_LOG.get(), new ResourceLocation(ZAMMod.MOD_ID, "block/stripped_avocado_log"),
+   //             new ResourceLocation(ZAMMod.MOD_ID, "block/stripped_avocado_log_top"));
+   //     axisBlock((RotatedPillarBlock) ZAMBlocks.STRIPPED_AVOCADO_WOOD.get(), new ResourceLocation(ZAMMod.MOD_ID, "block/stripped_avocado_log"),
+   //             new ResourceLocation(ZAMMod.MOD_ID, "block/stripped_avocado_log"));
+//
+   //     blockItem(ZAMBlocks.AVOCADO_LOG);
+   //     blockItem(ZAMBlocks.AVOCADO_WOOD);
+   //     blockItem(ZAMBlocks.STRIPPED_AVOCADO_LOG);
+   //     blockItem(ZAMBlocks.STRIPPED_AVOCADO_WOOD);
+//
+   //     blockWithItem(ZAMBlocks.AVOCADO_PLANKS);
+//
+   //     leavesBlock(ZAMBlocks.AVOCADO_LEAVES);
+   //     saplingBlock(ZAMBlocks.AVOCADO_SAPLING);
 
     }
 
@@ -108,6 +119,16 @@ public class ZAMBlockModelGenerator extends BlockStateProvider {
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().cubeAll(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    private void saplingBlock(RegistryObject<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 
     private ResourceLocation blockPrefix(String name) {

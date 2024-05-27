@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "zammod:block/mug_of_magnet_pilsner" },
+    "facing=east": { "model": "zammod:block/mug_of_magnet_pilsner", "y": 90 },
+    "facing=south": { "model": "zammod:block/mug_of_magnet_pilsner", "y": 180 },
+    "facing=west": { "model": "zammod:block/mug_of_magnet_pilsner", "y": 270 }
+  }
+}

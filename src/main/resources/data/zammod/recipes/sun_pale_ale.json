@@ -1,0 +1,20 @@
+{
+  "type": "zammod:beer_brewing",
+  "ingredients": [
+    {
+      "item": "zammod:hop"
+    },
+    {
+      "item": "zammod:dry_seeds"
+    },
+    {
+      "item": "minecraft:sunflower"
+    },
+    {
+      "item": "minecraft:glistering_melon_slice"
+    }
+  ],
+  "output": {
+    "item": "zammod:mug_of_sun_pale_ale"
+  }
+}

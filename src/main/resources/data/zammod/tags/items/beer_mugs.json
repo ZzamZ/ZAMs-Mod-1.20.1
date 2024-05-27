@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    "zammod:mug_of_sun_pale_ale",
+    "zammod:mug_of_digger_bitter",
+    "zammod:mug_of_nether_porter",
+    "zammod:mug_of_wither_stout",
+    "zammod:mug_of_magnet_pilsner",
+    "zammod:mug_of_drowned_ale",
+    "zammod:mug_of_night_rauch",
+    "zammod:mug_of_ice_beer",
+    "zammod:mug_of_kvass",
+    "zammod:mug_of_leprechaun_cider",
+    "zammod:mug_of_chorus_ale",
+    "zammod:mug_of_nether_star_lager"
+  ]
+}

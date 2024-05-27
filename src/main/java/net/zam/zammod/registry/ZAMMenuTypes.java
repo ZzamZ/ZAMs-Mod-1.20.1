@@ -9,17 +9,19 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zam.zammod.ZAMMod;
-import net.zam.zammod.arcade.container.ArcadeContainer;
+import net.zam.zammod.gui.arcade.container.ArcadeContainer;
+import net.zam.zammod.gui.KegMenu;
+import net.zam.zammod.gui.MusicDiscLootBoxMenu;
 
 public class ZAMMenuTypes {
     public static final DeferredRegister<MenuType<?>> MENUS =
             DeferredRegister.create(ForgeRegistries.MENU_TYPES, ZAMMod.MOD_ID);
 
-    public static final RegistryObject<MenuType<ArcadeContainer>> ARCADE_CONTAINER =
-            registerMenuType(ArcadeContainer::create, "arcade_container");
+    public static final RegistryObject<MenuType<ArcadeContainer>> ARCADE_CONTAINER = registerMenuType(ArcadeContainer::create, "arcade_container");
+    public static final RegistryObject<MenuType<KegMenu>> KEG_MENU = registerMenuType(KegMenu::new, "keg_menu");
+    public static final RegistryObject<MenuType<MusicDiscLootBoxMenu>> MUSIC_DISC_LOOT_BOX_MENU = registerMenuType((id, inv, data) -> new MusicDiscLootBoxMenu(id, inv), "music_disc_loot_box_menu");
 
-
-    private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {
+    private static <T extends AbstractContainerMenu> RegistryObject<MenuType<T>> registerMenuType(IContainerFactory<T> factory, String name) {
         return MENUS.register(name, () -> IForgeMenuType.create(factory));
     }
 

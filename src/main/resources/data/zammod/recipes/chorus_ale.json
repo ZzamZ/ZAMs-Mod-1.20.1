@@ -1,0 +1,20 @@
+{
+  "type": "zammod:beer_brewing",
+  "ingredients": [
+    {
+      "item": "zammod:hop"
+    },
+    {
+      "item": "zammod:dry_seeds"
+    },
+    {
+      "item": "minecraft:phantom_membrane"
+    },
+    {
+      "item": "minecraft:chorus_fruit"
+    }
+  ],
+  "output": {
+    "item": "zammod:mug_of_chorus_ale"
+  }
+}

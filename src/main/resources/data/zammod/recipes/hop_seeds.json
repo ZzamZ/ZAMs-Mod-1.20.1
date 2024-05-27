@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "zammod:hop"
+    }
+  ],
+  "result": {
+    "item": "zammod:hop_seeds"
+  }
+}

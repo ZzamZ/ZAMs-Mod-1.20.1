@@ -11,7 +11,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.zam.zammod.enchantment.SoulboundEnchantment;
-import net.zam.zammod.util.config.ConfigHolder;
 import net.zam.zammod.util.config.ServerConfig;
 import org.apache.commons.lang3.tuple.Pair;
 import org.jetbrains.annotations.Nullable;
@@ -21,11 +20,18 @@ import java.util.List;
 
 public class ZAMConfig {
 
+    public static boolean fadedShader = true;
+
+
     public static ServerConfig server;
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-    public static final LostOptions LOST_OPTIONS = new LostOptions(BUILDER);
+    public ForgeConfigSpec.IntValue dayLength;
 
+    public ForgeConfigSpec.ConfigValue<List<? extends String>> dimensionsWithSkyRendering;
+
+
+    public static final LostOptions LOST_OPTIONS = new LostOptions(BUILDER);
 
 
     public static class Common {
@@ -64,6 +70,7 @@ public class ZAMConfig {
             builder.pop();
         }
     }
+
 
     private static final ForgeConfigSpec.BooleanValue CONFLICT_WITH_VANISHING_CURSE = BUILDER
             .comment("Whether it conflicts with the Vanishing Curse")
@@ -164,5 +171,9 @@ public class ZAMConfig {
             }
         }
         return false;
+    }
+
+    private static ForgeConfigSpec.BooleanValue buildBoolean(ForgeConfigSpec.Builder builder, String name, boolean defaultValue, String comment) {
+        return builder.comment(comment).translation(name).define(name, defaultValue);
     }
 }

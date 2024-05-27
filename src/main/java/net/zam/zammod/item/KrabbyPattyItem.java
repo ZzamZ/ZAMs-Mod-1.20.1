@@ -17,12 +17,10 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import java.util.function.Supplier;
 
-public class KrabbyPattyItem extends CharmItem {
+public class KrabbyPattyItem extends Item{
 
-    public KrabbyPattyItem(FoodProperties food, Supplier<Integer> eatingCooldown, Supplier<Boolean> isEnabled) {
-        super(new Item.Properties().stacksTo(1).fireResistant().food(food));
-        this.eatingCooldown = eatingCooldown;
-        this.isEnabled = isEnabled;
+    public KrabbyPattyItem(FoodProperties food) {
+        super(new Item.Properties().stacksTo(1).fireResistant().food(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).build()));
     }
 
     @Override
@@ -38,14 +36,8 @@ public class KrabbyPattyItem extends CharmItem {
 
     }
 
-    private final Supplier<Integer> eatingCooldown;
-    private final Supplier<Boolean> isEnabled;
-
-
-    @Override
-    protected boolean isCosmetic() {
-        return !isEnabled.get();
-    }
+    private Supplier<Integer> eatingCooldown;
+    private Supplier<Boolean> isEnabled;
 
     @Override
     public ItemStack finishUsingItem(ItemStack stack, Level world, LivingEntity entity) {

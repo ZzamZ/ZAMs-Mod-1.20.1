@@ -19,8 +19,8 @@ public class ZAMBlockTags extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
 
-        this.tag(BlockTags.CLIMBABLE)
-                .add(ZAMBlocks.SCAFFINITY.get());
+      //  this.tag(BlockTags.CLIMBABLE)
+                //.add(ZAMBlocks.SCAFFINITY.get());
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ZAMBlocks.SAND_STAIRS.get())

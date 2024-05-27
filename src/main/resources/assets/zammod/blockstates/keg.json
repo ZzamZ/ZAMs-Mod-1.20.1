@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "zammod:block/keg" },
+    "facing=east": { "model": "zammod:block/keg", "y": 90 },
+    "facing=south": { "model": "zammod:block/keg", "y": 180 },
+    "facing=west": { "model": "zammod:block/keg", "y": 270 }
+  }
+}

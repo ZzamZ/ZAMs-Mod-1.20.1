@@ -9,10 +9,10 @@ import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.zam.zammod.arcade.ArcadeGame;
-import net.zam.zammod.arcade.ArcadeManager;
-import net.zam.zammod.arcade.ArcadeScreen;
-import net.zam.zammod.arcade.container.ArcadeContainer;
+import net.zam.zammod.gui.arcade.ArcadeGame;
+import net.zam.zammod.gui.arcade.ArcadeManager;
+import net.zam.zammod.gui.arcade.ArcadeScreen;
+import net.zam.zammod.gui.arcade.container.ArcadeContainer;
 import net.zam.zammod.registry.ZAMBlockEntities;;
 
 public class ArcadeTileEntity extends BlockEntity implements MenuProvider {

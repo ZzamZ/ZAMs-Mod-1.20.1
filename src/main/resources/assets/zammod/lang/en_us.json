@@ -28,6 +28,8 @@
   "item.zammod.netherite_horse_armor": "Netherite Horse Armor",
   "item.zammod.emerald_horse_armor": "Emerald Horse Armor",
 
+  "item.zammod.otter_spawn_egg": "Otter Spawn Egg",
+
   "block.zammod.lost_bounty": "Lost Bounty",
   "item.zammod.marlin_lance": "Marlin Lance",
   "item.zammod.secret_formula": "Secret Formula",
@@ -96,6 +98,49 @@
   "block.zammod.purple_concrete_stairs": "Purple Concrete Stairs",
   "block.zammod.magenta_concrete_stairs": "Magenta Concrete Stairs",
   "block.zammod.pink_concrete_stairs": "Pink Concrete Stairs",
+
+  "block.zammod.keg": "Keg",
+  "block.zammod.hop": "Hop Plant",
+  "block.zammod.hop_plant": "Hop Plant",
+
+  "item.zammod.hop": "Hop",
+  "item.zammod.hop_seeds": "Hop Seeds",
+  "item.zammod.dry_seeds": "Dry Wheat Seeds",
+
+  "item.zammod.mug_empty": "Empty Mug",
+
+  "item.zammod.mug_of_sun_pale_ale": "Sun Pale Ale Mug",
+  "item.zammod.mug_of_digger_bitter": "Digger Bitter Mug",
+  "item.zammod.mug_of_nether_porter": "Nether Porter Mug",
+  "item.zammod.mug_of_wither_stout": "Wither Stout Mug",
+  "item.zammod.mug_of_magnet_pilsner": "Magnet Pilsner Mug",
+  "item.zammod.mug_of_drowned_ale": "Drowned Ale Mug",
+  "item.zammod.mug_of_night_rauch": "Night Rauch Mug",
+  "item.zammod.mug_of_ice_beer": "Ice Beer Mug",
+  "item.zammod.mug_of_kvass": "Kvass Mug",
+  "item.zammod.mug_of_leprechaun_cider": "Leprechaun Cider Mug",
+  "item.zammod.mug_of_chorus_ale": "Chorus Ale Mug",
+  "item.zammod.mug_of_nimbus_nectar": "Nimbus Nectar Mug",
+
+
+  "block.zammod.mug_empty": "Empty Mug",
+
+  "block.zammod.mug_of_sun_pale_ale": "Sun Pale Ale Mug",
+  "block.zammod.mug_of_digger_bitter": "Digger Bitter Mug",
+  "block.zammod.mug_of_nether_porter": "Nether Porter Mug",
+  "block.zammod.mug_of_wither_stout": "Wither Stout Mug",
+  "block.zammod.mug_of_magnet_pilsner": "Magnet Pilsner Mug",
+  "block.zammod.mug_of_drowned_ale": "Drowned Ale Mug",
+  "block.zammod.mug_of_night_rauch": "Night Rauch Mug",
+  "block.zammod.mug_of_ice_beer": "Ice Beer Mug",
+  "block.zammod.mug_of_kvass": "Kvass Mug",
+  "block.zammod.mug_of_leprechaun_cider": "Leprechaun Cider Mug",
+  "block.zammod.mug_of_chorus_ale": "Chorus Ale Mug",
+
+  "effect.zammod.freeze": "Frosty",
+  "effect.zammod.phantom": "Well Rested",
+  "effect.zammod.attract": "Attraction",
+  "effect.zammod.wither": "Wither Touch",
 
 
   "item.zammod.pokemon_album_case": "Pokémon Collection Case",

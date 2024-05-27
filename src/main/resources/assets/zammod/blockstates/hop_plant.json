@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "berries=false": {
+      "model": "zammod:block/hop_plant"
+    },
+    "berries=true": {
+      "model": "zammod:block/hop_plant_mature"
+    }
+  }
+}

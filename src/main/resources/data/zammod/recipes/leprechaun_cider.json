@@ -1,0 +1,20 @@
+{
+  "type": "zammod:beer_brewing",
+  "ingredients": [
+    {
+      "item": "zammod:hop"
+    },
+    {
+      "item": "zammod:dry_seeds"
+    },
+    {
+      "item": "minecraft:emerald"
+    },
+    {
+      "item": "minecraft:rabbit_foot"
+    }
+  ],
+  "output": {
+    "item": "zammod:mug_of_leprechaun_cider"
+  }
+}

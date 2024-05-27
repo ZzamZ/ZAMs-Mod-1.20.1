@@ -1,0 +1,26 @@
+{
+  "parent": "zammod:root",
+  "display": {
+    "icon": {
+      "item": "zammod:lupus_nocte_howling"
+    },
+    "title": "I like the sound of that!",
+    "description": "Obtain your first music disc",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "zammod:music_discs"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "zammod:beer_brewing",
+  "ingredients": [
+    {
+      "item": "zammod:hop"
+    },
+    {
+      "item": "zammod:dry_seeds"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:wither_skeleton_skull"
+    }
+  ],
+  "output": {
+    "item": "zammod:mug_of_wither_stout"
+  }
+}

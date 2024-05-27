@@ -1,0 +1,37 @@
+{
+  "parent": "zammod:root",
+  "criteria": {
+    "fish_caught": {
+      "trigger": "minecraft:player_caught_fish",
+      "conditions": {
+        "item": {
+          "tag": "zammod:fishables"
+        },
+        "count": {
+          "min": 1
+        }
+      }
+    }
+  },
+  "rewards": {
+    "recipes": [],
+    "loot": [
+      "zammod:wood_medal"
+    ]
+  },
+  "display": {
+    "title": {
+      "text": "Amateur Fisherman"
+    },
+    "description": {
+      "text": "Catch 25 items while fishing."
+    },
+    "icon": {
+      "item": "zammod:wood_medal"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  }
+}

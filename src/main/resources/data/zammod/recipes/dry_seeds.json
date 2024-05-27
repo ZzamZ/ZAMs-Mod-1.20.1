@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "result": "zammod:dry_seeds",
+  "experience": 0.15,
+  "cookingtime": 200
+}

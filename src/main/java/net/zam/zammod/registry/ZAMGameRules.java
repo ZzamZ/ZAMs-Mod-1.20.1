@@ -26,12 +26,12 @@ public class ZAMGameRules {
     private static final Map<String, BooleanValue> BOOLEAN_VALUES = new HashMap<>();
     private static final Map<String, IntegerValue> INTEGER_VALUES = new HashMap<>();
 
-    public static final BooleanValue
-            ONION_RING_ENABLED = booleanValue(createName(ZAMItems.KRABBY_PATTY, "enabled"));
+ //   public static final BooleanValue
+    //        ONION_RING_ENABLED = booleanValue(createName(ZAMItems.KRABBY_PATTY, "enabled"));
 
 
-    public static final IntegerValue
-            ONION_RING_COOLDOWN = integerValue(createName(ZAMItems.KRABBY_PATTY, "cooldown"), 20);
+   // public static final IntegerValue
+    //        ONION_RING_COOLDOWN = integerValue(createName(ZAMItems.KRABBY_PATTY, "cooldown"), 20);
 
 
     private static String createName(RegistryObject<? extends Item> item, String name) {

@@ -11,38 +11,38 @@ import net.minecraftforge.common.ToolAction;
 import net.zam.zammod.registry.ZAMBlocks;
 import org.jetbrains.annotations.Nullable;
 
-public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
-    public ModFlammableRotatedPillarBlock(Properties pProperties) {
-        super(pProperties);
-    }
-
-    @Override
-    public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-        return true;
-    }
-
-    @Override
-    public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-        return 5;
-    }
-
-    @Override
-    public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-        return 5;
-    }
-
-    @Override
-    public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
-        if(context.getItemInHand().getItem() instanceof AxeItem) {
-            if(state.is(ZAMBlocks.AVOCADO_LOG.get())) {
-                return ZAMBlocks.STRIPPED_AVOCADO_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
-            }
-
-            if(state.is(ZAMBlocks.AVOCADO_WOOD.get())) {
-                return ZAMBlocks.STRIPPED_AVOCADO_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
-            }
-        }
-
-        return super.getToolModifiedState(state, context, toolAction, simulate);
-    }
-}
+//public class ModFlammableRotatedPillarBlock extends RotatedPillarBlock {
+//    public ModFlammableRotatedPillarBlock(Properties pProperties) {
+//        super(pProperties);
+//    }
+//
+//    @Override
+//    public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+//        return true;
+//    }
+//
+//    @Override
+//    public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+//        return 5;
+//    }
+//
+//    @Override
+//    public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+//        return 5;
+//    }
+//
+//    @Override
+//    public @Nullable BlockState getToolModifiedState(BlockState state, UseOnContext context, ToolAction toolAction, boolean simulate) {
+//        if(context.getItemInHand().getItem() instanceof AxeItem) {
+//            if(state.is(ZAMBlocks.AVOCADO_LOG.get())) {
+//                return ZAMBlocks.STRIPPED_AVOCADO_LOG.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+//            }
+//
+//            if(state.is(ZAMBlocks.AVOCADO_WOOD.get())) {
+//                return ZAMBlocks.STRIPPED_AVOCADO_WOOD.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
+//            }
+//        }
+//
+//        return super.getToolModifiedState(state, context, toolAction, simulate);
+//    }
+//}

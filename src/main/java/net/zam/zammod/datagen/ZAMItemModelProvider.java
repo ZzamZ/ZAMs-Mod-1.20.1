@@ -18,7 +18,8 @@ public class ZAMItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
         simpleItem(ZAMItems.CORAL_FRUIT);
-        simpleItem(ZAMItems.PRISON_BUBBLE);
+       // simpleItem(ZAMItems.PRISON_BUBBLE);
+        simpleItem(ZAMItems.STARDROP);
         simpleItem(ZAMItems.OLD_RECORD_BOX);
         caseItem(ZAMItems.POKEMON_ALBUM_CASE);
         pokemonMusicItem(ZAMItems.POKEMON_STRIATON_CITY);
@@ -33,6 +34,7 @@ public class ZAMItemModelProvider extends ItemModelProvider {
         pokemonMusicItem(ZAMItems.POKEMON_EAST_PROVINCE);
         pokemonMusicItem(ZAMItems.POKEMON_VOLO);
         pokemonMusicItem(ZAMItems.POKEMON_NS_CASTLE);
+        withExistingParent(ZAMItems.OTTER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
     }
 

@@ -1,0 +1,20 @@
+{
+  "type": "zammod:beer_brewing",
+  "ingredients": [
+    {
+      "item": "zammod:hop"
+    },
+    {
+      "item": "zammod:dry_seeds"
+    },
+    {
+      "item": "minecraft:prismarine_crystals"
+    },
+    {
+      "item": "minecraft:prismarine_shard"
+    }
+  ],
+  "output": {
+    "item": "zammod:mug_of_drowned_ale"
+  }
+}

@@ -16,18 +16,19 @@ public class ZAMCreativeModeTab {
 
     public static RegistryObject<CreativeModeTab> AQUATIC_TAB = CREATIVE_MODE_TABS.register("aquatic_tab", () ->
             CreativeModeTab.builder().icon(() -> new ItemStack(ZAMItems.GUARDIAN_CHESTPLATE.get())).title(Component.literal("ZAM Aquatic Additions")).displayItems((displayParameters, output) -> {
-
                 output.accept(ZAMBlocks.LOST_BOUNTY.get());
+                output.accept(ZAMItems.STARDROP.get());
                 output.accept(ZAMItems.OLD_RECORD_BOX.get());
                 output.accept(ZAMBlocks.ARCADE_MACHINE.get());
-                output.accept(ZAMBlocks.SCAFFINITY.get());
+           //     output.accept(ZAMBlocks.SCAFFINITY.get());
                 output.accept(ZAMItems.MARLIN_LANCE.get());
-                output.accept(ZAMItems.PRISON_BUBBLE.get());
+           //     output.accept(ZAMItems.PRISON_BUBBLE.get());
                 output.accept(ZAMItems.GUARDIAN_HELMET.get());
                 output.accept(ZAMItems.GUARDIAN_CHESTPLATE.get());
                 output.accept(ZAMItems.GUARDIAN_LEGGING.get());
                 output.accept(ZAMItems.GUARDIAN_BOOTS.get());
                 output.accept(ZAMItems.CORAL_FRUIT.get());
+                output.accept(ZAMItems.OTTER_SPAWN_EGG.get());
 
                 output.accept(ZAMItems.WOOD_MEDAL.get());
                 output.accept(ZAMItems.BRONZE_MEDAL.get());
@@ -36,7 +37,6 @@ public class ZAMCreativeModeTab {
                 output.accept(ZAMItems.LEGENDARY_MEDAL.get());
 
                 output.accept(ZAMItems.EMERALD_HORSE_ARMOR.get());
-                output.accept(ZAMItems.NETHERITE_HORSE_ARMOR.get());
 
              //   output.accept(ZAMItems.BASIC_BADGE.get());
               //  output.accept(ZAMItems.TRIO_BADGE.get());
@@ -56,12 +56,14 @@ public class ZAMCreativeModeTab {
 
 
 
+
                 output.accept(ZAMBlocks.EMERALD_CRYSTAL_BLOCK.get());
                 output.accept(ZAMBlocks.BUDDING_EMERALD.get());
                 output.accept(ZAMBlocks.EMERALD_CLUSTER.get());
                 output.accept(ZAMBlocks.LARGE_EMERALD_BUD.get());
                 output.accept(ZAMBlocks.MEDIUM_EMERALD_BUD.get());
                 output.accept(ZAMBlocks.SMALL_EMERALD_BUD.get());
+                output.accept(ZAMItems.EMERALD_SHARD.get());
 
                 output.accept(ZAMBlocks.AZURE_FROGLIGHT.get());
                 output.accept(ZAMBlocks.RUDDY_FROGLIGHT.get());
@@ -111,7 +113,6 @@ public class ZAMCreativeModeTab {
                 output.accept(ZAMBlocks.SAND_SLAB.get());
                 output.accept(ZAMBlocks.SAND_STAIRS.get());
 
-
                 output.accept(ZAMItems.POKEMON_ALBUM_CASE.get());
                 output.accept(ZAMItems.POKEMON_STRIATON_CITY.get());
                 output.accept(ZAMItems.POKEMON_CASTELIA_CITY.get());
@@ -143,10 +144,33 @@ public class ZAMCreativeModeTab {
                 output.accept(ZAMItems.CASTLE_CRASHERS_RACE_AROUND_THE_WORLD.get());
 
 
-                output.accept(ZAMBlocks.AVOCADO_PLANKS.get());
+             //   output.accept(ZAMBlocks.AVOCADO_PLANKS.get());
 
 
 
+            }).build());
+
+
+    public static RegistryObject<CreativeModeTab> BEER_TAB = CREATIVE_MODE_TABS.register("beer_tab", () ->
+            CreativeModeTab.builder().icon(() -> new ItemStack(ZAMItems.MUG_OF_ICE_BEER.get())).title(Component.literal("Beer & Stuff")).displayItems((displayParameters, output) -> {
+                output.accept(ZAMItems.HOP.get());
+                output.accept(ZAMItems.HOP_SEEDS.get());
+                output.accept(ZAMItems.DRY_SEEDS.get());
+                output.accept(ZAMItems.MUG_EMPTY.get());
+                output.accept(ZAMItems.MUG_OF_CHORUS_ALE.get());
+                output.accept(ZAMItems.MUG_OF_DIGGER_BITTER.get());
+                output.accept(ZAMItems.MUG_OF_DROWNED_ALE.get());
+                output.accept(ZAMItems.MUG_OF_ICE_BEER.get());
+                output.accept(ZAMItems.MUG_OF_KVASS.get());
+                output.accept(ZAMItems.MUG_OF_LEPRECHAUN_CIDER.get());
+                output.accept(ZAMItems.MUG_OF_MAGNET_PILSNER.get());
+                output.accept(ZAMItems.MUG_OF_NETHER_PORTER.get());
+                output.accept(ZAMItems.MUG_OF_NIGHT_RAUCH.get());
+                output.accept(ZAMItems.MUG_OF_SUN_PALE_ALE.get());
+                output.accept(ZAMItems.MUG_OF_WITHER_STOUT.get());
+                output.accept(ZAMItems.MUG_OF_NIMBUS_NECTAR.get());
+
+                output.accept(ZAMBlocks.KEG.get());
             }).build());
 
 

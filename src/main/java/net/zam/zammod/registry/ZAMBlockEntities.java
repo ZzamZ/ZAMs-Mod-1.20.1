@@ -11,6 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zam.zammod.ZAMMod;
 import net.zam.zammod.block.arcade.ArcadeTileEntity;
+import net.zam.zammod.block.beer.workstations.KegEntity;
 import net.zam.zammod.block.chest.LostBountyBlockEntity;
 
 import javax.annotation.Nonnull;
@@ -22,6 +23,8 @@ public class ZAMBlockEntities {
 
     public static final RegistryObject<BlockEntityType<LostBountyBlockEntity>> LOST_BOUNTY = register("lost_bounty", () -> BlockEntityType.Builder.of(LostBountyBlockEntity::new, ZAMBlocks.LOST_BOUNTY.get()));
     public static final RegistryObject<BlockEntityType<ArcadeTileEntity>> ARCADE_MACHINE = register("arcade_machine", () -> BlockEntityType.Builder.of(ArcadeTileEntity::new, ZAMBlocks.ARCADE_MACHINE.get()));
+    public static final RegistryObject<BlockEntityType<KegEntity>> KEG_ENTITY = BLOCK_ENTITIES.register("keg_entity", () -> BlockEntityType.Builder.of(KegEntity::new, ZAMBlocks.KEG.get()).build(null));
+
     public static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(@Nonnull String name, @Nonnull Supplier<BlockEntityType.Builder<T>> initializer) {
         Type<?> type = Util.fetchChoiceType(References.BLOCK_ENTITY, ZAMMod.MOD_ID + ":" + name);
         return BLOCK_ENTITIES.register(name, () -> initializer.get().build(type));

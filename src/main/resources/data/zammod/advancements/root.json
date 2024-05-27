@@ -1,0 +1,27 @@
+{
+  "criteria": {
+    "player_moved": {
+      "trigger": "minecraft:tick",
+      "conditions": {}
+    }
+  },
+  "rewards": {
+    "recipes": []
+  },
+  "display": {
+    "title": {
+      "text": "ZAM's Mod"
+    },
+    "description": {
+      "text": "Let the exploring begin"
+    },
+    "background": "minecraft:blocks/prismarine_bricks.png",
+    "icon": {
+      "item": "zammod:stardrop"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  }
+}
