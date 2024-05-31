@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "zammod:hop"
+    },
+    "title": {
+        "text": "Hopping Around"
+    },
+    "description": {
+      "text": "Get hop by growing hop seeds on the bottom side of the block."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "zammod:root",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zammod:hop"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

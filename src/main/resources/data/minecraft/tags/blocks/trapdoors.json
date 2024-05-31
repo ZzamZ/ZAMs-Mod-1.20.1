@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "zammod:copper_trapdoor",
+    "zammod:exposed_copper_trapdoor",
+    "zammod:weathered_copper_trapdoor",
+    "zammod:oxidized_copper_trapdoor",
+    "zammod:waxed_copper_trapdoor",
+    "zammod:waxed_exposed_copper_trapdoor",
+    "zammod:waxed_weathered_copper_trapdoor",
+    "zammod:waxed_oxidized_copper_trapdoor"
+  ]
+}

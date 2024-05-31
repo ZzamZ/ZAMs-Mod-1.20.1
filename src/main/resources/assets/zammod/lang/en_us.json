@@ -1,16 +1,4 @@
 {
-  "enchantment.zammod.soulbound": "SoulBound",
-  "enchantment.zammod.soulbound.desc": "Allows you to keep item on death. Each death removes a level from the enchantment",
-  "config.zammod.conflictWithVanishingCurse": "Conflict with the Disappearance Curse",
-  "config.zammod.isTreasure": "Treasure enchantment (i.e. the enchantment table cannot be swiped)",
-  "config.zammod.allowBreakItem": "Damage to items is allowed",
-  "config.zammod.maxDamagePercent": "Max percentage of damage",
-  "config.zammod.minPower": "Min power",
-  "config.zammod.powerRange": "Power range",
-  "config.zammod.blacklist": "Blacklist",
-  "config.zammod.whitelist": "Whitelist",
-  "config.zammod.listExample": "Example:(Only vanilla items support omitting prefixes)",
-
   "item.minecraft.potion.effect.mining_fatigue_potion": "Mining Fatigue Potion",
   "item.minecraft.splash_potion.effect.mining_fatigue_potion": "Splash Potion of Mining Fatigue",
   "item.minecraft.lingering_potion.effect.mining_fatigue_potion": "Lingering Potion of Mining Fatigue",
@@ -20,25 +8,29 @@
   "item.minecraft.lingering_potion.effect.long_mining_fatigue_potion": "Lingering Potion of Mining Fatigue",
   "item.minecraft.tipped_arrow.effect.long_mining_fatigue_potion": "Lingering Potion of Mining Fatigue",
 
-  "item.zammod.guardian_helmet": "Ancient Helmet",
-  "item.zammod.guardian_chestplate": "Ancient Chestplate",
-  "item.zammod.guardian_leggings": "Ancient Leggings",
-  "item.zammod.guardian_boots": "Ancient Boots",
+  "item.zammod.guardian_helmet": "Marine Helmet",
+  "item.zammod.guardian_chestplate": "Marine Chestplate",
+  "item.zammod.guardian_leggings": "Marine Leggings",
+  "item.zammod.guardian_boots": "Marine Boots",
 
   "item.zammod.netherite_horse_armor": "Netherite Horse Armor",
   "item.zammod.emerald_horse_armor": "Emerald Horse Armor",
 
   "item.zammod.otter_spawn_egg": "Otter Spawn Egg",
+  "item.zammod.stardrop": "Stardrop",
 
+  "arcade.zammod.game": "Snake",
+
+  "block.zammod.arcade_machine": "Arcade Machine",
   "block.zammod.lost_bounty": "Lost Bounty",
   "item.zammod.marlin_lance": "Marlin Lance",
   "item.zammod.secret_formula": "Secret Formula",
   "item.zammod.krabby_patty": "Krabby Patty",
   "block.zammod.scaffinity": "Scaffinity",
-  "item.zammod.prison_bubble": "Prison Bubble",
+  "item.zammod.marine_bubble": "Marine Bubble",
   "info.zammod.noentity": "Held Entity: Nothing",
   "info.zammod.containedentity": "Held Entity: %s",
-  "info.zammod.prison_bubble": "The Prison Bubble is an item that can be used to move mobs around. Punch a mob to capture, and right click to release it. The Prison Bubble will not work on boss mobs (if blacklisted).",
+  "info.zammod.marine_bubble": "The Marine Bubble is an item that can be used to move mobs around. Punch a mob to capture, and right click to release it. The Prison Bubble will not work on boss mobs (if blacklisted).",
   "tooltip.zammod.press_shift": "Press Shift For Info",
   "item.zammod.coral_fruit": "Coral Fruit",
   "block.zammod.emerald_crystal_block": "Emerald Crystal Block",
@@ -47,6 +39,10 @@
   "block.zammod.large_emerald_bud": "Large Emerald Bud",
   "block.zammod.medium_emerald_bud": "Medium Emerald Bud",
   "block.zammod.small_emerald_bud": "Small Emerald Bud",
+  "item.zammod.emerald_shard": "Emerald Shard",
+
+  "item.zammod.doubloon": "Doubloon",
+  "item.zammod.lost_key": "Lost Key",
 
 
   "item.zammod.wood_medal": "Wood Medal",
@@ -99,6 +95,60 @@
   "block.zammod.magenta_concrete_stairs": "Magenta Concrete Stairs",
   "block.zammod.pink_concrete_stairs": "Pink Concrete Stairs",
 
+  "subtitles.block.copper_bulb.turn_off": "Copper Bulb turns off",
+  "subtitles.block.copper_bulb.turn_on": "Copper Bulb turns on",
+  "subtitles.block.copper_trapdoor.close": "Trapdoor closes",
+  "subtitles.block.copper_trapdoor.open": "Trapdoor opens",
+
+  "block.zammod.chiseled_copper": "Chiseled Copper",
+  "block.zammod.copper_bulb": "Copper Bulb",
+  "block.zammod.copper_door": "Copper Door",
+  "block.zammod.copper_grate": "Copper Grate",
+  "block.zammod.copper_trapdoor": "Copper Trapdoor",
+
+  "block.zammod.waxed_chiseled_copper": "Waxed Chiseled Copper",
+  "block.zammod.waxed_copper_bulb": "Waxed Copper Bulb",
+  "block.zammod.waxed_copper_door": "Waxed Copper Door",
+  "block.zammod.waxed_copper_grate": "Waxed Copper Grate",
+  "block.zammod.waxed_copper_trapdoor": "Waxed Copper Trapdoor",
+
+  "block.zammod.exposed_chiseled_copper": "Exposed Chiseled Copper",
+  "block.zammod.exposed_copper_bulb": "Exposed Copper Bulb",
+  "block.zammod.exposed_copper_door": "Exposed Copper Door",
+  "block.zammod.exposed_copper_grate": "Exposed Copper Grate",
+  "block.zammod.exposed_copper_trapdoor": "Exposed Copper Trapdoor",
+
+  "block.zammod.waxed_exposed_chiseled_copper": "Waxed Exposed Chiseled Copper",
+  "block.zammod.waxed_exposed_copper_bulb": "Waxed Exposed Copper Bulb",
+  "block.zammod.waxed_exposed_copper_door": "Waxed Exposed Copper Door",
+  "block.zammod.waxed_exposed_copper_grate": "Waxed Exposed Copper Grate",
+  "block.zammod.waxed_exposed_copper_trapdoor": "Waxed Exposed Copper Trapdoor",
+
+  "block.zammod.oxidized_chiseled_copper": "Oxidized Chiseled Copper",
+  "block.zammod.oxidized_copper_bulb": "Oxidized Copper Bulb",
+  "block.zammod.oxidized_copper_door": "Oxidized Copper Door",
+  "block.zammod.oxidized_copper_grate": "Oxidized Copper Grate",
+  "block.zammod.oxidized_copper_trapdoor": "Oxidized Copper Trapdoor",
+
+  "block.zammod.waxed_oxidized_chiseled_copper": "Waxed Oxidized Chiseled Copper",
+  "block.zammod.waxed_oxidized_copper_bulb": "Waxed Oxidized Copper Bulb",
+  "block.zammod.waxed_oxidized_copper_door": "Waxed Oxidized Copper Door",
+  "block.zammod.waxed_oxidized_copper_grate": "Waxed Oxidized Copper Grate",
+  "block.zammod.waxed_oxidized_copper_trapdoor": "Waxed Oxidized Copper Trapdoor",
+
+  "block.zammod.weathered_chiseled_copper": "Weathered Chiseled Copper",
+  "block.zammod.weathered_copper_bulb": "Weathered Copper Bulb",
+  "block.zammod.weathered_copper_door": "Weathered Copper Door",
+  "block.zammod.weathered_copper_grate": "Weathered Copper Grate",
+  "block.zammod.weathered_copper_trapdoor": "Weathered Copper Trapdoor",
+
+  "block.zammod.waxed_weathered_chiseled_copper": "Waxed Weathered Chiseled Copper",
+  "block.zammod.waxed_weathered_copper_bulb": "Waxed Weathered Copper Bulb",
+  "block.zammod.waxed_weathered_copper_door": "Waxed Weathered Copper Door",
+  "block.zammod.waxed_weathered_copper_grate": "Waxed Weathered Copper Grate",
+  "block.zammod.waxed_weathered_copper_trapdoor": "Waxed Weathered Copper Trapdoor",
+
+
   "block.zammod.keg": "Keg",
   "block.zammod.hop": "Hop Plant",
   "block.zammod.hop_plant": "Hop Plant",
@@ -121,6 +171,7 @@
   "item.zammod.mug_of_leprechaun_cider": "Leprechaun Cider Mug",
   "item.zammod.mug_of_chorus_ale": "Chorus Ale Mug",
   "item.zammod.mug_of_nimbus_nectar": "Nimbus Nectar Mug",
+  "item.zammod.mug_of_stardrop_sparkle": "Stardrop Sparkle Mug",
 
 
   "block.zammod.mug_empty": "Empty Mug",
@@ -136,12 +187,16 @@
   "block.zammod.mug_of_kvass": "Kvass Mug",
   "block.zammod.mug_of_leprechaun_cider": "Leprechaun Cider Mug",
   "block.zammod.mug_of_chorus_ale": "Chorus Ale Mug",
+  "block.zammod.mug_of_nimbus_nectar": "Nimbus Nectar Mug",
+  "block.zammod.mug_of_stardrop_sparkle": "Stardrop Sparkle Mug",
 
   "effect.zammod.freeze": "Frosty",
   "effect.zammod.phantom": "Well Rested",
   "effect.zammod.attract": "Attraction",
   "effect.zammod.wither": "Wither Touch",
-
+  "effect.zammod.stardrop": "Max Energy",
+  "effect.zammod.flight": "Flight",
+  "effect.zammod.faded": "Sheeeeeesh",
 
   "item.zammod.pokemon_album_case": "Pokémon Collection Case",
   "item.zammod.pokemon_striaton_city": "Music Disc",

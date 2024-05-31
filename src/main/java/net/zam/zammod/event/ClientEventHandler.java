@@ -17,6 +17,8 @@ public class ClientEventHandler {
     @SubscribeEvent
     public static void registerParticleFactories(final RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(ZAMParticles.YELLOW_BUBBLES.get(), YellowBubbleParticles.Provider::new);
+        event.registerSpriteSet(ZAMParticles.PURPLE_BUBBLES.get(), YellowBubbleParticles.Provider::new);
+        event.registerSpriteSet(ZAMParticles.WHITE_BUBBLES.get(), YellowBubbleParticles.Provider::new);
     }
 
     public static void clientRegistry() {

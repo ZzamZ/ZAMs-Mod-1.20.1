@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "zammod:stardrop"
+    },
+    "title": "You Found A Stardrop!",
+    "description": "You feel an unwavering connection to the valley itself",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "zammod:marine_armor",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zammod:stardrop"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

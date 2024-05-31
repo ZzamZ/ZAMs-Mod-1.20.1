@@ -253,6 +253,18 @@ public class ZAMRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('C', ZAMItems.EMERALD_SHARD.get())
                 .unlockedBy("has_emerald_shard", inventoryTrigger(ItemPredicate.Builder.item().
                         of(ZAMItems.EMERALD_SHARD.get()).build())).save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ZAMBlocks.ARCADE_MACHINE.get(),1)
+                .pattern("IRI")
+                .pattern("ESE")
+                .pattern("IRI")
+                .define('I', Blocks.IRON_BLOCK)
+                .define('R', Blocks.REDSTONE_BLOCK)
+                .define('S', ZAMItems.STARDROP.get())
+                .define('E', ZAMItems.EMERALD_SHARD.get())
+                .unlockedBy("has_stardrop", inventoryTrigger(ItemPredicate.Builder.item().
+                        of(ZAMItems.STARDROP.get()).build())).save(pWriter);
+
+
 
     }
 }

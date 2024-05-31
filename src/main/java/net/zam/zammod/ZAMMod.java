@@ -1,5 +1,6 @@
 package net.zam.zammod;
 
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -25,16 +26,18 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
+import net.zam.zammod.advancement.FishingCatchTrigger;
+import net.zam.zammod.event.StardropEffectHandler;
 import net.zam.zammod.gui.arcade.ArcadeManager;
 import net.zam.zammod.block.chest.ClientHandler;
-import net.zam.zammod.entity.client.OtterRenderer;
+//import net.zam.zammod.entity.client.OtterRenderer;
 import net.zam.zammod.entity.skins.FrogSkins;
 import net.zam.zammod.entity.skins.WolfSkins;
 import net.zam.zammod.event.ClientEventHandler;
-import net.zam.zammod.gui.KegScreen;
+import net.zam.zammod.gui.keg.KegScreen;
 import net.zam.zammod.gui.MusicDiscLootBoxScreen;
-import net.zam.zammod.item.records.cases.CastleCrashersAlbumCase;
-import net.zam.zammod.item.records.cases.PokemonAlbumCase;
+//import net.zam.zammod.item.records.cases.CastleCrashersAlbumCase;
+//import net.zam.zammod.item.records.cases.PokemonAlbumCase;
 import net.zam.zammod.potion.BetterBrewingRecipe;
 import net.zam.zammod.registry.*;
 import org.apache.logging.log4j.LogManager;
@@ -55,7 +58,6 @@ public class ZAMMod {
         ZAMBlockEntities.register(modEventBus);
         ZAMEntities.register(modEventBus);
         ZAMSounds.register(modEventBus);
-        ZAMEnchantments.register(modEventBus);
         ZAMPotions.register(modEventBus);
         ZAMCreativeModeTab.register(modEventBus);
         ZAMEffects.register(modEventBus);
@@ -69,10 +71,10 @@ public class ZAMMod {
         modEventBus.addListener(this::onCommonSetup);
         modEventBus.addListener(this::commonSetup);
 
-
         ArcadeManager.init();
 
         MinecraftForge.EVENT_BUS.register(this);
+        MinecraftForge.EVENT_BUS.register(new StardropEffectHandler());
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
             modEventBus.addListener(this::registerRenderers);
 
@@ -91,6 +93,7 @@ public class ZAMMod {
         event.enqueueWork(ClientHandler::setupClient);
         ClientEventHandler.clientRegistry();
 
+
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
@@ -106,8 +109,8 @@ public class ZAMMod {
 
 
     public void onCommonSetup(FMLCommonSetupEvent event) {
-        event.enqueueWork(PokemonAlbumCase::initAllowedItems);
-        event.enqueueWork(CastleCrashersAlbumCase::initAllowedItems);
+     //   event.enqueueWork(PokemonAlbumCase::initAllowedItems);
+     //   event.enqueueWork(CastleCrashersAlbumCase::initAllowedItems);
     }
 
     public static ResourceLocation id(String s) {
@@ -125,7 +128,7 @@ public class ZAMMod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             event.enqueueWork(() -> {
-                EntityRenderers.register(ZAMEntities.OTTER.get(), OtterRenderer::new);
+          //      EntityRenderers.register(ZAMEntities.OTTER.get(), OtterRenderer::new);
                 MenuScreens.register(ZAMMenuTypes.KEG_MENU.get(), KegScreen::new);
                 MenuScreens.register(ZAMMenuTypes.MUSIC_DISC_LOOT_BOX_MENU.get(), MusicDiscLootBoxScreen::new);
                 ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.KEG.get(), RenderType.cutout());
@@ -133,6 +136,30 @@ public class ZAMMod {
                 ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.HOP_PLANT.get(), RenderType.cutout());
                 ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.MUG_OF_SUN_PALE_ALE.get(), RenderType.cutout());
                 ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.MUG_EMPTY.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.COPPER_DOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.COPPER_GRATE.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.COPPER_TRAPDOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.EXPOSED_COPPER_DOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.EXPOSED_COPPER_GRATE.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.EXPOSED_COPPER_TRAPDOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.OXIDIZED_COPPER_DOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.OXIDIZED_COPPER_GRATE.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.OXIDIZED_COPPER_TRAPDOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WEATHERED_COPPER_DOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WEATHERED_COPPER_GRATE.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WEATHERED_COPPER_TRAPDOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WAXED_COPPER_DOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WAXED_COPPER_GRATE.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WAXED_COPPER_TRAPDOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WAXED_EXPOSED_COPPER_DOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WAXED_EXPOSED_COPPER_GRATE.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WAXED_EXPOSED_COPPER_TRAPDOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WAXED_OXIDIZED_COPPER_DOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WAXED_OXIDIZED_COPPER_GRATE.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WAXED_OXIDIZED_COPPER_TRAPDOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WAXED_WEATHERED_COPPER_DOOR.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WAXED_WEATHERED_COPPER_GRATE.get(), RenderType.cutout());
+                ItemBlockRenderTypes.setRenderLayer(ZAMBlocks.WAXED_WEATHERED_COPPER_TRAPDOOR.get(), RenderType.cutout());
             });
         }
     }

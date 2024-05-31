@@ -104,6 +104,14 @@ public class ZAMBeerProperties {
             .effect(() -> new MobEffectInstance(ZAMEffects.FLIGHT.get(), 6000, 0), 1.0f)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 1.0f)
             .build();
+
+    public static final FoodProperties STARDROP_SPARKLE = new FoodProperties.Builder()
+            .nutrition(5)
+            .saturationMod(0.6f)
+            .alwaysEat()
+            .effect(() -> new MobEffectInstance(ZAMEffects.STARDROP.get(), 6000, 0), 1.0f)
+            .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 400, 0), 1.0f)
+            .build();
     public static final FoodProperties HOP = new FoodProperties.Builder()
             .nutrition(5)
             .saturationMod(0.6f)

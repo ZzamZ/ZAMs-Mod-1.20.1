@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "zammod:tuff_stairs",
+    "zammod:polished_tuff_stairs",
+    "zammod:tuff_brick_stairs"
+  ]
+}

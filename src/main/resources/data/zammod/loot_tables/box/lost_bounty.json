@@ -5,18 +5,9 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 4,
           "name": "minecraft:trident",
+          "weight": 4,
           "functions": [
-            {
-              "function": "minecraft:set_enchantments",
-              "enchantments": {
-                "minecraft:looting": {
-                  "min": 0,
-                  "max": 3
-                }
-              }
-            },
             {
               "function": "minecraft:set_enchantments",
               "enchantments": {
@@ -25,67 +16,57 @@
                   "max": 5
                 }
               }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "zammod:guardian_helmet"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "zammod:guardian_chestplate"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "zammod:guardian_leggings"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "zammod:guardian_boots"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "zammod:scaffinity"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 3,
-          "name": "zammod:marlin_lance"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 20,
-          "name": "minecraft:tropical_fish_bucket",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": 1
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 4,
-          "name": "minecraft:enchanted_book",
-          "functions": [
+            },
             {
               "function": "minecraft:set_enchantments",
               "enchantments": {
-                "zammod:soulbound": 1
+                "minecraft:looting": {
+                  "min": 0,
+                  "max": 3
+                }
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "name": "zammod:guardian_helmet",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "zammod:guardian_chestplate",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "zammod:guardian_leggings",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "zammod:guardian_boots",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "zammod:marlin_lance",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "name": "zammod:marine_bubble",
+          "weight": 10
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:tropical_fish_bucket",
+          "weight": 40
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:seagrass",
+          "weight": 200,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -98,8 +79,8 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 80,
           "name": "minecraft:prismarine_crystals",
+          "weight": 160,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -112,8 +93,8 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 40,
           "name": "minecraft:nautilus_shell",
+          "weight": 80,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -126,22 +107,8 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
-          "name": "zammod:old_record_box",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 3
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 100,
           "name": "minecraft:glow_ink_sac",
+          "weight": 200,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -154,13 +121,13 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
-          "name": "minecraft:golden_apple"
+          "name": "minecraft:golden_apple",
+          "weight": 40
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
           "name": "minecraft:diamond",
+          "weight": 10,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -173,8 +140,8 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
           "name": "minecraft:gold_ingot",
+          "weight": 30,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -187,88 +154,134 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
-          "name": "minecraft:gold_ingot"
+          "name": "minecraft:gold_ingot",
+          "weight": 30,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
           "name": "minecraft:iron_ingot",
+          "weight": 30,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 5
+                "max": 4
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
-          "name": "minecraft:iron_ingot"
+          "name": "minecraft:iron_ingot",
+          "weight": 30,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "weight": 30,
+          "name": "minecraft:copper_ingot",
+          "weight": 35,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:copper_ingot",
+          "weight": 35,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 4
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
           "name": "minecraft:gold_nugget",
+          "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 9
+                "max": 12
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 15,
           "name": "minecraft:gold_nugget",
+          "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 9
+                "max": 12
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 30,
           "name": "minecraft:iron_nugget",
+          "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 9
+                "max": 12
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 30,
           "name": "minecraft:iron_nugget",
+          "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 9
+                "max": 12
               }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 100,
           "name": "minecraft:ink_sac",
+          "weight": 200,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -281,27 +294,8 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 40,
-          "name": "zammod:coral_fruit",
-          "functions": [
-            {
-              "function": "minecraft:set_count",
-              "count": {
-                "min": 1,
-                "max": 5
-              }
-            }
-          ]
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 5,
-          "name": "zammod:prison_bubble"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 100,
           "name": "minecraft:kelp",
+          "weight": 200,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -314,29 +308,46 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
-          "name": "minecraft:tropical_fish_bucket"
+          "name": "minecraft:tropical_fish_bucket",
+          "weight": 40
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
           "name": "minecraft:axolotl_bucket",
+          "weight": 30
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:amethyst_shard",
+          "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
-              "count": 1
+              "count": {
+                "min": 1,
+                "max": 7
+              }
             }
           ]
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
-          "name": "minecraft:tropical_fish_bucket"
+          "name": "zammod:emerald_shard",
+          "weight": 30,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 7
+              }
+            }
+          ]
         },
         {
           "type": "minecraft:item",
-          "weight": 15,
-          "name": "zammod:emerald_shard",
+          "name": "zammod:doubloon",
+          "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
@@ -349,21 +360,45 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 25,
-          "name": "minecraft:amethyst_shard",
+          "name": "zammod:lost_key",
+          "weight": 15
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:emerald",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 2,
+                "max": 7
+              }
+            }
+          ]
+        },
+
+
+        {
+          "type": "minecraft:item",
+          "name": "zammod:stardrop",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "zammod:hop_seeds",
+          "weight": 50,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1,
-                "max": 7
+                "max": 3
               }
             }
           ]
         }
       ]
     }
-  ],
-  "random_sequence": "zammod:box/lost_bounty"
-
+  ]
 }

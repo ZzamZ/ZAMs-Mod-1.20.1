@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "item": "zammod:emerald_shard"
+    },
+    "title": {
+      "text": "That Good Stuff..."
+    },
+    "description": {
+      "text": "Try something you maybe weren't supposed to..."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "zammod:hop",
+  "criteria": {
+    "consume_emerald_shard": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "zammod:emerald_shard"
+          ]
+        }
+      }
+    }
+  },
+  "requirements": [
+    ["consume_emerald_shard"]
+  ]
+}

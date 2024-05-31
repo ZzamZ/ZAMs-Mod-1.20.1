@@ -10,7 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zam.zammod.ZAMMod;
 import net.zam.zammod.gui.arcade.container.ArcadeContainer;
-import net.zam.zammod.gui.KegMenu;
+import net.zam.zammod.gui.keg.KegMenu;
 import net.zam.zammod.gui.MusicDiscLootBoxMenu;
 
 public class ZAMMenuTypes {

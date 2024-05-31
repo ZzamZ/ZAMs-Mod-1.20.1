@@ -1,0 +1,38 @@
+{
+  "parent": "zammod:bronze_medal",
+  "criteria": {
+    "catch_500": {
+      "trigger": "zammod:fishing_catch",
+      "conditions": {
+        "catches": {
+          "min": 500
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch_500"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "zammod:advancement/silver"
+    ]
+  },
+  "display": {
+    "title": {
+      "text": "Angling Ace"
+    },
+    "description": {
+      "text": "Catch 500 items while fishing"
+    },
+    "icon": {
+      "item": "zammod:silver_medal"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  }
+}

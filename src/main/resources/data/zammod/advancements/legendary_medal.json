@@ -1,0 +1,36 @@
+{
+  "parent": "zammod:gold_medal",
+  "criteria": {
+    "catch_5000": {
+      "trigger": "zammod:fishing_catch",
+      "conditions": {
+        "catches": {
+          "min": 5000
+        }
+      }
+    }
+  },
+  "requirements": [
+    ["catch_5000"]
+  ],
+  "rewards": {
+    "loot": [
+      "zammod:advancement/legendary"
+    ]
+  },
+  "display": {
+    "title": {
+      "text": "Women Fear Me Fish Fear Me Men Turn Their Eyes Away From Me As I Walk No Beast Dare Makes A Sound In My Presence I Am Alone On This Barren Earth"
+    },
+    "description": {
+      "text": "Catch 5000 items while fishing"
+    },
+    "icon": {
+      "item": "zammod:legendary_medal"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  }
+}

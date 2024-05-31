@@ -20,19 +20,19 @@ public class ZAMItemTags extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.tag(ItemTags.MUSIC_DISCS)
-                .add(ZAMItems.POKEMON_STRIATON_CITY.get())
-                .add(ZAMItems.POKEMON_CASTELIA_CITY.get())
-                .add(ZAMItems.POKEMON_NIMBASA_CITY.get())
-                .add(ZAMItems.POKEMON_DRIFTVEIL_CITY.get())
-                .add(ZAMItems.POKEMON_MISTRALTON_CITY.get())
-                .add(ZAMItems.POKEMON_ICIRRUS_CITY.get())
-                .add(ZAMItems.POKEMON_VIRBANK_CITY.get())
-                .add(ZAMItems.POKEMON_HUMILAU_CITY.get())
-                .add(ZAMItems.POKEMON_GEAR_STATION.get())
-                .add(ZAMItems.POKEMON_EAST_PROVINCE.get())
-                .add(ZAMItems.POKEMON_NS_CASTLE.get())
-                .add(ZAMItems.POKEMON_VOLO.get());
+        this.tag(ItemTags.MUSIC_DISCS);
+             //  .add(ZAMItems.POKEMON_STRIATON_CITY.get())
+             //  .add(ZAMItems.POKEMON_CASTELIA_CITY.get())
+             //  .add(ZAMItems.POKEMON_NIMBASA_CITY.get())
+             //  .add(ZAMItems.POKEMON_DRIFTVEIL_CITY.get())
+             //  .add(ZAMItems.POKEMON_MISTRALTON_CITY.get())
+             //  .add(ZAMItems.POKEMON_ICIRRUS_CITY.get())
+             //  .add(ZAMItems.POKEMON_VIRBANK_CITY.get())
+             //  .add(ZAMItems.POKEMON_HUMILAU_CITY.get())
+             //  .add(ZAMItems.POKEMON_GEAR_STATION.get())
+             //  .add(ZAMItems.POKEMON_EAST_PROVINCE.get())
+             //  .add(ZAMItems.POKEMON_NS_CASTLE.get())
+             //  .add(ZAMItems.POKEMON_VOLO.get());
 
 
 

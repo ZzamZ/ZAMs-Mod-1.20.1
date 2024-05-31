@@ -10,7 +10,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zam.zammod.ZAMMod;
 import net.zam.zammod.item.*;
-import net.zam.zammod.item.records.cases.PokemonAlbumCase;
+//import net.zam.zammod.item.records.cases.PokemonAlbumCase;
 import net.zam.zammod.item.records.sets.pokemon.PokemonBlackWhiteCollection;
 import net.zam.zammod.loot.ZAMLootTables;
 import net.zam.zammod.misc.ZAMBeerProperties;
@@ -26,16 +26,18 @@ public class ZAMItems {
 
     //Aquatic Utilities
     public static final RegistryObject<Item> MARLIN_LANCE = ITEMS.register("marlin_lance", MarlinLanceItem::new);
- //   public static final RegistryObject<Item> PRISON_BUBBLE = ITEMS.register("prison_bubble", () -> new PrisonBubbleItem(new Item.Properties()));
+    public static final RegistryObject<Item> MARINE_BUBBLE = ITEMS.register("marine_bubble", () -> new MarineBubbleItem(new Item.Properties()));
     public static final RegistryObject<Item> EMERALD_SHARD = ITEMS.register("emerald_shard", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).effect(() -> new MobEffectInstance(ZAMEffects.FADED_EFFECT.get(), 2400), 1.0F).alwaysEat().build())));
-    public static final RegistryObject<Item> OLD_RECORD_BOX = registerWithTab(() -> new LootBoxItem(ZAMLootTables.OLD_RECORD_BOX), "old_record_box");
+   // public static final RegistryObject<Item> OLD_RECORD_BOX = registerWithTab(() -> new LootBoxItem(ZAMLootTables.OLD_RECORD_BOX), "old_record_box");
   //  public static final RegistryObject<Item> MUSIC_DISC_LOOT_BOX = ITEMS.register("music_disc_loot_box", () -> new MusicDiscLootBoxItem(new Item.Properties()));
 
     //Food
     public static final RegistryObject<Item> CORAL_FRUIT = ITEMS.register("coral_fruit", () -> new CoralFruitItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.0F).alwaysEat().build()), true));
   //  public static final RegistryObject<Item> KRABBY_PATTY = ITEMS.register("krabby_patty", () -> new KrabbyPattyItem(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).build()));
 
-    public static final RegistryObject<Item> STARDROP = ITEMS.register("stardrop", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> STARDROP = ITEMS.register("stardrop", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(1.2F).effect(() -> new MobEffectInstance(ZAMEffects.STARDROP.get(), 3600), 1.0F).alwaysEat().build()).rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> DOUBLOON = ITEMS.register("doubloon", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
+    public static final RegistryObject<Item> LOST_KEY = ITEMS.register("lost_key", () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
 
 
     //Fishing Medals
@@ -61,8 +63,8 @@ public class ZAMItems {
     public static final RegistryObject<Item> EMERALD_HORSE_ARMOR = ITEMS.register("emerald_horse_armor", () -> new HorseArmorItem(13, "emerald", new Item.Properties().stacksTo(1)));
 
 
-    public static final RegistryObject<Item> CLAM = ITEMS.register("clam", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> OTTER_SPAWN_EGG = ITEMS.register("otter_spawn_egg", () -> new ForgeSpawnEggItem(ZAMEntities.OTTER, 0x352C34, 0xB49494, new Item.Properties()));
+   // public static final RegistryObject<Item> CLAM = ITEMS.register("clam", () -> new Item(new Item.Properties()));
+   // public static final RegistryObject<Item> OTTER_SPAWN_EGG = ITEMS.register("otter_spawn_egg", () -> new ForgeSpawnEggItem(ZAMEntities.OTTER, 0x352C34, 0xB49494, new Item.Properties()));
 
 
     //Badges (WIP)
@@ -98,174 +100,175 @@ public class ZAMItems {
     public static final RegistryObject<Item> MUG_OF_SUN_PALE_ALE = ITEMS.register("mug_of_sun_pale_ale", () -> new MugItem(ZAMBlocks.MUG_OF_SUN_PALE_ALE.get(), new Item.Properties().stacksTo(16).food(ZAMBeerProperties.SUN_PALE_ALE)));
     public static final RegistryObject<Item> MUG_OF_WITHER_STOUT = ITEMS.register("mug_of_wither_stout", () -> new MugItem(ZAMBlocks.MUG_OF_WITHER_STOUT.get(), new Item.Properties().stacksTo(16).food(ZAMBeerProperties.WITHER_STOUT)));
     public static final RegistryObject<Item> MUG_OF_NIMBUS_NECTAR = ITEMS.register("mug_of_nimbus_nectar", () -> new MugItem(ZAMBlocks.MUG_OF_NIMBUS_NECTAR.get(), new Item.Properties().stacksTo(16).food(ZAMBeerProperties.NIMBUS_NECTAR)));
+    public static final RegistryObject<Item> MUG_OF_STARDROP_SPARKLE = ITEMS.register("mug_of_stardrop_sparkle", () -> new MugItem(ZAMBlocks.MUG_OF_STARDROP_SPARKLE.get(), new Item.Properties().stacksTo(16).food(ZAMBeerProperties.STARDROP_SPARKLE)));
 
     //Pokemon Black & White Collection 12
-    public static final RegistryObject<Item> POKEMON_ALBUM_CASE = ITEMS.register("pokemon_album_case", () -> new PokemonAlbumCase(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
-    public static final RegistryObject<Item> POKEMON_STRIATON_CITY = ITEMS.register("pokemon_striaton_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_STRIATON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10160));
-    public static final RegistryObject<Item> POKEMON_CASTELIA_CITY = ITEMS.register("pokemon_castelia_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_CASTELIA_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3640));
-    public static final RegistryObject<Item> POKEMON_NIMBASA_CITY = ITEMS.register("pokemon_nimbasa_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NIMBASA_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4480));
-    public static final RegistryObject<Item> POKEMON_DRIFTVEIL_CITY = ITEMS.register("pokemon_driftveil_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_DRIFTVEIL_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 8400));
-    public static final RegistryObject<Item> POKEMON_MISTRALTON_CITY = ITEMS.register("pokemon_mistralton_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_MISTRALTON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4160));
-    public static final RegistryObject<Item> POKEMON_ICIRRUS_CITY = ITEMS.register("pokemon_icirrus_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_ICIRRUS_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3520));
-    public static final RegistryObject<Item> POKEMON_VIRBANK_CITY = ITEMS.register("pokemon_virbank_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VIRBANK_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10120));
-    public static final RegistryObject<Item> POKEMON_HUMILAU_CITY = ITEMS.register("pokemon_humilau_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_HUMILAU_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4840));
-    public static final RegistryObject<Item> POKEMON_EAST_PROVINCE = ITEMS.register("pokemon_east_province", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_EAST_PROVINCE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4040));
-    public static final RegistryObject<Item> POKEMON_GEAR_STATION = ITEMS.register("pokemon_gear_station", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_GEAR_STATION, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4640));
-    public static final RegistryObject<Item> POKEMON_NS_CASTLE = ITEMS.register("pokemon_ns_castle", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NS_CASTLE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4440));
-    public static final RegistryObject<Item> POKEMON_VOLO = ITEMS.register("pokemon_volo", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VOLO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6000));
+   // public static final RegistryObject<Item> POKEMON_ALBUM_CASE = ITEMS.register("pokemon_album_case", () -> new PokemonAlbumCase(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
+   // public static final RegistryObject<Item> POKEMON_STRIATON_CITY = ITEMS.register("pokemon_striaton_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_STRIATON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10160));
+   // public static final RegistryObject<Item> POKEMON_CASTELIA_CITY = ITEMS.register("pokemon_castelia_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_CASTELIA_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3640));
+  //  public static final RegistryObject<Item> POKEMON_NIMBASA_CITY = ITEMS.register("pokemon_nimbasa_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NIMBASA_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4480));
+  //  public static final RegistryObject<Item> POKEMON_DRIFTVEIL_CITY = ITEMS.register("pokemon_driftveil_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_DRIFTVEIL_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 8400));
+   // public static final RegistryObject<Item> POKEMON_MISTRALTON_CITY = ITEMS.register("pokemon_mistralton_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_MISTRALTON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4160));
+  //  public static final RegistryObject<Item> POKEMON_ICIRRUS_CITY = ITEMS.register("pokemon_icirrus_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_ICIRRUS_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3520));
+   // public static final RegistryObject<Item> POKEMON_VIRBANK_CITY = ITEMS.register("pokemon_virbank_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VIRBANK_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10120));
+   // public static final RegistryObject<Item> POKEMON_HUMILAU_CITY = ITEMS.register("pokemon_humilau_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_HUMILAU_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4840));
+  //  public static final RegistryObject<Item> POKEMON_EAST_PROVINCE = ITEMS.register("pokemon_east_province", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_EAST_PROVINCE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4040));
+   // public static final RegistryObject<Item> POKEMON_GEAR_STATION = ITEMS.register("pokemon_gear_station", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_GEAR_STATION, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4640));
+  //  public static final RegistryObject<Item> POKEMON_NS_CASTLE = ITEMS.register("pokemon_ns_castle", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NS_CASTLE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4440));
+  //  public static final RegistryObject<Item> POKEMON_VOLO = ITEMS.register("pokemon_volo", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VOLO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6000));
 
 
     //Pokemon Explorers Collection 12
 
     //Castle Crashers Story Collection 12
-    public static final RegistryObject<Item> CASTLE_CRASHERS_DARK_SKIES = ITEMS.register("castle_crashers_dark_skies", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_DARK_SKIES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_RAGE_OF_THE_CHAMPION = ITEMS.register("castle_crashers_rage_of_the_champion", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_RAGE_OF_THE_CHAMPION, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_WINTER_BLISS = ITEMS.register("castle_crashers_winter_bliss", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_WINTER_BLISS, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_SPACE_PIRATES = ITEMS.register("castle_crashers_space_pirates", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_PIERCING_LAZER = ITEMS.register("castle_crashers_piercing_lazer", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_PIERCING_LAZER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_SPANISH_WALTZ = ITEMS.register("castle_crashers_spanish_waltz", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPANISH_WALTZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_JUMPER = ITEMS.register("castle_crashers_jumper", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_THE_SHOW = ITEMS.register("castle_crashers_the_show", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_THE_FINAL_CONFRONTATION = ITEMS.register("castle_crashers_the_final_confrontation", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_MUDHOLES = ITEMS.register("castle_crashers_mudholes", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_FLUTEY = ITEMS.register("castle_crashers_flutey", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_FOUR_BRAVE_CHAMPIONS = ITEMS.register("castle_crashers_four_brave_champions", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_PLEASE_DONT = ITEMS.register("castle_crashers_please_dont", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> CASTLE_CRASHERS_RACE_AROUND_THE_WORLD = ITEMS.register("castle_crashers_race_around_the_world", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+   // public static final RegistryObject<Item> CASTLE_CRASHERS_DARK_SKIES = ITEMS.register("castle_crashers_dark_skies", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_DARK_SKIES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+  //  public static final RegistryObject<Item> CASTLE_CRASHERS_RAGE_OF_THE_CHAMPION = ITEMS.register("castle_crashers_rage_of_the_champion", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_RAGE_OF_THE_CHAMPION, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+  //  public static final RegistryObject<Item> CASTLE_CRASHERS_WINTER_BLISS = ITEMS.register("castle_crashers_winter_bliss", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_WINTER_BLISS, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+  //  public static final RegistryObject<Item> CASTLE_CRASHERS_SPACE_PIRATES = ITEMS.register("castle_crashers_space_pirates", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+   // public static final RegistryObject<Item> CASTLE_CRASHERS_PIERCING_LAZER = ITEMS.register("castle_crashers_piercing_lazer", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_PIERCING_LAZER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+   // public static final RegistryObject<Item> CASTLE_CRASHERS_SPANISH_WALTZ = ITEMS.register("castle_crashers_spanish_waltz", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPANISH_WALTZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+   // public static final RegistryObject<Item> CASTLE_CRASHERS_JUMPER = ITEMS.register("castle_crashers_jumper", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+   // public static final RegistryObject<Item> CASTLE_CRASHERS_THE_SHOW = ITEMS.register("castle_crashers_the_show", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+   // public static final RegistryObject<Item> CASTLE_CRASHERS_THE_FINAL_CONFRONTATION = ITEMS.register("castle_crashers_the_final_confrontation", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+  //  public static final RegistryObject<Item> CASTLE_CRASHERS_MUDHOLES = ITEMS.register("castle_crashers_mudholes", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+  //  public static final RegistryObject<Item> CASTLE_CRASHERS_FLUTEY = ITEMS.register("castle_crashers_flutey", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+  //  public static final RegistryObject<Item> CASTLE_CRASHERS_FOUR_BRAVE_CHAMPIONS = ITEMS.register("castle_crashers_four_brave_champions", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+   //// public static final RegistryObject<Item> CASTLE_CRASHERS_PLEASE_DONT = ITEMS.register("castle_crashers_please_dont", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+  //  public static final RegistryObject<Item> CASTLE_CRASHERS_RACE_AROUND_THE_WORLD = ITEMS.register("castle_crashers_race_around_the_world", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_JUMPER, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
 
     //Castle Crashers Bonus Collection
 
 
     //Sonic Collection 4
-    public static final RegistryObject<Item> SONIC_LIVE_AND_LEARN = ITEMS.register("sonic_live_and_learn", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> SONIC_KNIGHT_OF_THE_WIND = ITEMS.register("sonic_knight_of_the_wind", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> SONIC_HEROS = ITEMS.register("sonic_heros", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> SONIC_ESCAPE_FROM_THE_CITY = ITEMS.register("sonic_escape_from_the_city", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> SONIC_LIVE_AND_LEARN = ITEMS.register("sonic_live_and_learn", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> SONIC_KNIGHT_OF_THE_WIND = ITEMS.register("sonic_knight_of_the_wind", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> SONIC_HEROS = ITEMS.register("sonic_heros", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> SONIC_ESCAPE_FROM_THE_CITY = ITEMS.register("sonic_escape_from_the_city", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
-    //JJK Collection 6
-    public static final RegistryObject<Item> JJK_LOST_IN_PARADISE = ITEMS.register("jjk_lost_in_paradise", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> JJK_SPECIALZ = ITEMS.register("jjk_specialz", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> JJK_KING_GNU = ITEMS.register("jjk_king_gnu", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> JJK_KITANI = ITEMS.register("jjk_kitani", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> JJK_KAI_KAI_KITAN = ITEMS.register("jjk_kai_kai_kitan", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> JJK_VIVID_VICE = ITEMS.register("jjk_vivid_vice", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  //JJK Collection 6
+//  public static final RegistryObject<Item> JJK_LOST_IN_PARADISE = ITEMS.register("jjk_lost_in_paradise", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> JJK_SPECIALZ = ITEMS.register("jjk_specialz", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> JJK_KING_GNU = ITEMS.register("jjk_king_gnu", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> JJK_KITANI = ITEMS.register("jjk_kitani", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> JJK_KAI_KAI_KITAN = ITEMS.register("jjk_kai_kai_kitan", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> JJK_VIVID_VICE = ITEMS.register("jjk_vivid_vice", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
 
-    //Avenged Sevenfold Collection 6
-    public static final RegistryObject<Item> A7X_NOBODY = ITEMS.register("a7x_nobody", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> A7X_MAD_HATTER = ITEMS.register("a7x_mad_hatter", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> A7X_SO_FAR_AWAY = ITEMS.register("a7x_so_far_away", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> A7X_SHEPHERD_OF_FIRE = ITEMS.register("a7x_shepherd_of_fire", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> A7X_HAIL_TO_THE_KING = ITEMS.register("a7x_hail_to_the_king", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> A7X_THE_STAGE = ITEMS.register("a7x_the_stage", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> A7X_BURIED_ALIVE = ITEMS.register("a7x_buried_alive", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  //Avenged Sevenfold Collection 6
+//  public static final RegistryObject<Item> A7X_NOBODY = ITEMS.register("a7x_nobody", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> A7X_MAD_HATTER = ITEMS.register("a7x_mad_hatter", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> A7X_SO_FAR_AWAY = ITEMS.register("a7x_so_far_away", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> A7X_SHEPHERD_OF_FIRE = ITEMS.register("a7x_shepherd_of_fire", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> A7X_HAIL_TO_THE_KING = ITEMS.register("a7x_hail_to_the_king", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> A7X_THE_STAGE = ITEMS.register("a7x_the_stage", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> A7X_BURIED_ALIVE = ITEMS.register("a7x_buried_alive", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
-    //Daft Punk Collection 4
-    public static final RegistryObject<Item> ROBOT_ROCK = ITEMS.register("robot_rock", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPANISH_WALTZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> GET_LUCKY = ITEMS.register("get_lucky", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPANISH_WALTZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> AERODYNAMIC = ITEMS.register("aerodynamic", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPANISH_WALTZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> AROUND_THE_WORLD = ITEMS.register("around_the_world", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPANISH_WALTZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  //Daft Punk Collection 4
+//  public static final RegistryObject<Item> ROBOT_ROCK = ITEMS.register("robot_rock", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPANISH_WALTZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> GET_LUCKY = ITEMS.register("get_lucky", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPANISH_WALTZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> AERODYNAMIC = ITEMS.register("aerodynamic", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPANISH_WALTZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> AROUND_THE_WORLD = ITEMS.register("around_the_world", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPANISH_WALTZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
-    //Ghost Collection 6
-    public static final RegistryObject<Item> GHOST_SQUARE_HAMMER = ITEMS.register("ghost_square_hammer", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> GHOST_MARY_ON_A_CROSS = ITEMS.register("ghost_mary_on_a_cross", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> GHOST_CIRICE = ITEMS.register("ghost_cirice", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> GHOST_SPILLWAYS = ITEMS.register("ghost_spillways", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> GHOST_LIFE_ETERNAL = ITEMS.register("ghost_life_eternal", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> GHOST_RATS = ITEMS.register("ghost_rats", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  //Ghost Collection 6
+//  public static final RegistryObject<Item> GHOST_SQUARE_HAMMER = ITEMS.register("ghost_square_hammer", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> GHOST_MARY_ON_A_CROSS = ITEMS.register("ghost_mary_on_a_cross", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> GHOST_CIRICE = ITEMS.register("ghost_cirice", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> GHOST_SPILLWAYS = ITEMS.register("ghost_spillways", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> GHOST_LIFE_ETERNAL = ITEMS.register("ghost_life_eternal", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> GHOST_RATS = ITEMS.register("ghost_rats", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
-    //Zelda Collection 9
-    public static final RegistryObject<Item> ZELDA_GERUDO_VALLEY = ITEMS.register("zelda_gerudo_valley", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> ZELDA_DRAGON_ROOST = ITEMS.register("zelda_dragon_roost", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> ZELDA_ZORA_DOMAIN = ITEMS.register("zelda_zora_domain", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> ZELDA_RITO_VILLAGE = ITEMS.register("zelda_rito_village", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> ZELDA_MAIN_THEME = ITEMS.register("zelda_main_theme", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> ZELDA_SIDON_THEME = ITEMS.register("zelda_sidon_theme", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> ZELDA_MIPHA_THEME = ITEMS.register("zelda_mipha_theme", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-  //  public static final RegistryObject<Item> ZELDA_KOROK_FOREST_RECORD = ITEMS.register("zelda_korok_forest_music_disc", () -> new RecordItem(4, ZAMSounds.ZELDA_KOROK_FOREST, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4520));
-  //  public static final RegistryObject<Item> ZELDA_SHRINE_BATTLE_RECORD = ITEMS.register("zelda_shrine_battle_music_disc", () -> new RecordItem(4, ZAMSounds.ZELDA_SHRINE_BATTLE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4280));
+//  //Zelda Collection 9
+//  public static final RegistryObject<Item> ZELDA_GERUDO_VALLEY = ITEMS.register("zelda_gerudo_valley", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> ZELDA_DRAGON_ROOST = ITEMS.register("zelda_dragon_roost", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> ZELDA_ZORA_DOMAIN = ITEMS.register("zelda_zora_domain", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> ZELDA_RITO_VILLAGE = ITEMS.register("zelda_rito_village", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> ZELDA_MAIN_THEME = ITEMS.register("zelda_main_theme", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> ZELDA_SIDON_THEME = ITEMS.register("zelda_sidon_theme", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> ZELDA_MIPHA_THEME = ITEMS.register("zelda_mipha_theme", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+////  public static final RegistryObject<Item> ZELDA_KOROK_FOREST_RECORD = ITEMS.register("zelda_korok_forest_music_disc", () -> new RecordItem(4, ZAMSounds.ZELDA_KOROK_FOREST, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4520));
+////  public static final RegistryObject<Item> ZELDA_SHRINE_BATTLE_RECORD = ITEMS.register("zelda_shrine_battle_music_disc", () -> new RecordItem(4, ZAMSounds.ZELDA_SHRINE_BATTLE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4280));
 
-    //Spongebob Collection 5
-    public static final RegistryObject<Item> SPONGEBOB_AWARD_WINNERS_A = ITEMS.register("spongebob_award_winners_a", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> SPONGEBOB_CHA_CHA_NOVA = ITEMS.register("spongebob_cha_cha_nova", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> SPONGEBOB_JELLYFISH_JAM = ITEMS.register("spongebob_jellyfish_jam", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> SPONGEBOB_PUKA_A = ITEMS.register("spongebob_puka_a", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> SPONGEBOB_SWEET_VICTORY = ITEMS.register("spongebob_sweet_victory", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  //Spongebob Collection 5
+//  public static final RegistryObject<Item> SPONGEBOB_AWARD_WINNERS_A = ITEMS.register("spongebob_award_winners_a", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> SPONGEBOB_CHA_CHA_NOVA = ITEMS.register("spongebob_cha_cha_nova", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> SPONGEBOB_JELLYFISH_JAM = ITEMS.register("spongebob_jellyfish_jam", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> SPONGEBOB_PUKA_A = ITEMS.register("spongebob_puka_a", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> SPONGEBOB_SWEET_VICTORY = ITEMS.register("spongebob_sweet_victory", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
-    //HXH Collection 6
-    public static final RegistryObject<Item> HXH_ALL_I_NEED_IS_MONEY = ITEMS.register("hxh_all_i_need_is_money", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> HXH_DEPARTURE = ITEMS.register("hxh_departure", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> HXH_HUNTING_FOR_YOUR_DREAM = ITEMS.register("hxh_hunting_for_your_dream", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> HXH_WORLD_ADVENTURE = ITEMS.register("hxh_world_adventure", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> HXH_MARTIAL_ARTIST = ITEMS.register("hxh_martial_artist", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> HXH_HISOKA = ITEMS.register("hxh_hisoka", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  //HXH Collection 6
+//  public static final RegistryObject<Item> HXH_ALL_I_NEED_IS_MONEY = ITEMS.register("hxh_all_i_need_is_money", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> HXH_DEPARTURE = ITEMS.register("hxh_departure", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> HXH_HUNTING_FOR_YOUR_DREAM = ITEMS.register("hxh_hunting_for_your_dream", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> HXH_WORLD_ADVENTURE = ITEMS.register("hxh_world_adventure", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> HXH_MARTIAL_ARTIST = ITEMS.register("hxh_martial_artist", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> HXH_HISOKA = ITEMS.register("hxh_hisoka", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
-    //Call of Duty Collection 13
-    public static final RegistryObject<Item> COD_SNAKESKIN_BOOTS = ITEMS.register("cod_snakeskin_boots", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> COD_GREEN_RUN = ITEMS.register("cod_green_run", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> COD_115 = ITEMS.register("cod_115", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> COD_WIDOWS_WINE = ITEMS.register("cod_widows_wine", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> COD_SPEED_COLA = ITEMS.register("cod_speed_cola", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> COD_ALWAYS_RUNNING = ITEMS.register("cod_always_running", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
- //   public static final RegistryObject<Item> COD_MYSTERY = ITEMS.register("cod_mystery", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-  //  public static final RegistryObject<Item> COD_ECHOES_DAMNED = ITEMS.register("cod_echoes_damned", () -> new RecordItem(4, ZAMSounds.COD_ECHOES_DAMNED, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6040));
-  //  public static final RegistryObject<Item> COD_RUSTY_CAGE = ITEMS.register("cod_rusty_cage", () -> new RecordItem(4, ZAMSounds.COD_RUSTY_CAGE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4320));
-  //  public static final RegistryObject<Item> COD_WE_ALL_FALL_DOWN = ITEMS.register("cod_we_all_fall_down", () -> new RecordItem(4, ZAMSounds.COD_WE_ALL_FALL_DOWN, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4000));
-  //  public static final RegistryObject<Item> COD_WHERE_ARE_WE = ITEMS.register("cod_where_are_we", () -> new RecordItem(4, ZAMSounds.COD_WHERE_ARE_WE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6360));
-  //  public static final RegistryObject<Item> COD_SHADOWS_JAZZ = ITEMS.register("cod_shadows_jazz", () -> new RecordItem(4, ZAMSounds.COD_SHADOWS_JAZZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3280));
- //   public static final RegistryObject<Item> COD_MOTD = ITEMS.register("cod_motd", () -> new RecordItem(4, ZAMSounds.COD_MOB_OF_THE_DEAD_MONO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 1080));
+//  //Call of Duty Collection 13
+//  public static final RegistryObject<Item> COD_SNAKESKIN_BOOTS = ITEMS.register("cod_snakeskin_boots", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> COD_GREEN_RUN = ITEMS.register("cod_green_run", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> COD_115 = ITEMS.register("cod_115", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> COD_WIDOWS_WINE = ITEMS.register("cod_widows_wine", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> COD_SPEED_COLA = ITEMS.register("cod_speed_cola", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> COD_ALWAYS_RUNNING = ITEMS.register("cod_always_running", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+///   public static final RegistryObject<Item> COD_MYSTERY = ITEMS.register("cod_mystery", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+////  public static final RegistryObject<Item> COD_ECHOES_DAMNED = ITEMS.register("cod_echoes_damned", () -> new RecordItem(4, ZAMSounds.COD_ECHOES_DAMNED, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6040));
+////  public static final RegistryObject<Item> COD_RUSTY_CAGE = ITEMS.register("cod_rusty_cage", () -> new RecordItem(4, ZAMSounds.COD_RUSTY_CAGE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4320));
+////  public static final RegistryObject<Item> COD_WE_ALL_FALL_DOWN = ITEMS.register("cod_we_all_fall_down", () -> new RecordItem(4, ZAMSounds.COD_WE_ALL_FALL_DOWN, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4000));
+////  public static final RegistryObject<Item> COD_WHERE_ARE_WE = ITEMS.register("cod_where_are_we", () -> new RecordItem(4, ZAMSounds.COD_WHERE_ARE_WE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6360));
+////  public static final RegistryObject<Item> COD_SHADOWS_JAZZ = ITEMS.register("cod_shadows_jazz", () -> new RecordItem(4, ZAMSounds.COD_SHADOWS_JAZZ, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3280));
+///   public static final RegistryObject<Item> COD_MOTD = ITEMS.register("cod_motd", () -> new RecordItem(4, ZAMSounds.COD_MOB_OF_THE_DEAD_MONO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 1080));
 
-    //Entertainment Collection 8
-    public static final RegistryObject<Item> AOT_GUREN_NO_YUMIYA = ITEMS.register("aot_guren_no_yumiya", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-  //  public static final RegistryObject<Item> HTTDY_TEST_DRIVE_RECORD = ITEMS.register("httyd_test_drive_music_disc", () -> new RecordItem(4, ZAMSounds.HTTYD_TEST_DRIVE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3840));
-   //// public static final RegistryObject<Item> HTTYD_MAP_THE_WORLD_RECORD = ITEMS.register("httyd_map_the_world_music_disc", () -> new RecordItem(4, ZAMSounds.HTTYD_MAP_THE_WORLD, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3120));
-  //  public static final RegistryObject<Item> CARS_RECORD = ITEMS.register("cars_music_disc", () -> new RecordItem(4, ZAMSounds.CARS, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6240));
-  //  public static final RegistryObject<Item> CARS2_RECORD = ITEMS.register("cars2_music_disc", () -> new RecordItem(4, ZAMSounds.CARS2, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4920));
-    public static final RegistryObject<Item> JERMA = ITEMS.register("jerma", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> GRAVITY_FALLS = ITEMS.register("gravity_falls", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> STAR_WARS_DUEL_OF_THE_FATES = ITEMS.register("star_wars_duel_of_the_fates", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  //Entertainment Collection 8
+//  public static final RegistryObject<Item> AOT_GUREN_NO_YUMIYA = ITEMS.register("aot_guren_no_yumiya", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+////  public static final RegistryObject<Item> HTTDY_TEST_DRIVE_RECORD = ITEMS.register("httyd_test_drive_music_disc", () -> new RecordItem(4, ZAMSounds.HTTYD_TEST_DRIVE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3840));
+// //// public static final RegistryObject<Item> HTTYD_MAP_THE_WORLD_RECORD = ITEMS.register("httyd_map_the_world_music_disc", () -> new RecordItem(4, ZAMSounds.HTTYD_MAP_THE_WORLD, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3120));
+////  public static final RegistryObject<Item> CARS_RECORD = ITEMS.register("cars_music_disc", () -> new RecordItem(4, ZAMSounds.CARS, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6240));
+////  public static final RegistryObject<Item> CARS2_RECORD = ITEMS.register("cars2_music_disc", () -> new RecordItem(4, ZAMSounds.CARS2, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4920));
+//  public static final RegistryObject<Item> JERMA = ITEMS.register("jerma", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> GRAVITY_FALLS = ITEMS.register("gravity_falls", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> STAR_WARS_DUEL_OF_THE_FATES = ITEMS.register("star_wars_duel_of_the_fates", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
-    // Collection 8
-    public static final RegistryObject<Item> STIR_FRY = ITEMS.register("stir_fry", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> TELEPHONE = ITEMS.register("telephone", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> WE_DIDNT_START_THE_FIRE = ITEMS.register("we_didnt_start_the_fire", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> HOTEL_CALIFORNIA = ITEMS.register("hotel_california", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> IM_FREE = ITEMS.register("im_free", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> RAPP_SNITCHES = ITEMS.register("rapp_snitches", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> LIE_LIE_LIE = ITEMS.register("lie_lie_lie", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> MICROWAVE_POPCORN = ITEMS.register("microwave_popcorn", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  // Collection 8
+//  public static final RegistryObject<Item> STIR_FRY = ITEMS.register("stir_fry", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> TELEPHONE = ITEMS.register("telephone", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> WE_DIDNT_START_THE_FIRE = ITEMS.register("we_didnt_start_the_fire", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> HOTEL_CALIFORNIA = ITEMS.register("hotel_california", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> IM_FREE = ITEMS.register("im_free", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> RAPP_SNITCHES = ITEMS.register("rapp_snitches", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> LIE_LIE_LIE = ITEMS.register("lie_lie_lie", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> MICROWAVE_POPCORN = ITEMS.register("microwave_popcorn", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
-    //Gaming Collection 10
-    public static final RegistryObject<Item> DONKEY_KONG = ITEMS.register("donkey_long", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> TETRIS = ITEMS.register("tetris", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> EARTHBOUND = ITEMS.register("earthbound", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> RUNESCAPE = ITEMS.register("runescape", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> FORTNITE = ITEMS.register("fortnite", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> KIRBY = ITEMS.register("kirby", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> TERARRIA = ITEMS.register("terarria", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> UNO = ITEMS.register("uno", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  //Gaming Collection 10
+//  public static final RegistryObject<Item> DONKEY_KONG = ITEMS.register("donkey_long", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> TETRIS = ITEMS.register("tetris", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> EARTHBOUND = ITEMS.register("earthbound", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> RUNESCAPE = ITEMS.register("runescape", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> FORTNITE = ITEMS.register("fortnite", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> KIRBY = ITEMS.register("kirby", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> TERARRIA = ITEMS.register("terarria", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> UNO = ITEMS.register("uno", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
-    //Terrific Tunes Collection 5
-    public static final RegistryObject<Item> CAT_INDEV = ITEMS.register("cat_indev", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> LUPUS_NOCTE_HOWLING = ITEMS.register("lupus_nocte_howling", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> C418_DOG = ITEMS.register("c418_dog", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> LE_FISHE = ITEMS.register("le_fishe", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  //Terrific Tunes Collection 5
+//  public static final RegistryObject<Item> CAT_INDEV = ITEMS.register("cat_indev", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> LUPUS_NOCTE_HOWLING = ITEMS.register("lupus_nocte_howling", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> C418_DOG = ITEMS.register("c418_dog", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> LE_FISHE = ITEMS.register("le_fishe", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
-    //Animal Crossing Collection 6
-    public static final RegistryObject<Item> AC_SPACE_KK = ITEMS.register("ac_space_kk", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> AC_LUCKY_KK = ITEMS.register("ac_lucky_kk", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> AC_BUBBLEGUM_KK = ITEMS.register("ac_bubblegum_kk", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> AC_DODO_AIRLINES = ITEMS.register("ac_dodo_airlines", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> AC_ISLAND_TOUR = ITEMS.register("ac_island_tour", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> AC_HARVS_ISLAND = ITEMS.register("ac_harvs_island", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  //Animal Crossing Collection 6
+//  public static final RegistryObject<Item> AC_SPACE_KK = ITEMS.register("ac_space_kk", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> AC_LUCKY_KK = ITEMS.register("ac_lucky_kk", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> AC_BUBBLEGUM_KK = ITEMS.register("ac_bubblegum_kk", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> AC_DODO_AIRLINES = ITEMS.register("ac_dodo_airlines", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> AC_ISLAND_TOUR = ITEMS.register("ac_island_tour", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> AC_HARVS_ISLAND = ITEMS.register("ac_harvs_island", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
-    //Halo Collection 5
-    public static final RegistryObject<Item> HALO_MASHUP = ITEMS.register("halo_mashup", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> HALO_OVERTURE = ITEMS.register("halo_overture", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> HALO_MAIN_THEME = ITEMS.register("halo_main_theme", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> HALO_WARTHOG_RUN = ITEMS.register("halo_warthog_run", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
-    public static final RegistryObject<Item> HALO_ATONEMENT = ITEMS.register("halo_atonement", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  //Halo Collection 5
+//  public static final RegistryObject<Item> HALO_MASHUP = ITEMS.register("halo_mashup", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> HALO_OVERTURE = ITEMS.register("halo_overture", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> HALO_MAIN_THEME = ITEMS.register("halo_main_theme", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> HALO_WARTHOG_RUN = ITEMS.register("halo_warthog_run", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
+//  public static final RegistryObject<Item> HALO_ATONEMENT = ITEMS.register("halo_atonement", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_SPACE_PIRATES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));
 
     //Deep Rock Collection 4
   //  public static final RegistryObject<Item> DEEP_ROCK_CODE_TO_THE_FALLEN_RECORD = ITEMS.register("deep_rock_code_to_the_fallen_music_disc", () -> new RecordItem(4, ZAMSounds.DEEP_ROCK_CODE_TO_THE_FALLEN, new Item.Properties().rarity(Rarity.RARE).stacksTo(7200), 7240));

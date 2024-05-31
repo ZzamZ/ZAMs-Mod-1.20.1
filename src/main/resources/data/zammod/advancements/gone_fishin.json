@@ -1,0 +1,34 @@
+{
+  "parent": "zammod:root",
+  "criteria": {
+    "catch_10": {
+      "trigger": "zammod:fishing_catch",
+      "conditions": {
+        "catches": {
+          "min": 10
+        }
+      }
+    }
+  },
+  "requirements": [
+    ["catch_10"]
+  ],
+  "rewards": {
+    "experience": 25
+  },
+  "display": {
+    "title": {
+      "text": "Gone Fishin'"
+    },
+    "description": {
+      "text": "Catch 10 items while fishing"
+    },
+    "icon": {
+      "item": "minecraft:pufferfish"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "parent": "zammod:wood_medal",
+  "criteria": {
+    "catch_100": {
+      "trigger": "zammod:fishing_catch",
+      "conditions": {
+        "catches": {
+          "min": 100
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch_100"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "zammod:advancement/bronze"
+    ]
+  },
+  "display": {
+    "title": {
+      "text": "Plenty of Fish in the Sea"
+    },
+    "description": {
+      "text": "Catch 100 items while fishing"
+    },
+    "icon": {
+      "item": "zammod:bronze_medal"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  }
+}

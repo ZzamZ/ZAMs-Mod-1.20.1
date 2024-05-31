@@ -15,6 +15,12 @@ public class ZAMParticles {
     public static final RegistryObject<SimpleParticleType> YELLOW_BUBBLES = PARTICLE_TYPES.register("yellow_bubbles",
             () -> new SimpleParticleType(true));
 
+    public static final RegistryObject<SimpleParticleType> PURPLE_BUBBLES = PARTICLE_TYPES.register("purple_bubbles",
+            () -> new SimpleParticleType(true));
+
+    public static final RegistryObject<SimpleParticleType> WHITE_BUBBLES = PARTICLE_TYPES.register("white_bubbles",
+            () -> new SimpleParticleType(true));
+
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);
     }

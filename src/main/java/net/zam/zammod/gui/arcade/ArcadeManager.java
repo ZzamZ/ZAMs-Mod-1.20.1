@@ -25,7 +25,7 @@ public class ArcadeManager {
 
     public void add(GameConstructor game, String key) {
         games.add(game);
-        names.add(Component.translatable("arcade.zammod.game." + key));
+        names.add(Component.translatable("arcade.zammod.game" + key));
     }
 
     public List<GameConstructor> getGames() {

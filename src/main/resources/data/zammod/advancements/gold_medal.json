@@ -1,0 +1,38 @@
+{
+  "parent": "zammod:silver_medal",
+  "criteria": {
+    "catch_1000": {
+      "trigger": "zammod:fishing_catch",
+      "conditions": {
+        "catches": {
+          "min": 1000
+        }
+      }
+    }
+  },
+  "requirements": [
+    [
+      "catch_1000"
+    ]
+  ],
+  "rewards": {
+    "loot": [
+      "zammod:advancement/gold"
+    ]
+  },
+  "display": {
+    "title": {
+      "text": "Tidal Triumph"
+    },
+    "description": {
+      "text": "Catch 1000 items while fishing"
+    },
+    "icon": {
+      "item": "zammod:gold_medal"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  }
+}

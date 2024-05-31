@@ -35,7 +35,7 @@ public class ArcadeTileEntity extends BlockEntity implements MenuProvider {
 
     @Override
     public Component getDisplayName() {
-        return Component.translatable("container.buildersaddition.arcade");
+        return Component.translatable("container.zammod.arcade");
     }
 
     public static void tick(Level world, BlockPos pos, BlockState state, ArcadeTileEntity te) {

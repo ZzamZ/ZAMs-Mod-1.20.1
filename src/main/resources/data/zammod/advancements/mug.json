@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "zammod:mug_of_sun_pale_ale"
+    },
+    "title": {
+      "text": "To beer or not to beer"
+    },
+    "description": {
+      "text": "Brew your first beer"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "zammod:keg",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "zammod:beer_mugs"
+          }
+        ]
+      }
+    }
+  }
+}

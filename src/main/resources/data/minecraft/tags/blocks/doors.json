@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "zammod:copper_door",
+    "zammod:exposed_copper_door",
+    "zammod:weathered_copper_door",
+    "zammod:oxidized_copper_door",
+    "zammod:waxed_copper_door",
+    "zammod:waxed_exposed_copper_door",
+    "zammod:waxed_weathered_copper_door",
+    "zammod:waxed_oxidized_copper_door"
+  ]
+}

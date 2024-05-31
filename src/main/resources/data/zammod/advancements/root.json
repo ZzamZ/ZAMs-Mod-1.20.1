@@ -15,7 +15,7 @@
     "description": {
       "text": "Let the exploring begin"
     },
-    "background": "minecraft:blocks/prismarine_bricks.png",
+    "background": "minecraft:textures/block/prismarine_bricks.png",
     "icon": {
       "item": "zammod:stardrop"
     },

@@ -7,10 +7,13 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class YellowBubbleParticles extends TextureSheetParticle {
+    private final SpriteSet sprites;
+
     protected YellowBubbleParticles(ClientLevel level, double xCoord, double yCoord, double zCoord,
                                     SpriteSet spriteSet, double xd, double yd, double zd) {
         super(level, xCoord, yCoord, zCoord, xd, yd, zd);
 
+        this.sprites = spriteSet; // Initialize the sprites
         this.friction = 0.8F;
         this.xd = xd;
         this.yd = yd;
@@ -23,12 +26,18 @@ public class YellowBubbleParticles extends TextureSheetParticle {
 
         this.rCol = 1f;
         this.gCol = 1f;
-        this.bCol = 1f;
+        this.bCol = 0f;
     }
 
     @Override
     public ParticleRenderType getRenderType() {
         return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        this.setSpriteFromAge(this.sprites); // Ensure sprite updates with age
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -39,6 +48,7 @@ public class YellowBubbleParticles extends TextureSheetParticle {
             this.sprites = spriteSet;
         }
 
+        @Override
         public Particle createParticle(SimpleParticleType particleType, ClientLevel level,
                                        double x, double y, double z,
                                        double dx, double dy, double dz) {

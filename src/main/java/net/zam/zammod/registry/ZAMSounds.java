@@ -43,8 +43,12 @@ public class ZAMSounds {
     public static final RegistryObject<SoundEvent> BLOCK_COPPER_TRAPDOOR_OPEN = registerSoundEvent("block.copper_trapdoor.open");
     
     //Faded
-    public static final RegistryObject<SoundEvent> FADED_EFFECT_BEGIN = registerSoundEvent("faded_effect_begin");
-    public static final RegistryObject<SoundEvent> FADED_EFFECT_END = registerSoundEvent("faded_effect_end");
+    public static final RegistryObject<SoundEvent> FADED_EFFECT_BEGIN = registerSoundEvent("potion_effect_begin");
+    public static final RegistryObject<SoundEvent> FADED_EFFECT_END = registerSoundEvent("potion_effect_end");
+
+
+    //Stardrop
+    public static final RegistryObject<SoundEvent> STARDROP = registerSoundEvent("stardrop");
 
 
     //Devil Fruits

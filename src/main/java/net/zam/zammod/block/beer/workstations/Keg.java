@@ -184,6 +184,18 @@ public class Keg extends BaseEntityBlock {
                         } else if (!pPlayer.getInventory().add(new ItemStack(ZAMItems.MUG_OF_CHORUS_ALE.get()))) {
                             pPlayer.drop(new ItemStack(ZAMItems.MUG_OF_CHORUS_ALE.get()), false);
                         }
+                    } else if (beer == 12) {
+                        if (itemStack.isEmpty()) {
+                            pPlayer.setItemInHand(pHand, new ItemStack(ZAMItems.MUG_OF_NIMBUS_NECTAR.get()));
+                        } else if (!pPlayer.getInventory().add(new ItemStack(ZAMItems.MUG_OF_NIMBUS_NECTAR.get()))) {
+                            pPlayer.drop(new ItemStack(ZAMItems.MUG_OF_NIMBUS_NECTAR.get()), false);
+                        }
+                    } else if (beer == 13) {
+                        if (itemStack.isEmpty()) {
+                            pPlayer.setItemInHand(pHand, new ItemStack(ZAMItems.MUG_OF_STARDROP_SPARKLE.get()));
+                        } else if (!pPlayer.getInventory().add(new ItemStack(ZAMItems.MUG_OF_STARDROP_SPARKLE.get()))) {
+                            pPlayer.drop(new ItemStack(ZAMItems.MUG_OF_STARDROP_SPARKLE.get()), false);
+                        }
                     }
 
                     ((KegEntity) entity).beerLevel = ((KegEntity) entity).beerLevel - 2;

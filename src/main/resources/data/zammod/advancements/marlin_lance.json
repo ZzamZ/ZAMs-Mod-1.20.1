@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "item": "zammod:marlin_lance"
+    },
+    "title": "Lance A Lot",
+    "description": "Find yourself a Marlin Lance"
+  },
+  "parent": "zammod:marine_bubble",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zammod:marlin_lance"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

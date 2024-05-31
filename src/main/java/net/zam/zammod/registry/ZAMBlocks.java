@@ -17,7 +17,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.zam.zammod.ZAMMod;
 import net.zam.zammod.block.*;
-import net.zam.zammod.block.arcade.Arcade;
+import net.zam.zammod.block.arcade.ArcadeMachineBlock;
 import net.zam.zammod.block.beer.mugs.MugBlock;
 import net.zam.zammod.block.beer.mugs.beer.*;
 import net.zam.zammod.block.beer.plants.Hop;
@@ -38,7 +38,7 @@ public class ZAMBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ZAMMod.MOD_ID);
 
     //Arcade
-    public static final RegistryObject<Block> ARCADE_MACHINE = registerBlock("arcade_machine", () -> new Arcade(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).strength(2.0F).sound(SoundType.METAL).toString()));
+    public static final RegistryObject<Block> ARCADE_MACHINE = registerBlock("arcade_machine", () -> new ArcadeMachineBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).strength(2.0F).sound(SoundType.METAL).noOcclusion().toString()));
 
 
     //Ocean
@@ -167,7 +167,8 @@ public class ZAMBlocks {
     public static final RegistryObject<Block> MUG_OF_NIGHT_RAUCH = registerBlockWithoutItem("mug_of_night_rauch", () -> new NightRauchMug(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
     public static final RegistryObject<Block> MUG_OF_SUN_PALE_ALE = registerBlockWithoutItem("mug_of_sun_pale_ale",() -> new SunPaleAleMug(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
     public static final RegistryObject<Block> MUG_OF_WITHER_STOUT = registerBlockWithoutItem("mug_of_wither_stout",() -> new WitherStoutMug(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
-    public static final RegistryObject<Block> MUG_OF_NIMBUS_NECTAR = registerBlockWithoutItem("mug_of_nimbus_nectar",() -> new WitherStoutMug(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
+    public static final RegistryObject<Block> MUG_OF_NIMBUS_NECTAR = registerBlockWithoutItem("mug_of_nimbus_nectar",() -> new NimbusNectarMug(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
+    public static final RegistryObject<Block> MUG_OF_STARDROP_SPARKLE = registerBlockWithoutItem("mug_of_stardrop_sparkle",() -> new StardropSparkleMug(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
 
     //Avocado Woodset
    // public static final RegistryObject<Block> AVOCADO_LOG = registerBlock("avocado_log", () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG).noLootTable()));
@@ -203,20 +204,20 @@ public class ZAMBlocks {
 
 
 
-  //  private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {
-  //      RegistryObject<Block> blockObj = ZAMBlocks.BLOCKS.register(name, block);
-  //      ZAMItems.ITEMS.register(name, getBlockSupplier(itemType, blockObj));
-  //      return blockObj;
-  //  }
-
-//   private static Supplier<? extends BlockItem> getBlockSupplier(int itemType, RegistryObject<Block> blockObj) {
-//       switch (itemType) {
-//           default:
-//               return () -> new BlockItem(blockObj.get(), new Item.Properties());
-//           case 1:
-//               return () -> new ScaffinityBlockItem(blockObj.get(), new Item.Properties());
-//       }
+//   private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {
+//       RegistryObject<Block> blockObj = ZAMBlocks.BLOCKS.register(name, block);
+//      ZAMItems.ITEMS.register(name, getBlockSupplier(itemType, blockObj));
+//       return blockObj;
 //   }
+
+//  private static Supplier<? extends BlockItem> getBlockSupplier(int itemType, RegistryObject<Block> blockObj) {
+//     switch (itemType) {
+//          default:
+//             return () -> new BlockItem(blockObj.get(), new Item.Properties());
+//          case 1:
+//              return () -> new ScaffinityBlockItem(blockObj.get(), new Item.Properties());
+//      }
+//  }
 
 
 

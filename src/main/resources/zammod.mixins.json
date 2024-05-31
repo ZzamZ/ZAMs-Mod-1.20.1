@@ -5,11 +5,10 @@
   "refmap": "zammod.refmap.json",
   "compatibilityLevel": "JAVA_17",
     "mixins": [
-      "ServerPlayerMixin",
-      "InventoryMixin",
       "FrogVariantsMixin",
       "BlocksMixin",
-      "MixinLivingEntity",
+      "AxeItemMixin",
+      "HoneycombItemMixin",
       "gamerule.BooleanValueInvoker",
       "gamerule.IntegerValueInvoker"
     ],

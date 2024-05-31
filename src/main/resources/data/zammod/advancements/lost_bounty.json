@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "item": "zammod:lost_bounty"
+    },
+    "title": "Bounty of the Deep",
+    "description": "Fish up your first Lost Bounty",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "zammod:gone_fishin",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zammod:lost_bounty"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

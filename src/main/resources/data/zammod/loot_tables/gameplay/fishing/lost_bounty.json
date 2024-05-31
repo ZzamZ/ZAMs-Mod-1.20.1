@@ -28,9 +28,9 @@
           "name": "minecraft:gameplay/fishing/treasure"
         },
         {
-          "_comment": "33% chance of getting a neptunium nugget",
+          "_comment": "33% chance of getting a sponge",
           "type": "minecraft:item",
-          "name": "zammod:old_record_box"
+          "name": "minecraft:sponge"
         }
       ]
     }

@@ -1,0 +1,24 @@
+{
+  "display": {
+    "icon": {
+      "item": "zammod:marine_bubble"
+    },
+    "title": "Bubble Buddy",
+    "description": "Find yourself a Marine Bubble"
+  },
+  "parent": "zammod:lost_bounty",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zammod:marine_bubble"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

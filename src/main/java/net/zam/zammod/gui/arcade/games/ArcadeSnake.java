@@ -194,7 +194,7 @@ public class ArcadeSnake extends ArcadeGame {
                 s.print(px, py, "x");
                 playSound(0);
                 Player player = Minecraft.getInstance().player;
-                if (player != null) {
+                if (player != null && isHighScore(score)) {
                     Minecraft.getInstance().setScreen(new NameScreen(this, score));
                 }
                 return;
@@ -313,6 +313,13 @@ public class ArcadeSnake extends ArcadeGame {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private boolean isHighScore(int score) {
+        if (highScores.size() < 3) {
+            return true;
+        }
+        return score > highScores.get(highScores.size() - 1).score;
     }
 
     private class Tail {

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "zammod:block/mug_of_stardrop_sparkle" },
+    "facing=east": { "model": "zammod:block/mug_of_stardrop_sparkle", "y": 90 },
+    "facing=south": { "model": "zammod:block/mug_of_stardrop_sparkle", "y": 180 },
+    "facing=west": { "model": "zammod:block/mug_of_stardrop_sparkle", "y": 270 }
+  }
+}

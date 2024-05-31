@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "item": "zammod:keg"
+    },
+    "title": {
+      "text": "It all starts with a Keg"
+    },
+    "description": {
+      "text": "Craft a keg and start your journey in brewing."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "zammod:hop",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zammod:keg"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

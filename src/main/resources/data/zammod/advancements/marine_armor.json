@@ -1,0 +1,57 @@
+{
+  "parent": "zammod:marlin_lance",
+  "criteria": {
+    "marine_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "zammod:guardian_helmet"
+            ]
+          },
+          {
+            "items": [
+              "zammod:guardian_chestplate"
+            ]
+          },
+          {
+            "items": [
+              "zammod:guardian_leggings"
+            ]
+          },
+          {
+            "items": [
+              "zammod:guardian_boots"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "text": "Obtain a full set of Marine Armor"
+    },
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "item": "zammod:guardian_chestplate",
+      "nbt": "{Damage:0}"
+    },
+    "show_toast": true,
+    "title": {
+      "text": "High Tide!!"
+    }
+  },
+  "requirements": [
+    [
+      "marine_armor"
+    ]
+  ],
+  "rewards": {
+    "experience": 100
+  },
+  "sends_telemetry_event": true
+}
