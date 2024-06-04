@@ -1,12 +1,12 @@
 {
   "display": {
     "icon": {
-      "item": "zammod:marlin_lance"
+      "item": "zammod:scaffinity"
     },
-    "title": "Lance A Lot",
-    "description": "Find yourself a Marlin Lance"
+    "title": "To Scaffinity And Beyond!",
+    "description": "Find yourself a Scaffinity"
   },
-  "parent": "zammod:scaffinity",
+  "parent": "zammod:marine_bubble",
   "criteria": {
     "requirement": {
       "trigger": "minecraft:inventory_changed",
@@ -14,7 +14,7 @@
         "items": [
           {
             "items": [
-              "zammod:marlin_lance"
+              "zammod:scaffinity"
             ]
           }
         ]

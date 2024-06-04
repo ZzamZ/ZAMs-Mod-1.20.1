@@ -39,10 +39,26 @@ public class ZAMBlockLootTables extends BlockLootSubProvider {
      this.dropWhenSilkTouch(ZAMBlocks.MEDIUM_EMERALD_BUD.get());
      this.dropWhenSilkTouch(ZAMBlocks.LARGE_EMERALD_BUD.get());
      this.add(ZAMBlocks.BUDDING_EMERALD.get(), noDrop());
+     this.add(ZAMBlocks.HOP.get(), noDrop());
 
-   //  this.add(ZAMBlocks.SCAFFINITY.get(), noDrop());
+      this.dropSelf(ZAMBlocks.KEG.get());
+      this.dropSelf(ZAMBlocks.MUG_EMPTY.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_SUN_PALE_ALE.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_DIGGER_BITTER.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_WITHER_STOUT.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_MAGNET_PILSNER.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_DROWNED_ALE.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_NIGHT_RAUCH.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_ICE_BEER.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_KVASS.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_LEPRECHAUN_CIDER.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_CHORUS_ALE.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_NETHER_PORTER.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_NIMBUS_NECTAR.get());
+      this.dropSelf(ZAMBlocks.MUG_OF_STARDROP_SPARKLE.get());
 
-     this.dropSelf(ZAMBlocks.RUDDY_FROGLIGHT.get());
+
+      this.dropSelf(ZAMBlocks.RUDDY_FROGLIGHT.get());
      this.dropSelf(ZAMBlocks.AZURE_FROGLIGHT.get());
      this.dropSelf(ZAMBlocks.EBON_FROGLIGHT.get());
 
@@ -80,8 +96,8 @@ public class ZAMBlockLootTables extends BlockLootSubProvider {
      this.dropSelf(ZAMBlocks.MAGENTA_CONCRETE_STAIRS.get());
      this.dropSelf(ZAMBlocks.PINK_CONCRETE_STAIRS.get());
 
-     this.dropSelf(ZAMBlocks.PACKED_ICE_SLAB.get());
-     this.dropSelf(ZAMBlocks.PACKED_ICE_STAIRS.get());
+     this.dropWhenSilkTouch(ZAMBlocks.PACKED_ICE_SLAB.get());
+     this.dropWhenSilkTouch(ZAMBlocks.PACKED_ICE_STAIRS.get());
      this.dropSelf(ZAMBlocks.SAND_SLAB.get());
      this.dropSelf(ZAMBlocks.SAND_STAIRS.get());
 
@@ -89,6 +105,46 @@ public class ZAMBlockLootTables extends BlockLootSubProvider {
      this.dropSelf(ZAMBlocks.ARCADE_MACHINE.get());
 
 
+     this.dropSelf(ZAMBlocks.CHISELED_COPPER.get());
+     this.dropSelf(ZAMBlocks.EXPOSED_CHISELED_COPPER.get());
+     this.dropSelf(ZAMBlocks.WEATHERED_CHISELED_COPPER.get());
+     this.dropSelf(ZAMBlocks.OXIDIZED_CHISELED_COPPER.get());
+     this.dropSelf(ZAMBlocks.WAXED_CHISELED_COPPER.get());
+     this.dropSelf(ZAMBlocks.WAXED_EXPOSED_CHISELED_COPPER.get());
+     this.dropSelf(ZAMBlocks.WAXED_WEATHERED_CHISELED_COPPER.get());
+     this.dropSelf(ZAMBlocks.WAXED_OXIDIZED_CHISELED_COPPER.get());
+     this.dropSelf(ZAMBlocks.COPPER_GRATE.get());
+     this.dropSelf(ZAMBlocks.EXPOSED_COPPER_GRATE.get());
+     this.dropSelf(ZAMBlocks.WEATHERED_COPPER_GRATE.get());
+     this.dropSelf(ZAMBlocks.OXIDIZED_COPPER_GRATE.get());
+     this.dropSelf(ZAMBlocks.WAXED_COPPER_GRATE.get());
+     this.dropSelf(ZAMBlocks.WAXED_EXPOSED_COPPER_GRATE.get());
+     this.dropSelf(ZAMBlocks.WAXED_WEATHERED_COPPER_GRATE.get());
+     this.dropSelf(ZAMBlocks.WAXED_OXIDIZED_COPPER_GRATE.get());
+     this.dropSelf(ZAMBlocks.COPPER_BULB.get());
+     this.dropSelf(ZAMBlocks.EXPOSED_COPPER_BULB.get());
+     this.dropSelf(ZAMBlocks.WEATHERED_COPPER_BULB.get());
+     this.dropSelf(ZAMBlocks.OXIDIZED_COPPER_BULB.get());
+     this.dropSelf(ZAMBlocks.WAXED_COPPER_BULB.get());
+     this.dropSelf(ZAMBlocks.WAXED_EXPOSED_COPPER_BULB.get());
+     this.dropSelf(ZAMBlocks.WAXED_WEATHERED_COPPER_BULB.get());
+     this.dropSelf(ZAMBlocks.WAXED_OXIDIZED_COPPER_BULB.get());
+     this.dropSelf(ZAMBlocks.COPPER_DOOR.get());
+     this.dropSelf(ZAMBlocks.EXPOSED_COPPER_DOOR.get());
+     this.dropSelf(ZAMBlocks.WEATHERED_COPPER_DOOR.get());
+     this.dropSelf(ZAMBlocks.OXIDIZED_COPPER_DOOR.get());
+     this.dropSelf(ZAMBlocks.WAXED_COPPER_DOOR.get());
+     this.dropSelf(ZAMBlocks.WAXED_EXPOSED_COPPER_DOOR.get());
+     this.dropSelf(ZAMBlocks.WAXED_WEATHERED_COPPER_DOOR.get());
+     this.dropSelf(ZAMBlocks.WAXED_OXIDIZED_COPPER_DOOR.get());
+     this.dropSelf(ZAMBlocks.COPPER_TRAPDOOR.get());
+     this.dropSelf(ZAMBlocks.EXPOSED_COPPER_TRAPDOOR.get());
+     this.dropSelf(ZAMBlocks.WEATHERED_COPPER_TRAPDOOR.get());
+     this.dropSelf(ZAMBlocks.OXIDIZED_COPPER_TRAPDOOR.get());
+     this.dropSelf(ZAMBlocks.WAXED_COPPER_TRAPDOOR.get());
+     this.dropSelf(ZAMBlocks.WAXED_EXPOSED_COPPER_TRAPDOOR.get());
+     this.dropSelf(ZAMBlocks.WAXED_WEATHERED_COPPER_TRAPDOOR.get());
+     this.dropSelf(ZAMBlocks.WAXED_OXIDIZED_COPPER_TRAPDOOR.get());
     }
 
         @Override

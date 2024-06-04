@@ -20,6 +20,7 @@
   "item.zammod.stardrop": "Stardrop",
 
   "arcade.zammod.game": "Snake",
+  "container.zammod.arcade": "Snake Arcade Machine",
 
   "block.zammod.arcade_machine": "Arcade Machine",
   "block.zammod.lost_bounty": "Lost Bounty",

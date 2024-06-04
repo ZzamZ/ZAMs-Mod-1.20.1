@@ -13,6 +13,8 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
+import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -27,10 +29,8 @@ import java.util.List;
 
 public class MarineBubbleItem extends Item {
 
-    private static final TagKey<EntityType<?>> BLACKLIST_TAG = TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation(ZAMMod.MOD_ID, "marine_bubble_blacklist"));
-
     public MarineBubbleItem(Properties properties) {
-        super(new Item.Properties().stacksTo(1).durability(3));
+        super(new Item.Properties().stacksTo(1).durability(5));
     }
 
     @Override
@@ -40,7 +40,7 @@ public class MarineBubbleItem extends Item {
 
     @Override
     public boolean onLeftClickEntity(ItemStack stack, Player player, Entity entity) {
-        if (stack.getOrCreateTagElement("entity_data").isEmpty() && !entity.getType().is(BLACKLIST_TAG)) {
+        if (stack.getOrCreateTagElement("entity_data").isEmpty() && isAllowedEntity(entity)) {
             CompoundTag tag = entity.serializeNBT();
             if (!player.level().isClientSide) {
                 entity.discard();
@@ -84,14 +84,14 @@ public class MarineBubbleItem extends Item {
         return tag;
     }
 
-    void playSound(Player player) {
+    private void playSound(Player player) {
         player.level().playSound(null, player.blockPosition(), SoundEvents.RESPAWN_ANCHOR_CHARGE, SoundSource.AMBIENT, 1, 1);
     }
 
     @Override
     @OnlyIn(Dist.CLIENT)
     public void appendHoverText(ItemStack stack, Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-        super.appendHoverText(stack, worldIn, tooltip, flagIn); // Call to the super method if needed
+        super.appendHoverText(stack, worldIn, tooltip, flagIn);
 
         if (stack.hasTag()) {
             CompoundTag tag = stack.getOrCreateTagElement("entity_data");
@@ -114,4 +114,8 @@ public class MarineBubbleItem extends Item {
         return stack.hasTag() && !stack.getOrCreateTagElement("entity_data").isEmpty();
     }
 
+    private boolean isAllowedEntity(Entity entity) {
+        EntityType<?> type = entity.getType();
+        return type.getCategory() == MobCategory.WATER_CREATURE || entity instanceof Animal;
+    }
 }

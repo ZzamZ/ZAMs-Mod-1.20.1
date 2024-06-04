@@ -56,7 +56,7 @@
         {
           "type": "minecraft:item",
           "name": "zammod:marine_bubble",
-          "weight": 10
+          "weight": 5
         },
         {
           "type": "minecraft:item",
@@ -377,8 +377,11 @@
             }
           ]
         },
-
-
+        {
+          "type": "minecraft:item",
+          "name": "zammod:scaffinity",
+          "weight": 3
+        },
         {
           "type": "minecraft:item",
           "name": "zammod:stardrop",
@@ -387,7 +390,7 @@
         {
           "type": "minecraft:item",
           "name": "zammod:hop_seeds",
-          "weight": 50,
+          "weight": 70,
           "functions": [
             {
               "function": "minecraft:set_count",

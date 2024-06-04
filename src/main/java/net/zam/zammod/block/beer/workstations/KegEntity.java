@@ -232,9 +232,12 @@ public class KegEntity extends BlockEntity implements MenuProvider {
                 entity.beerType = 10;
             } else if (match.get().getResultItem().getItem().equals(ZAMItems.MUG_OF_CHORUS_ALE.get())) {
                 entity.beerType = 11;
-            } else if (match.get().getResultItem().getItem().equals(ZAMItems.MUG_OF_NETHER_PORTER.get())) {
+            } else if (match.get().getResultItem().getItem().equals(ZAMItems.MUG_OF_NIMBUS_NECTAR.get())) {
                 entity.beerType = 12;
+            } else if (match.get().getResultItem().getItem().equals(ZAMItems.MUG_OF_STARDROP_SPARKLE.get())) {
+                entity.beerType = 13;
             }
+
 
             entity.beerLevel = entity.waterLevel;
             entity.waterLevel = 0;

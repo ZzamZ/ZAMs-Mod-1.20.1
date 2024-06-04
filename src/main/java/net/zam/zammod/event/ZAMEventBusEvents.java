@@ -7,6 +7,7 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegisterEvent;
 import net.zam.zammod.ZAMMod;
@@ -37,6 +38,11 @@ public class ZAMEventBusEvents {
         event.register(ForgeRegistries.Keys.RECIPE_TYPES, (helper) -> {
             helper.register(KegRecipe.Type.ID, KegRecipe.Type.INSTANCE);
         });
+    }
+
+    @SubscribeEvent
+    public static void registerAdvancementTriggers(FMLCommonSetupEvent event) {
+        CriteriaTriggers.register(FishingCatchTrigger.INSTANCE);
     }
 
     @SubscribeEvent

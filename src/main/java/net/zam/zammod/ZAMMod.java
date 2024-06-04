@@ -71,13 +71,11 @@ public class ZAMMod {
         modEventBus.addListener(this::onCommonSetup);
         modEventBus.addListener(this::commonSetup);
 
-        ArcadeManager.init();
-
         MinecraftForge.EVENT_BUS.register(this);
         MinecraftForge.EVENT_BUS.register(new StardropEffectHandler());
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> {
             modEventBus.addListener(this::registerRenderers);
-
+            ArcadeManager.init();
         });
         context.registerConfig(ModConfig.Type.COMMON, ZAMConfig.spec);
 

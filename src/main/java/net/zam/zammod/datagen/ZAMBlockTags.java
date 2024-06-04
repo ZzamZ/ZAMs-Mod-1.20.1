@@ -19,14 +19,33 @@ public class ZAMBlockTags extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
 
-      //  this.tag(BlockTags.CLIMBABLE)
-                //.add(ZAMBlocks.SCAFFINITY.get());
+        this.tag(BlockTags.CLIMBABLE)
+                .add(ZAMBlocks.SCAFFINITY.get());
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .add(ZAMBlocks.SAND_STAIRS.get())
                 .add(ZAMBlocks.SAND_SLAB.get());
 
-        this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
+        this.tag(BlockTags.MINEABLE_WITH_AXE).add(
+                ZAMBlocks.KEG.get(),
+                ZAMBlocks.MUG_EMPTY.get(),
+                ZAMBlocks.MUG_OF_SUN_PALE_ALE.get(),
+                ZAMBlocks.MUG_OF_DIGGER_BITTER.get(),
+                ZAMBlocks.MUG_OF_WITHER_STOUT.get(),
+                ZAMBlocks.MUG_OF_MAGNET_PILSNER.get(),
+                ZAMBlocks.MUG_OF_DROWNED_ALE.get(),
+                ZAMBlocks.MUG_OF_NIGHT_RAUCH.get(),
+                ZAMBlocks.MUG_OF_ICE_BEER.get(),
+                ZAMBlocks.MUG_OF_KVASS.get(),
+                ZAMBlocks.MUG_OF_LEPRECHAUN_CIDER.get(),
+                ZAMBlocks.MUG_OF_CHORUS_ALE.get(),
+                ZAMBlocks.MUG_OF_NETHER_PORTER.get(),
+                ZAMBlocks.MUG_OF_NIMBUS_NECTAR.get(),
+                ZAMBlocks.MUG_OF_STARDROP_SPARKLE.get());
+
+
+
+                this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
                 ZAMBlocks.WHITE_CONCRETE_SLAB.get(),
                 ZAMBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(),
                 ZAMBlocks.GRAY_CONCRETE_SLAB.get(),

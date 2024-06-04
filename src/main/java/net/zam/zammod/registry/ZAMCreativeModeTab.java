@@ -22,7 +22,7 @@ public class ZAMCreativeModeTab {
                 output.accept(ZAMItems.LOST_KEY.get());
                 //   output.accept(ZAMItems.OLD_RECORD_BOX.get());
                 output.accept(ZAMBlocks.ARCADE_MACHINE.get());
-             //   output.accept(ZAMBlocks.SCAFFINITY.get());
+                output.accept(ZAMBlocks.SCAFFINITY.get());
                 output.accept(ZAMItems.MARLIN_LANCE.get());
                 output.accept(ZAMItems.MARINE_BUBBLE.get());
                 output.accept(ZAMItems.GUARDIAN_HELMET.get());

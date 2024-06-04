@@ -30,7 +30,6 @@ import net.zam.zammod.util.ZAMOxidizable;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import java.util.Properties;
 import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
@@ -43,7 +42,7 @@ public class ZAMBlocks {
 
     //Ocean
     public static final RegistryObject<Block> LOST_BOUNTY = registerWithRenderer(LostBounty::new, "lost_bounty", new Item.Properties());
-   // public static final RegistryObject<Block> SCAFFINITY = registerBlockAndItem("scaffinity", () -> new ScaffinityBlock(BlockBehaviour.Properties.copy(Blocks.SCAFFOLDING).mapColor(MapColor.COLOR_LIGHT_BLUE).noLootTable()), 1);
+    public static final RegistryObject<Block> SCAFFINITY = registerBlockAndItem("scaffinity", () -> new ScaffinityBlock(BlockBehaviour.Properties.copy(Blocks.SCAFFOLDING).mapColor(MapColor.COLOR_LIGHT_BLUE).noLootTable()), 1);
 
     //Emerald Geode
     public static final RegistryObject<Block> EMERALD_CRYSTAL_BLOCK = registerBlock("emerald_crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(MapColor.EMERALD).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY)));
@@ -154,7 +153,7 @@ public class ZAMBlocks {
     //Beer
     public static final RegistryObject<Block> KEG = registerBlock("keg", () -> new Keg(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
     public static final RegistryObject<Block> HOP = registerBlockWithoutItem("hop", () -> new Hop(BlockBehaviour.Properties.copy(Blocks.CAVE_VINES).lightLevel(CaveVines.emission(0)).noOcclusion()));
-    public static final RegistryObject<Block> HOP_PLANT = registerBlockWithoutItem("hop_plant", () -> new HopPlant(BlockBehaviour.Properties.copy(Blocks.CAVE_VINES).lightLevel(CaveVines.emission(0)).noOcclusion()));
+    public static final RegistryObject<Block> HOP_PLANT = registerBlockWithoutItem("hop_plant", () -> new HopPlant(BlockBehaviour.Properties.copy(Blocks.CAVE_VINES).lightLevel(CaveVines.emission(0)).noOcclusion().noLootTable()));
     public static final RegistryObject<Block> MUG_EMPTY = registerBlockWithoutItem("mug_empty", () -> new MugBlock(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
     public static final RegistryObject<Block> MUG_OF_CHORUS_ALE = registerBlockWithoutItem("mug_of_chorus_ale", () -> new ChorusAleMug(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
     public static final RegistryObject<Block> MUG_OF_DIGGER_BITTER = registerBlockWithoutItem("mug_of_digger_bitter",() -> new DiggerBitterMug(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
@@ -204,20 +203,20 @@ public class ZAMBlocks {
 
 
 
-//   private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {
-//       RegistryObject<Block> blockObj = ZAMBlocks.BLOCKS.register(name, block);
-//      ZAMItems.ITEMS.register(name, getBlockSupplier(itemType, blockObj));
-//       return blockObj;
-//   }
+   private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {
+       RegistryObject<Block> blockObj = ZAMBlocks.BLOCKS.register(name, block);
+      ZAMItems.ITEMS.register(name, getBlockSupplier(itemType, blockObj));
+       return blockObj;
+   }
 
-//  private static Supplier<? extends BlockItem> getBlockSupplier(int itemType, RegistryObject<Block> blockObj) {
-//     switch (itemType) {
-//          default:
-//             return () -> new BlockItem(blockObj.get(), new Item.Properties());
-//          case 1:
-//              return () -> new ScaffinityBlockItem(blockObj.get(), new Item.Properties());
-//      }
-//  }
+  private static Supplier<? extends BlockItem> getBlockSupplier(int itemType, RegistryObject<Block> blockObj) {
+     switch (itemType) {
+          default:
+             return () -> new BlockItem(blockObj.get(), new Item.Properties());
+          case 1:
+              return () -> new ScaffinityBlockItem(blockObj.get(), new Item.Properties());
+      }
+  }
 
 
 

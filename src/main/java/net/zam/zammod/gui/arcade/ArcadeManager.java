@@ -6,6 +6,8 @@ import java.util.List;
 import net.minecraft.network.chat.Component;
 import net.zam.zammod.gui.arcade.games.ArcadeSnake;
 import net.zam.zammod.block.arcade.ArcadeTileEntity;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class ArcadeManager {
     public interface GameConstructor {
@@ -40,6 +42,7 @@ public class ArcadeManager {
         return this.names.get(index).getString();
     }
 
+    @OnlyIn(Dist.CLIENT)
     public static void init() {
         new ArcadeManager();
         instance.add(ArcadeSnake::new, "snake");
