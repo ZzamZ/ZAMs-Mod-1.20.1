@@ -1,7 +1,17 @@
 package net.zam.zammod.datagen;
 
+import com.google.common.collect.ImmutableList;
+import com.google.gson.JsonElement;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.models.blockstates.BlockStateGenerator;
+import net.minecraft.data.models.blockstates.MultiPartGenerator;
+import net.minecraft.data.models.blockstates.Variant;
+import net.minecraft.data.models.blockstates.VariantProperties;
+import net.minecraft.data.models.model.ModelLocationUtils;
+import net.minecraft.data.models.model.ModelTemplates;
+import net.minecraft.data.models.model.TextureMapping;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -11,11 +21,20 @@ import net.minecraftforge.registries.RegistryObject;
 import net.zam.zammod.ZAMMod;
 import net.zam.zammod.registry.ZAMBlocks;
 
+import java.util.List;
+import java.util.function.BiConsumer;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
+import java.util.stream.Collectors;
+
 public class ZAMBlockModelGenerator extends BlockStateProvider {
+    Consumer<BlockStateGenerator> blockStateOutput;
+    BiConsumer<ResourceLocation, Supplier<JsonElement>> modelOutput;
+
     public ZAMBlockModelGenerator(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, ZAMMod.MOD_ID, exFileHelper);
     }
-
     @Override
     protected void registerStatesAndModels() {
 
@@ -94,7 +113,15 @@ public class ZAMBlockModelGenerator extends BlockStateProvider {
         blockItem(ZAMBlocks.PINK_CONCRETE_SLAB);
         blockItem(ZAMBlocks.PINK_CONCRETE_STAIRS);
 
-   //     logBlock(((RotatedPillarBlock) ZAMBlocks.AVOCADO_LOG.get()));
+        blockWithItem(ZAMBlocks.OPAL_ORE);
+        blockWithItem(ZAMBlocks.DEEPSLATE_OPAL_ORE);
+        blockWithItem(ZAMBlocks.OPAL_BLOCK);
+        blockWithItem(ZAMBlocks.AQUAMARINE_ORE);
+        blockWithItem(ZAMBlocks.DEEPSLATE_AQUAMARINE_ORE);
+        blockWithItem(ZAMBlocks.AQUAMARINE_BLOCK);
+
+
+        //     logBlock(((RotatedPillarBlock) ZAMBlocks.AVOCADO_LOG.get()));
    //     axisBlock(((RotatedPillarBlock) ZAMBlocks.AVOCADO_WOOD.get()), blockTexture(ZAMBlocks.AVOCADO_LOG.get()), blockTexture(ZAMBlocks.AVOCADO_LOG.get()));
    //     axisBlock((RotatedPillarBlock) ZAMBlocks.STRIPPED_AVOCADO_LOG.get(), new ResourceLocation(ZAMMod.MOD_ID, "block/stripped_avocado_log"),
    //             new ResourceLocation(ZAMMod.MOD_ID, "block/stripped_avocado_log_top"));
@@ -110,6 +137,7 @@ public class ZAMBlockModelGenerator extends BlockStateProvider {
 //
    //     leavesBlock(ZAMBlocks.AVOCADO_LEAVES);
    //     saplingBlock(ZAMBlocks.AVOCADO_SAPLING);
+        blockWithItem(ZAMBlocks.GRIMM_SOIL);
 
     }
 

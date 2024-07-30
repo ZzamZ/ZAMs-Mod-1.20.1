@@ -1,0 +1,84 @@
+{
+  "displayName": "Music Disc Loot Box",
+  "localizedNames": {
+    "en_us": "Music Disc Loot Box"
+  },
+  "contents": [
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_13",
+      "rarity": "common"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_cat",
+      "rarity": "common"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_blocks",
+      "rarity": "common"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_chirp",
+      "rarity": "common"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_far",
+      "rarity": "common"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_mall",
+      "rarity": "common"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_mellohi",
+      "rarity": "common"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_stal",
+      "rarity": "common"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_strad",
+      "rarity": "common"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_ward",
+      "rarity": "rare"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_11",
+      "rarity": "rare"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_wait",
+      "rarity": "rare"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_pigstep",
+      "rarity": "ultra_rare"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_otherside",
+      "rarity": "ultra_rare"
+    },
+    {
+      "type": "single",
+      "id": "minecraft:music_disc_5",
+      "rarity": "ultra_rare"
+    }
+  ],
+  "color": "#555555"
+}

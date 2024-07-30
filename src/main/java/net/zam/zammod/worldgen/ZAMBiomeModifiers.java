@@ -14,16 +14,10 @@ import net.zam.zammod.registry.ZAMTags;
 
 public class ZAMBiomeModifiers {
 
-    public static final ResourceKey<BiomeModifier> ADD_EMERALD_GEODE = registerKey("add_emerald_geode");
-
 
     public static void bootstrap(BootstapContext<BiomeModifier> context) {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
-
-        context.register(ADD_EMERALD_GEODE, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(biomes.getOrThrow(ZAMTags.Biomes.HAS_EMERALD_GEODE),
-                HolderSet.direct(placedFeatures.getOrThrow(ZAMPlacedFeatures.EMERALD_GEODE_PLACED_KEY)), GenerationStep.Decoration.LOCAL_MODIFICATIONS));
-
 
     }
     private static ResourceKey<BiomeModifier> registerKey(String name) {

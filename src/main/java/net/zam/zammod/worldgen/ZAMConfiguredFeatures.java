@@ -30,38 +30,21 @@ import java.util.List;
 public class ZAMConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> EMERALD_GEODE_KEY = registerKey("emerald_geode");
     public static final ResourceKey<ConfiguredFeature<?, ?>> AVOCADO_TREE_KEY = registerKey("avocado_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> REDWOOD_TREE_KEY = registerKey("redwood_tree");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> REDWOOD_TREE_MEDIUM_KEY = registerKey("redwood_tree_medium");
-    public static final ResourceKey<ConfiguredFeature<?, ?>> REDWOOD_TREE_LARGE_KEY = registerKey("redwood_tree_large");
 
    public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
- //      register(context, AVOCADO_TREE_KEY, Feature.TREE,
- //              new TreeConfiguration.TreeConfigurationBuilder(
- //                      BlockStateProvider.simple(ZAMBlocks.AVOCADO_LOG.get()),
- //                      new CrossTrunkPlacer(4, 2, 0),
- //                      BlockStateProvider.simple(ZAMBlocks.AVOCADO_LEAVES.get()),
- //                      new AvocadoFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0)),
- //                      new TwoLayersFeatureSize(1, 0, 1))
- //                      .dirt(BlockStateProvider.simple(Blocks.DIRT))
- //                      .ignoreVines()
- //                      .forceDirt()
- //                      .build());
+       //      register(context, AVOCADO_TREE_KEY, Feature.TREE,
+       //              new TreeConfiguration.TreeConfigurationBuilder(
+       //                      BlockStateProvider.simple(ZAMBlocks.AVOCADO_LOG.get()),
+       //                      new CrossTrunkPlacer(4, 2, 0),
+       //                      BlockStateProvider.simple(ZAMBlocks.AVOCADO_LEAVES.get()),
+       //                      new AvocadoFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0)),
+       //                      new TwoLayersFeatureSize(1, 0, 1))
+       //                      .dirt(BlockStateProvider.simple(Blocks.DIRT))
+       //                      .ignoreVines()
+       //                      .forceDirt()
+       //                      .build());
 
-        register(context, EMERALD_GEODE_KEY, Feature.GEODE,
-                new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
-                        BlockStateProvider.simple(ZAMBlocks.EMERALD_CRYSTAL_BLOCK.get()),
-                        BlockStateProvider.simple(ZAMBlocks.BUDDING_EMERALD.get()),
-                        BlockStateProvider.simple(Blocks.CALCITE),
-                        BlockStateProvider.simple(Blocks.SMOOTH_BASALT),
-                        List.of(ZAMBlocks.SMALL_EMERALD_BUD.get().defaultBlockState(), ZAMBlocks.MEDIUM_EMERALD_BUD.get().defaultBlockState(), ZAMBlocks.LARGE_EMERALD_BUD.get().defaultBlockState(), ZAMBlocks.EMERALD_CLUSTER.get().defaultBlockState()),
-                        BlockTags.FEATURES_CANNOT_REPLACE, BlockTags.GEODE_INVALID_BLOCKS),
-                        new GeodeLayerSettings(1.7D, 2.2D, 3.2D, 4.2D),
-                        new GeodeCrackSettings(0.95D, 2.0D, 2), 0.35D, 0.083D,
-                        true, UniformInt.of(4, 6),
-                        UniformInt.of(3, 4),
-                        UniformInt.of(1, 2), -16, 16, 0.05D, 1));
-    }
-
+   }
 
     public static ResourceKey<ConfiguredFeature<?, ?>> registerKey(String name){
             return ResourceKey.create(Registries.CONFIGURED_FEATURE, new ResourceLocation(ZAMMod.MOD_ID, name));

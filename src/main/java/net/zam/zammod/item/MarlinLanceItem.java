@@ -45,7 +45,7 @@ public class MarlinLanceItem extends SwordItem {
             final FoodProperties foodProperties = itemstack.getFoodProperties(entity);
             if (foodProperties != null) player.getFoodData().eat(foodProperties.getNutrition(), foodProperties.getSaturationModifier());
         }
-        itemstack.setDamageValue(itemstack.getDamageValue() + 30);
+        itemstack.setDamageValue(itemstack.getDamageValue() + 15);
         if (itemstack.getDamageValue() >= itemstack.getMaxDamage()) itemstack.shrink(1);
         return itemstack;
     }

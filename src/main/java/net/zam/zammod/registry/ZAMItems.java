@@ -29,7 +29,7 @@ public class ZAMItems {
     public static final RegistryObject<Item> MARINE_BUBBLE = ITEMS.register("marine_bubble", () -> new MarineBubbleItem(new Item.Properties()));
     public static final RegistryObject<Item> EMERALD_SHARD = ITEMS.register("emerald_shard", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).effect(() -> new MobEffectInstance(ZAMEffects.FADED_EFFECT.get(), 2400), 1.0F).alwaysEat().build())));
    // public static final RegistryObject<Item> OLD_RECORD_BOX = registerWithTab(() -> new LootBoxItem(ZAMLootTables.OLD_RECORD_BOX), "old_record_box");
-  //  public static final RegistryObject<Item> MUSIC_DISC_LOOT_BOX = ITEMS.register("music_disc_loot_box", () -> new MusicDiscLootBoxItem(new Item.Properties()));
+    public static final RegistryObject<Item> MUSIC_DISC_LOOT_BOX = ITEMS.register("music_disc_loot_box", () -> new MusicDiscLootBoxItem(new Item.Properties()));
 
     //Food
     public static final RegistryObject<Item> CORAL_FRUIT = ITEMS.register("coral_fruit", () -> new CoralFruitItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.0F).alwaysEat().build()), true));
@@ -40,12 +40,30 @@ public class ZAMItems {
     public static final RegistryObject<Item> LOST_KEY = ITEMS.register("lost_key", () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
 
 
+    //Stardew Valley Template & Tools
+    public static final RegistryObject<Item> STARDEW_SMITHING_TEMPLATE = ITEMS.register("stardew_smithing_template", ToolsSmithingTemplateItem::new);
+    public static final RegistryObject<Item> STARDEW_SWORD = ITEMS.register("stardew_sword", () -> new SwordItem(Tiers.NETHERITE, 3, -2.4F, (new Item.Properties()).fireResistant()));
+    public static final RegistryObject<Item> STARDEW_SHOVEL = ITEMS.register("stardew_shovel", () -> new ShovelItem(Tiers.NETHERITE, 1.5F, -3.0F, (new Item.Properties()).fireResistant()));
+    public static final RegistryObject<Item> STARDEW_PICKAXE = ITEMS.register("stardew_pickaxe", () -> new PickaxeItem(Tiers.NETHERITE, 1, -2.8F, (new Item.Properties()).fireResistant()));
+    public static final RegistryObject<Item> STARDEW_AXE = ITEMS.register("stardew_axe", () -> new AxeItem(Tiers.NETHERITE, 5.0F, -3.0F, (new Item.Properties()).fireResistant()));
+    public static final RegistryObject<Item> STARDEW_HOE = ITEMS.register("stardew_hoe", () -> new HoeItem(Tiers.NETHERITE, -4, 0.0F, (new Item.Properties()).fireResistant()));
+
     //Fishing Medals
     public static final RegistryObject<Item> WOOD_MEDAL = ITEMS.register("wood_medal", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BRONZE_MEDAL = ITEMS.register("bronze_medal", () -> new Item(new Item.Properties().rarity(Rarity.COMMON)));
     public static final RegistryObject<Item> SILVER_MEDAL = ITEMS.register("silver_medal", () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
     public static final RegistryObject<Item> GOLD_MEDAL = ITEMS.register("gold_medal", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> LEGENDARY_MEDAL = ITEMS.register("legendary_medal", () -> new Item(new Item.Properties().rarity(Rarity.EPIC)));
+
+
+    //Gems
+    public static final RegistryObject<Item> OPAL = ITEMS.register("opal", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> AQUAMARINE = ITEMS.register("aquamarine", () -> new Item(new Item.Properties()));
+
+
+    //Selling Bins
+    public static final RegistryObject<Item> SHIPPING_BIN_BLOCK_ITEM = ITEMS.register("shipping_bin", () -> new BlockItem(ZAMBlocks.SHIPPING_BIN_BLOCK.get(), new Item.Properties()));
+
 
 
     //Armor
@@ -63,8 +81,8 @@ public class ZAMItems {
     public static final RegistryObject<Item> EMERALD_HORSE_ARMOR = ITEMS.register("emerald_horse_armor", () -> new HorseArmorItem(13, "emerald", new Item.Properties().stacksTo(1)));
 
 
-   // public static final RegistryObject<Item> CLAM = ITEMS.register("clam", () -> new Item(new Item.Properties()));
-   // public static final RegistryObject<Item> OTTER_SPAWN_EGG = ITEMS.register("otter_spawn_egg", () -> new ForgeSpawnEggItem(ZAMEntities.OTTER, 0x352C34, 0xB49494, new Item.Properties()));
+    public static final RegistryObject<Item> CLAM = ITEMS.register("clam", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> OTTER_SPAWN_EGG = ITEMS.register("otter_spawn_egg", () -> new ForgeSpawnEggItem(ZAMEntities.OTTER, 0x352C34, 0xB49494, new Item.Properties()));
 
 
     //Badges (WIP)
@@ -103,22 +121,69 @@ public class ZAMItems {
     public static final RegistryObject<Item> MUG_OF_STARDROP_SPARKLE = ITEMS.register("mug_of_stardrop_sparkle", () -> new MugItem(ZAMBlocks.MUG_OF_STARDROP_SPARKLE.get(), new Item.Properties().stacksTo(16).food(ZAMBeerProperties.STARDROP_SPARKLE)));
 
     //Pokemon Black & White Collection 12
-   // public static final RegistryObject<Item> POKEMON_ALBUM_CASE = ITEMS.register("pokemon_album_case", () -> new PokemonAlbumCase(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
-   // public static final RegistryObject<Item> POKEMON_STRIATON_CITY = ITEMS.register("pokemon_striaton_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_STRIATON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10160));
-   // public static final RegistryObject<Item> POKEMON_CASTELIA_CITY = ITEMS.register("pokemon_castelia_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_CASTELIA_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3640));
-  //  public static final RegistryObject<Item> POKEMON_NIMBASA_CITY = ITEMS.register("pokemon_nimbasa_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NIMBASA_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4480));
-  //  public static final RegistryObject<Item> POKEMON_DRIFTVEIL_CITY = ITEMS.register("pokemon_driftveil_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_DRIFTVEIL_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 8400));
-   // public static final RegistryObject<Item> POKEMON_MISTRALTON_CITY = ITEMS.register("pokemon_mistralton_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_MISTRALTON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4160));
-  //  public static final RegistryObject<Item> POKEMON_ICIRRUS_CITY = ITEMS.register("pokemon_icirrus_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_ICIRRUS_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3520));
-   // public static final RegistryObject<Item> POKEMON_VIRBANK_CITY = ITEMS.register("pokemon_virbank_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VIRBANK_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10120));
-   // public static final RegistryObject<Item> POKEMON_HUMILAU_CITY = ITEMS.register("pokemon_humilau_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_HUMILAU_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4840));
-  //  public static final RegistryObject<Item> POKEMON_EAST_PROVINCE = ITEMS.register("pokemon_east_province", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_EAST_PROVINCE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4040));
-   // public static final RegistryObject<Item> POKEMON_GEAR_STATION = ITEMS.register("pokemon_gear_station", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_GEAR_STATION, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4640));
-  //  public static final RegistryObject<Item> POKEMON_NS_CASTLE = ITEMS.register("pokemon_ns_castle", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NS_CASTLE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4440));
-  //  public static final RegistryObject<Item> POKEMON_VOLO = ITEMS.register("pokemon_volo", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VOLO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6000));
+     // public static final RegistryObject<Item> POKEMON_ALBUM_CASE = ITEMS.register("pokemon_album_case", () -> new PokemonAlbumCase(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
+      public static final RegistryObject<Item> POKEMON_ACCUMULA_TOWN = ITEMS.register("pokemon_accumula_town", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_STRIATON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10160));
+      public static final RegistryObject<Item> POKEMON_STRIATON_CITY = ITEMS.register("pokemon_striaton_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_STRIATON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10160));
+      public static final RegistryObject<Item> POKEMON_NACRENE_CITY = ITEMS.register("pokemon_nacrene_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_STRIATON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10160));
+      public static final RegistryObject<Item> POKEMON_CASTELIA_CITY = ITEMS.register("pokemon_castelia_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_CASTELIA_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3640));
+      public static final RegistryObject<Item> POKEMON_NIMBASA_CITY = ITEMS.register("pokemon_nimbasa_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NIMBASA_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4480));
+      public static final RegistryObject<Item> POKEMON_DRIFTVEIL_CITY = ITEMS.register("pokemon_driftveil_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_DRIFTVEIL_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 8400));
+      public static final RegistryObject<Item> POKEMON_MISTRALTON_CITY = ITEMS.register("pokemon_mistralton_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_MISTRALTON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4160));
+      public static final RegistryObject<Item> POKEMON_ICIRRUS_CITY = ITEMS.register("pokemon_icirrus_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_ICIRRUS_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3520));
+      public static final RegistryObject<Item> POKEMON_VIRBANK_CITY = ITEMS.register("pokemon_virbank_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VIRBANK_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10120));
+      public static final RegistryObject<Item> POKEMON_HUMILAU_CITY = ITEMS.register("pokemon_humilau_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_HUMILAU_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4840));
+      public static final RegistryObject<Item> POKEMON_OPELUCID_CITY = ITEMS.register("pokemon_opelucid_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_HUMILAU_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4840));
+      public static final RegistryObject<Item> POKEMON_UNDELLA_TOWN = ITEMS.register("pokemon_undella_town", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_HUMILAU_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4840));
+      public static final RegistryObject<Item> POKEMON_UNDELLA_TOWN_SUMMER = ITEMS.register("pokemon_undella_town_summer", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_HUMILAU_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4840));
 
 
-    //Pokemon Explorers Collection 12
+      public static final RegistryObject<Item> POKEMON_EAST_PROVINCE = ITEMS.register("pokemon_east_province", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_EAST_PROVINCE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4040));
+      public static final RegistryObject<Item> POKEMON_GEAR_STATION = ITEMS.register("pokemon_gear_station", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_GEAR_STATION, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4640));
+      public static final RegistryObject<Item> POKEMON_NS_CASTLE = ITEMS.register("pokemon_ns_castle", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NS_CASTLE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4440));
+      public static final RegistryObject<Item> POKEMON_VOLO = ITEMS.register("pokemon_volo", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VOLO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6000));
+      public static final RegistryObject<Item> POKEMON_LOREKEEPER_ZINNIA = ITEMS.register("pokemon_lorekeeper_zinnia", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_EAST_PROVINCE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4040));
+      public static final RegistryObject<Item> POKEMON_RIVAL_MUSIC = ITEMS.register("pokemon_rival_music", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_GEAR_STATION, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4640));
+      public static final RegistryObject<Item> POKEMON_LUMIOSE_CITY = ITEMS.register("pokemon_lumiose_city", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NS_CASTLE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4440));
+      public static final RegistryObject<Item> POKEMON_HOENN_VICTORY_ROAD = ITEMS.register("pokemon_hoenn_victory_road", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VOLO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6000));
+      public static final RegistryObject<Item> POKEMON_UNOVA_VICOTRY_ROAD = ITEMS.register("pokemon_unova_victory_road", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_EAST_PROVINCE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4040));
+      public static final RegistryObject<Item> POKEMON_POKESTAR_STUDIOS = ITEMS.register("pokemon_pokestar_studios", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_GEAR_STATION, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4640));
+      public static final RegistryObject<Item> POKEMON_GATE = ITEMS.register("pokemon_gate", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NS_CASTLE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4440));
+      public static final RegistryObject<Item> POKEMON_POKEMON_CENTER = ITEMS.register("pokemon_pokemon_center", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VOLO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6000));
+     // public static final RegistryObject<Item> POKEMON_POKEMON_CENTER = ITEMS.register("pokemon_pokemon_center", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VOLO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6000));
+
+
+
+ // public static final RegistryObject<Item> STARDEW_VALLEY_ALBUM_CASE = ITEMS.register("stardew_album_case", () -> new PokemonAlbumCase(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
+ // public static final RegistryObject<Item> STARDEW_VALLEY_OVERTURE = ITEMS.register("stardew_valley_overture", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_STRIATON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10160));
+ // public static final RegistryObject<Item> STARDEW_VALLEY_SPING = ITEMS.register("stardew_valley_spring", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_CASTELIA_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3640));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_PELICAN_TOWN = ITEMS.register("stardew_valley_pelican_town", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NIMBASA_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4480));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_COUNTRY_SHOP = ITEMS.register("stardew_valley_country_shop", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_DRIFTVEIL_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 8400));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_FAIR = ITEMS.register("stardew_valley_fair", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_DRIFTVEIL_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 8400));
+ // public static final RegistryObject<Item> STARDEW_VALLEY_SUMMER = ITEMS.register("stardew_valley_summer", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_MISTRALTON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4160));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_STARDROP_SALOON = ITEMS.register("stardew_valley_stardrop_saloon", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_ICIRRUS_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3520));
+ // public static final RegistryObject<Item> STARDEW_VALLEY_ADVENTURE_GUILD = ITEMS.register("stardew_valley_adventure_guild", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VIRBANK_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10120));
+ // public static final RegistryObject<Item> STARDEW_VALLEY_FALL = ITEMS.register("stardew_valley_fall", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_HUMILAU_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4840));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_LIBRARY_MUSEUM = ITEMS.register("stardew_valley_library_museum", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_EAST_PROVINCE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4040));
+ // public static final RegistryObject<Item> STARDEW_VALLEY_SPIRITS_EVE_FESTIVAL = ITEMS.register("stardew_valley_spirits_eve_festival", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_GEAR_STATION, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4640));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_WINTER = ITEMS.register("stardew_valley_winter", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NS_CASTLE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4440));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_WINTER_FESTIVAL = ITEMS.register("stardew_valley_winter_festival", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VOLO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6000));
+
+ // public static final RegistryObject<Item> STARDEW_VALLEY_ALBUM_CASE_TWO = ITEMS.register("stardew_album_case_two", () -> new PokemonAlbumCase(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
+ // public static final RegistryObject<Item> STARDEW_VALLEY_GOLDEN_STAR = ITEMS.register("stardew_valley_golden_star", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_STRIATON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10160));
+ // public static final RegistryObject<Item> STARDEW_VALLEY_DISTANT_BANJO = ITEMS.register("stardew_valley_distant_banjo", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_CASTELIA_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3640));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_LUAU_FESTIVAL = ITEMS.register("stardew_valley_luau_festival", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NIMBASA_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4480));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_MOONLIGHT_JELLIES = ITEMS.register("stardew_valley_moonlight_jellies", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_DRIFTVEIL_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 8400));
+ // public static final RegistryObject<Item> STARDEW_VALLEY_SUMMIT_CELEBRATION = ITEMS.register("stardew_valley_summit_celebration", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_MISTRALTON_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4160));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_ECHOS = ITEMS.register("stardew_valley_echos", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_ICIRRUS_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 3520));
+ // public static final RegistryObject<Item> STARDEW_VALLEY_PROFESSOR_SNAIL_RADIO = ITEMS.register("stardew_valley_professor_snail_radio", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VIRBANK_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 10120));
+ // public static final RegistryObject<Item> STARDEW_VALLEY_CRYSTAL_BELLS = ITEMS.register("stardew_valley_crystal_bells", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_HUMILAU_CITY, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4840));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_NIGHT_MARKET = ITEMS.register("stardew_valley_night_market", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_EAST_PROVINCE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4040));
+ // public static final RegistryObject<Item> STARDEW_VALLEY_SUBMARINE_THEME = ITEMS.register("stardew_valley_submarine_theme", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_GEAR_STATION, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4640));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_MOVIE_THEATER = ITEMS.register("stardew_valley_movie_theater", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_NS_CASTLE, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 4440));
+ //  public static final RegistryObject<Item> STARDEW_VALLEY_GINGER_ISLAND = ITEMS.register("stardew_valley_ginger_island", () -> new PokemonBlackWhiteCollection(4, ZAMSounds.POKEMON_VOLO, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 6000));
+//??
+
+ //Pokemon Explorers Collection 12
 
     //Castle Crashers Story Collection 12
    // public static final RegistryObject<Item> CASTLE_CRASHERS_DARK_SKIES = ITEMS.register("castle_crashers_dark_skies", () -> new RecordItem(4, ZAMSounds.CASTLE_CRASHERS_DARK_SKIES, new Item.Properties().rarity(Rarity.RARE).stacksTo(1), 5360));

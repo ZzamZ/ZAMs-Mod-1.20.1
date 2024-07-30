@@ -1,14 +1,11 @@
 package net.zam.zammod.registry;
 
-import net.minecraft.core.BlockPos;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -24,87 +21,30 @@ import net.zam.zammod.block.beer.plants.Hop;
 import net.zam.zammod.block.beer.plants.HopPlant;
 import net.zam.zammod.block.beer.workstations.Keg;
 import net.zam.zammod.block.chest.LostBounty;
-import net.zam.zammod.block.copper.*;
+import net.zam.zammod.block.grimm.GrimmFireBlock;
+import net.zam.zammod.block.grimm.GrimmSoilBlock;
+import net.zam.zammod.block.sellingbin.bins.ShippingBinBlock;
 import net.zam.zammod.item.renderer.BlockItemWithoutLevelRenderer;
-import net.zam.zammod.util.ZAMOxidizable;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
-import java.util.function.ToIntFunction;
 
 public class ZAMBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ZAMMod.MOD_ID);
 
     //Arcade
-    public static final RegistryObject<Block> ARCADE_MACHINE = registerBlock("arcade_machine", () -> new ArcadeMachineBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).strength(2.0F).sound(SoundType.METAL).noOcclusion().toString()));
+    public static final RegistryObject<Block> ARCADE_MACHINE = registerBlock("arcade_machine", () -> new ArcadeMachineBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).strength(2.0F).sound(SoundType.METAL).noOcclusion()));
 
 
     //Ocean
     public static final RegistryObject<Block> LOST_BOUNTY = registerWithRenderer(LostBounty::new, "lost_bounty", new Item.Properties());
     public static final RegistryObject<Block> SCAFFINITY = registerBlockAndItem("scaffinity", () -> new ScaffinityBlock(BlockBehaviour.Properties.copy(Blocks.SCAFFOLDING).mapColor(MapColor.COLOR_LIGHT_BLUE).noLootTable()), 1);
 
-    //Emerald Geode
-    public static final RegistryObject<Block> EMERALD_CRYSTAL_BLOCK = registerBlock("emerald_crystal_block", () -> new AmethystBlock(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK).mapColor(MapColor.EMERALD).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY)));
-    public static final RegistryObject<Block> BUDDING_EMERALD = registerBlock("budding_emerald", () -> new BuddingEmeraldBlock(BlockBehaviour.Properties.of().mapColor(MapColor.EMERALD).randomTicks().strength(1.5F).sound(SoundType.AMETHYST).requiresCorrectToolForDrops().pushReaction(PushReaction.DESTROY)));
-    public static final RegistryObject<Block> EMERALD_CLUSTER = registerBlock("emerald_cluster", () -> new AmethystClusterBlock(7, 3, BlockBehaviour.Properties.of().mapColor(MapColor.EMERALD).forceSolidOn().noOcclusion().randomTicks().sound(SoundType.AMETHYST_CLUSTER).strength(1.5F).pushReaction(PushReaction.DESTROY).lightLevel((p_152632_) -> 8)));
-    public static final RegistryObject<AmethystClusterBlock> LARGE_EMERALD_BUD = registerBlock("large_emerald_bud", () -> new AmethystClusterBlock(5, 3, BlockBehaviour.Properties.copy(ZAMBlocks.EMERALD_CLUSTER.get()).sound(SoundType.MEDIUM_AMETHYST_BUD).forceSolidOn().pushReaction(PushReaction.DESTROY).lightLevel((p_152629_) -> 4)));
-    public static final RegistryObject<AmethystClusterBlock> MEDIUM_EMERALD_BUD = registerBlock("medium_emerald_bud", () -> new AmethystClusterBlock(4, 3, BlockBehaviour.Properties.copy(ZAMBlocks.EMERALD_CLUSTER.get()).sound(SoundType.LARGE_AMETHYST_BUD).forceSolidOn().pushReaction(PushReaction.DESTROY).lightLevel((p_152617_) -> 2)));
-    public static final RegistryObject<AmethystClusterBlock> SMALL_EMERALD_BUD = registerBlock("small_emerald_bud", () -> new AmethystClusterBlock(3, 4, BlockBehaviour.Properties.copy(ZAMBlocks.EMERALD_CLUSTER.get()).sound(SoundType.SMALL_AMETHYST_BUD).forceSolidOn().pushReaction(PushReaction.DESTROY)));
-
-
     //Froglights
     public static final RegistryObject<Block> RUDDY_FROGLIGHT = registerBlock("ruddy_froglight", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OCHRE_FROGLIGHT).mapColor(MapColor.COLOR_RED).strength(0.3f).lightLevel(b -> 15).sound(SoundType.FROGLIGHT)));
     public static final RegistryObject<Block> AZURE_FROGLIGHT = registerBlock("azure_froglight", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OCHRE_FROGLIGHT).mapColor(MapColor.COLOR_BLUE).strength(0.3f).lightLevel(b -> 15).sound(SoundType.FROGLIGHT)));
     public static final RegistryObject<Block> EBON_FROGLIGHT = registerBlock("ebon_froglight", () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OCHRE_FROGLIGHT).mapColor(MapColor.COLOR_BLACK).strength(0.3f).lightLevel(b -> 15).sound(SoundType.FROGLIGHT)));
-
-
-    //Copper
-    public static final RegistryObject<Block> CHISELED_COPPER = registerBlock("chiseled_copper", () -> new WeatheringCopperFullBlock(convert(ZAMOxidizable.CopperOxidizableLevel.UNAFFECTED), BlockBehaviour.Properties.copy(Blocks.COPPER_BLOCK)));
-    public static final RegistryObject<Block> WAXED_CHISELED_COPPER = registerBlock("waxed_chiseled_copper", () -> new Block(BlockBehaviour.Properties.copy(CHISELED_COPPER.get())));
-    public static final RegistryObject<Block> EXPOSED_CHISELED_COPPER = registerBlock("exposed_chiseled_copper", () -> new WeatheringCopperFullBlock(convert(ZAMOxidizable.CopperOxidizableLevel.EXPOSED), BlockBehaviour.Properties.copy(Blocks.EXPOSED_COPPER)));
-    public static final RegistryObject<Block> WAXED_EXPOSED_CHISELED_COPPER = registerBlock("waxed_exposed_chiseled_copper", () -> new Block(BlockBehaviour.Properties.copy(EXPOSED_CHISELED_COPPER.get())));
-    public static final RegistryObject<Block> OXIDIZED_CHISELED_COPPER = registerBlock("oxidized_chiseled_copper", () -> new WeatheringCopperFullBlock(convert(ZAMOxidizable.CopperOxidizableLevel.OXIDIZED), BlockBehaviour.Properties.copy(Blocks.OXIDIZED_COPPER)));
-    public static final RegistryObject<Block> WAXED_OXIDIZED_CHISELED_COPPER = registerBlock("waxed_oxidized_chiseled_copper", () -> new Block(BlockBehaviour.Properties.copy(OXIDIZED_CHISELED_COPPER.get())));
-    public static final RegistryObject<Block> WEATHERED_CHISELED_COPPER = registerBlock("weathered_chiseled_copper", () -> new WeatheringCopperFullBlock(convert(ZAMOxidizable.CopperOxidizableLevel.WEATHERED), BlockBehaviour.Properties.copy(Blocks.WEATHERED_COPPER)));
-    public static final RegistryObject<Block> WAXED_WEATHERED_CHISELED_COPPER = registerBlock("waxed_weathered_chiseled_copper", () -> new Block(BlockBehaviour.Properties.copy(WEATHERED_CHISELED_COPPER.get())));
-
-    public static final RegistryObject<Block> COPPER_DOOR = registerBlock("copper_door", () -> new WeatheringDoorBlock(ZAMBlockSetTypes.COPPER, ZAMOxidizable.CopperOxidizableLevel.UNAFFECTED, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).strength(3.0F, 6.0F).noOcclusion().pushReaction(PushReaction.DESTROY)));
-    public static final RegistryObject<Block> WAXED_COPPER_DOOR = registerBlock("waxed_copper_door", () -> new CopperDoorBlock(ZAMBlockSetTypes.COPPER, BlockBehaviour.Properties.copy(COPPER_DOOR.get())));
-    public static final RegistryObject<Block> EXPOSED_COPPER_DOOR = registerBlock("exposed_copper_door", () -> new WeatheringDoorBlock(ZAMBlockSetTypes.COPPER, ZAMOxidizable.CopperOxidizableLevel.EXPOSED, BlockBehaviour.Properties.copy(COPPER_DOOR.get()).mapColor(MapColor.TERRACOTTA_LIGHT_GRAY)));
-    public static final RegistryObject<Block> WAXED_EXPOSED_COPPER_DOOR = registerBlock("waxed_exposed_copper_door", () -> new CopperDoorBlock(ZAMBlockSetTypes.COPPER, BlockBehaviour.Properties.copy(EXPOSED_COPPER_DOOR.get())));
-    public static final RegistryObject<Block> OXIDIZED_COPPER_DOOR = registerBlock("oxidized_copper_door", () -> new WeatheringDoorBlock(ZAMBlockSetTypes.COPPER, ZAMOxidizable.CopperOxidizableLevel.OXIDIZED, BlockBehaviour.Properties.copy(COPPER_DOOR.get()).mapColor(MapColor.WARPED_NYLIUM)));
-    public static final RegistryObject<Block> WAXED_OXIDIZED_COPPER_DOOR = registerBlock("waxed_oxidized_copper_door", () -> new CopperDoorBlock(ZAMBlockSetTypes.COPPER, BlockBehaviour.Properties.copy(OXIDIZED_COPPER_DOOR.get())));
-    public static final RegistryObject<Block> WEATHERED_COPPER_DOOR = registerBlock("weathered_copper_door", () -> new WeatheringDoorBlock(ZAMBlockSetTypes.COPPER, ZAMOxidizable.CopperOxidizableLevel.WEATHERED, BlockBehaviour.Properties.copy(COPPER_DOOR.get()).mapColor(MapColor.WARPED_STEM)));
-    public static final RegistryObject<Block> WAXED_WEATHERED_COPPER_DOOR = registerBlock("waxed_weathered_copper_door", () -> new CopperDoorBlock(ZAMBlockSetTypes.COPPER, BlockBehaviour.Properties.copy(WEATHERED_COPPER_DOOR.get())));
-
-    public static final RegistryObject<Block> COPPER_TRAPDOOR = registerBlock("copper_trapdoor", () -> new WeatheredCopperTrapdoorBlock(ZAMBlockSetTypes.COPPER, ZAMOxidizable.CopperOxidizableLevel.UNAFFECTED, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).strength(3.0F, 6.0F).noOcclusion().pushReaction(PushReaction.DESTROY).isValidSpawn(ZAMBlocks::never)));
-    public static final RegistryObject<Block> WAXED_COPPER_TRAPDOOR = registerBlock("waxed_copper_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(COPPER_TRAPDOOR.get()).isValidSpawn(ZAMBlocks::never), ZAMBlockSetTypes.COPPER));
-    public static final RegistryObject<Block> EXPOSED_COPPER_TRAPDOOR = registerBlock("exposed_copper_trapdoor", () -> new WeatheredCopperTrapdoorBlock(ZAMBlockSetTypes.COPPER, ZAMOxidizable.CopperOxidizableLevel.EXPOSED, BlockBehaviour.Properties.copy(COPPER_TRAPDOOR.get()).mapColor(MapColor.COLOR_ORANGE).isValidSpawn(ZAMBlocks::never)));
-    public static final RegistryObject<Block> WAXED_EXPOSED_COPPER_TRAPDOOR = registerBlock("waxed_exposed_copper_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(EXPOSED_COPPER_TRAPDOOR.get()).isValidSpawn(ZAMBlocks::never), ZAMBlockSetTypes.COPPER));
-    public static final RegistryObject<Block> OXIDIZED_COPPER_TRAPDOOR = registerBlock("oxidized_copper_trapdoor", () -> new WeatheredCopperTrapdoorBlock(ZAMBlockSetTypes.COPPER, ZAMOxidizable.CopperOxidizableLevel.OXIDIZED, BlockBehaviour.Properties.copy(COPPER_TRAPDOOR.get()).mapColor(MapColor.WARPED_NYLIUM).isValidSpawn(ZAMBlocks::never)));
-    public static final RegistryObject<Block> WAXED_OXIDIZED_COPPER_TRAPDOOR = registerBlock("waxed_oxidized_copper_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(OXIDIZED_COPPER_TRAPDOOR.get()).isValidSpawn(ZAMBlocks::never), ZAMBlockSetTypes.COPPER));
-    public static final RegistryObject<Block> WEATHERED_COPPER_TRAPDOOR = registerBlock("weathered_copper_trapdoor", () -> new WeatheredCopperTrapdoorBlock(ZAMBlockSetTypes.COPPER, ZAMOxidizable.CopperOxidizableLevel.WEATHERED, BlockBehaviour.Properties.copy(COPPER_TRAPDOOR.get()).mapColor(MapColor.WARPED_STEM).isValidSpawn(ZAMBlocks::never)));
-    public static final RegistryObject<Block> WAXED_WEATHERED_COPPER_TRAPDOOR = registerBlock("waxed_weathered_copper_trapdoor", () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(WEATHERED_COPPER_TRAPDOOR.get()).isValidSpawn(ZAMBlocks::never), ZAMBlockSetTypes.COPPER));
-
-    public static final RegistryObject<Block> COPPER_GRATE = registerBlock("copper_grate", () -> new WeatheringCopperGrateBlock(ZAMOxidizable.CopperOxidizableLevel.UNAFFECTED, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).strength(3.0F, 6.0F).sound(ZAMSounds.COPPER_GRATE).noOcclusion().isValidSpawn(ZAMBlocks::never).isRedstoneConductor(ZAMBlocks::never).isSuffocating(ZAMBlocks::never).isViewBlocking(ZAMBlocks::never)));
-    public static final RegistryObject<Block> WAXED_COPPER_GRATE = registerBlock("waxed_copper_grate", () -> new CopperGrateBlock(BlockBehaviour.Properties.copy(COPPER_GRATE.get()).isValidSpawn(ZAMBlocks::never).isRedstoneConductor(ZAMBlocks::never).isSuffocating(ZAMBlocks::never).isViewBlocking(ZAMBlocks::never)));
-    public static final RegistryObject<Block> EXPOSED_COPPER_GRATE = registerBlock("exposed_copper_grate", () -> new WeatheringCopperGrateBlock(ZAMOxidizable.CopperOxidizableLevel.EXPOSED, BlockBehaviour.Properties.copy(COPPER_GRATE.get()).mapColor(MapColor.COLOR_ORANGE).isValidSpawn(ZAMBlocks::never).isRedstoneConductor(ZAMBlocks::never).isSuffocating(ZAMBlocks::never).isViewBlocking(ZAMBlocks::never)));
-    public static final RegistryObject<Block> WAXED_EXPOSED_COPPER_GRATE = registerBlock("waxed_exposed_copper_grate", () -> new CopperGrateBlock(BlockBehaviour.Properties.copy(EXPOSED_COPPER_GRATE.get()).isValidSpawn(ZAMBlocks::never).isRedstoneConductor(ZAMBlocks::never).isSuffocating(ZAMBlocks::never).isViewBlocking(ZAMBlocks::never)));
-    public static final RegistryObject<Block> WEATHERED_COPPER_GRATE = registerBlock("weathered_copper_grate", () -> new WeatheringCopperGrateBlock(ZAMOxidizable.CopperOxidizableLevel.WEATHERED, BlockBehaviour.Properties.copy(COPPER_GRATE.get()).mapColor(MapColor.WARPED_STEM).isValidSpawn(ZAMBlocks::never).isRedstoneConductor(ZAMBlocks::never).isSuffocating(ZAMBlocks::never).isViewBlocking(ZAMBlocks::never)));
-    public static final RegistryObject<Block> WAXED_WEATHERED_COPPER_GRATE = registerBlock("waxed_weathered_copper_grate", () -> new CopperGrateBlock(BlockBehaviour.Properties.copy(WEATHERED_COPPER_GRATE.get()).isValidSpawn(ZAMBlocks::never).isRedstoneConductor(ZAMBlocks::never).isSuffocating(ZAMBlocks::never).isViewBlocking(ZAMBlocks::never)));
-    public static final RegistryObject<Block> OXIDIZED_COPPER_GRATE = registerBlock("oxidized_copper_grate", () -> new WeatheringCopperGrateBlock(ZAMOxidizable.CopperOxidizableLevel.OXIDIZED, BlockBehaviour.Properties.copy(COPPER_GRATE.get()).mapColor(MapColor.WARPED_NYLIUM).isValidSpawn(ZAMBlocks::never).isRedstoneConductor(ZAMBlocks::never).isSuffocating(ZAMBlocks::never).isViewBlocking(ZAMBlocks::never)));
-    public static final RegistryObject<Block> WAXED_OXIDIZED_COPPER_GRATE = registerBlock("waxed_oxidized_copper_grate", () -> new CopperGrateBlock(BlockBehaviour.Properties.copy(OXIDIZED_COPPER_GRATE.get()).isValidSpawn(ZAMBlocks::never).isRedstoneConductor(ZAMBlocks::never).isSuffocating(ZAMBlocks::never).isViewBlocking(ZAMBlocks::never)));
-
-    public static final RegistryObject<Block> COPPER_BULB = registerBlock("copper_bulb", () -> new WeatheringCopperBulbBlock(ZAMOxidizable.CopperOxidizableLevel.UNAFFECTED, BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_ORANGE).strength(3.0F, 6.0F).sound(ZAMSounds.COPPER_BULB).noOcclusion().lightLevel(litBlockEmission(15)).isValidSpawn(ZAMBlocks::never)));
-    public static final RegistryObject<Block> WAXED_COPPER_BULB = registerBlock("waxed_copper_bulb", () -> new CopperBulbBlock(BlockBehaviour.Properties.copy(COPPER_BULB.get()).isValidSpawn(ZAMBlocks::never).lightLevel(litBlockEmission(15))));
-    public static final RegistryObject<Block> EXPOSED_COPPER_BULB = registerBlock("exposed_copper_bulb", () -> new WeatheringCopperBulbBlock(ZAMOxidizable.CopperOxidizableLevel.EXPOSED, BlockBehaviour.Properties.copy(COPPER_BULB.get()).mapColor(MapColor.COLOR_ORANGE).isValidSpawn(ZAMBlocks::never).lightLevel(litBlockEmission(12))));
-    public static final RegistryObject<Block> WAXED_EXPOSED_COPPER_BULB = registerBlock("waxed_exposed_copper_bulb", () -> new CopperBulbBlock(BlockBehaviour.Properties.copy(EXPOSED_COPPER_BULB.get()).isValidSpawn(ZAMBlocks::never).lightLevel(litBlockEmission(12))));
-    public static final RegistryObject<Block> WEATHERED_COPPER_BULB = registerBlock("weathered_copper_bulb", () -> new WeatheringCopperBulbBlock(ZAMOxidizable.CopperOxidizableLevel.WEATHERED, BlockBehaviour.Properties.copy(COPPER_BULB.get()).mapColor(MapColor.WARPED_STEM).isValidSpawn(ZAMBlocks::never).lightLevel(litBlockEmission(8))));
-    public static final RegistryObject<Block> WAXED_WEATHERED_COPPER_BULB = registerBlock("waxed_weathered_copper_bulb", () -> new CopperBulbBlock(BlockBehaviour.Properties.copy(WEATHERED_COPPER_BULB.get()).isValidSpawn(ZAMBlocks::never).lightLevel(litBlockEmission(8))));
-    public static final RegistryObject<Block> OXIDIZED_COPPER_BULB = registerBlock("oxidized_copper_bulb", () -> new WeatheringCopperBulbBlock(ZAMOxidizable.CopperOxidizableLevel.OXIDIZED, BlockBehaviour.Properties.copy(COPPER_BULB.get()).mapColor(MapColor.WARPED_NYLIUM).isValidSpawn(ZAMBlocks::never).lightLevel(litBlockEmission(4))));
-    public static final RegistryObject<Block> WAXED_OXIDIZED_COPPER_BULB = registerBlock("waxed_oxidized_copper_bulb", () -> new CopperBulbBlock(BlockBehaviour.Properties.copy(OXIDIZED_COPPER_BULB.get()).isValidSpawn(ZAMBlocks::never).lightLevel(litBlockEmission(4))));
-
 
     //Concrete
     public static final RegistryObject<Block> WHITE_CONCRETE_SLAB = registerBlock("white_concrete_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CONCRETE)));
@@ -149,6 +89,10 @@ public class ZAMBlocks {
     public static final RegistryObject<Block> SAND_STAIRS = registerBlock("sand_stairs", () -> new StairBlock(Blocks.SAND::defaultBlockState, BlockBehaviour.Properties.copy(Blocks.SAND)));
 
 
+    //Selling Bins
+    public static final RegistryObject<Block> SHIPPING_BIN_BLOCK = BLOCKS.register("shipping_bin", () -> new ShippingBinBlock(Block.Properties.copy(Blocks.OAK_PLANKS).requiresCorrectToolForDrops().strength(2.0F)));
+
+
 
     //Beer
     public static final RegistryObject<Block> KEG = registerBlock("keg", () -> new Keg(BlockBehaviour.Properties.copy(Blocks.BARREL).noOcclusion()));
@@ -187,6 +131,19 @@ public class ZAMBlocks {
   //  public static final RegistryObject<Block> MARINE_LEAVES = registerBlock("marine_leaves", () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)) {@Override public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return true;}@Override public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 60;}@Override public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {return 30;}});
   //  public static final RegistryObject<Block> MARINE_SAPLING = registerBlock("marine_sapling", () -> new SaplingBlock(null, BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)));
 
+    //Grimm Stuff
+    public static final RegistryObject<Block> GRIMM_SOIL = registerBlock("grimm_soil", () -> new GrimmSoilBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_RED).instrument(NoteBlockInstrument.COW_BELL).requiresCorrectToolForDrops().strength(1.25F, 4.2F).sound(SoundType.SOUL_SOIL)));
+    public static final RegistryObject<Block> GRIMM_FIRE = registerBlock("grimm_fire", () -> new GrimmFireBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).replaceable().noCollission().instabreak().lightLevel((p_152605_) -> 8).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY)));
+
+
+    //Ore Blocks
+    public static final RegistryObject<Block> OPAL_ORE = registerBlock("opal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> DEEPSLATE_OPAL_ORE = registerBlock("deepslate_opal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> OPAL_BLOCK = registerBlock("opal_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.QUARTZ).requiresCorrectToolForDrops().strength(6.0F, 6.0F).sound(SoundType.METAL)));
+
+    public static final RegistryObject<Block> AQUAMARINE_ORE = registerBlock("aquamarine_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> DEEPSLATE_AQUAMARINE_ORE = registerBlock("deepslate_aquamarine_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(3, 7)));
+    public static final RegistryObject<Block> AQUAMARINE_BLOCK = registerBlock("aquamarine_block", () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.DIAMOND).requiresCorrectToolForDrops().strength(8.0F, 6.0F).sound(SoundType.METAL)));
 
 
     public static RegistryObject<Block> registerWithRenderer(Supplier<Block> supplier, @Nonnull String name, @Nullable Item.Properties properties) {
@@ -199,9 +156,6 @@ public class ZAMBlocks {
         }
         return block;
     }
-
-
-
 
    private static RegistryObject<Block> registerBlockAndItem(String name, Supplier<Block> block, int itemType) {
        RegistryObject<Block> blockObj = ZAMBlocks.BLOCKS.register(name, block);
@@ -218,8 +172,6 @@ public class ZAMBlocks {
       }
   }
 
-
-
     private static <T extends Block> RegistryObject<Block> registerBlockWithoutItem(String name, Supplier<T> block) {
         return BLOCKS.register(name, block);
     }
@@ -232,32 +184,6 @@ public class ZAMBlocks {
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block) {
         return ZAMItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
-    }
-
-    private static boolean never(BlockState state, BlockGetter world, BlockPos pos) {
-        return false;
-    }
-
-    private static boolean never(BlockState state, BlockGetter world, BlockPos pos, EntityType<?> type) {
-        return false;
-    }
-
-    private static ToIntFunction<BlockState> litBlockEmission(int lightValue) {
-        return (state) -> state.getValue(BlockStateProperties.LIT) ? lightValue : 0;
-    }
-
-    private static WeatheringCopper.WeatherState convert(ZAMOxidizable.CopperOxidizableLevel level) {
-        switch (level) {
-            case EXPOSED:
-                return WeatheringCopper.WeatherState.EXPOSED;
-            case WEATHERED:
-                return WeatheringCopper.WeatherState.WEATHERED;
-            case OXIDIZED:
-                return WeatheringCopper.WeatherState.OXIDIZED;
-            case UNAFFECTED:
-            default:
-                return WeatheringCopper.WeatherState.UNAFFECTED;
-        }
     }
 
 

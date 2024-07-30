@@ -23,7 +23,7 @@
           "name": "zammod:lost_bounty"
         },
         {
-          "_comment": "33% chance of getting vanilla treasure, to make Neptunium rarer without making vanilla loot a lot rarer",
+          "_comment": "33% chance of getting vanilla treasure, to make lost bounty rarer without making vanilla loot a lot rarer",
           "type": "minecraft:loot_table",
           "name": "minecraft:gameplay/fishing/treasure"
         },

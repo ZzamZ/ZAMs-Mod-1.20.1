@@ -20,7 +20,6 @@ public class ZAMBiomeTagsProvider extends BiomeTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.tag(ZAMTags.Biomes.HAS_EMERALD_GEODE).addTag(BiomeTags.IS_MOUNTAIN).add(Biomes.GROVE);
     }
 }
 

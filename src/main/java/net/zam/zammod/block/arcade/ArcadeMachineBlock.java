@@ -6,9 +6,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -20,45 +18,29 @@ import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.StateDefinition.Builder;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.network.NetworkHooks;
-import net.zam.zammod.block.BaseBlock;
 import net.zam.zammod.registry.ZAMBlockEntities;
 import net.zam.zammod.util.Util;
 
 import javax.annotation.Nullable;
 
-public class ArcadeMachineBlock extends BaseBlock implements EntityBlock {
+public class ArcadeMachineBlock extends Block implements EntityBlock {
     public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
-    public ArcadeMachineBlock() {
-        super("arcade", Properties.copy(Blocks.IRON_BLOCK)
-                .isSuffocating((state, world, pos) -> true)
-                .isViewBlocking((state, world, pos) -> true)
-                .noOcclusion()
-                .requiresCorrectToolForDrops()
-                .strength(5.0F));
+    public ArcadeMachineBlock(BlockBehaviour.Properties properties) {
+        super(properties);
         this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
     }
 
-    public ArcadeMachineBlock(String name) {
-        super("arcade_" + name, Properties.copy(Blocks.OAK_PLANKS)
-                .isSuffocating((state, world, pos) -> true)
-                .isViewBlocking((state, world, pos) -> true)
-                .noOcclusion()
-                .requiresCorrectToolForDrops()
-                .lightLevel((state) -> 15)
-                .strength(5.0F));
-        this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
-    }
-
+    @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level world, BlockState state, BlockEntityType<T> type) {
         return world.isClientSide() ? Util.createTickerHelper(type, ZAMBlockEntities.ARCADE_MACHINE.get(), ArcadeTileEntity::tick) : null;
     }
@@ -73,7 +55,6 @@ public class ArcadeMachineBlock extends BaseBlock implements EntityBlock {
         return Block.box(0.0D, 0.0D, 0.0D, 16.0D, 32.0D, 16.0D); // Hitbox is a single block
     }
 
-
     @Nullable
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -81,7 +62,7 @@ public class ArcadeMachineBlock extends BaseBlock implements EntityBlock {
     }
 
     @Override
-    protected void createBlockStateDefinition(Builder<Block, BlockState> builder) {
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(FACING);
     }
 
@@ -119,8 +100,6 @@ public class ArcadeMachineBlock extends BaseBlock implements EntityBlock {
         return null;
     }
 
-
-
     @Override
     public RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;
@@ -132,6 +111,7 @@ public class ArcadeMachineBlock extends BaseBlock implements EntityBlock {
         return tileentity != null && tileentity.triggerEvent(id, param);
     }
 
+    @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return new ArcadeTileEntity(pos, state);

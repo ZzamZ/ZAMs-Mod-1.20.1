@@ -21,26 +21,10 @@ public class ZAMSounds {
     public static final RegistryObject<SoundEvent> OTTER_SWIM = registerSoundEvent("entity.otter.swim");
     public static final RegistryObject<SoundEvent> BITE_ATTACK = registerSoundEvent("entity.bite_attack");
 
-    
-    //Copper
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_BULB_BREAK = registerSoundEvent("block.copper_bulb.break");
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_BULB_STEP = registerSoundEvent("block.copper_bulb.step");
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_BULB_PLACE = registerSoundEvent("block.copper_bulb.place");
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_BULB_HIT = registerSoundEvent("block.copper_bulb.hit");
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_BULB_FALL = registerSoundEvent("block.copper_bulb.fall");
-    public static final ForgeSoundType COPPER_BULB = new ForgeSoundType(1.0F, 1.0F, BLOCK_COPPER_BULB_BREAK, BLOCK_COPPER_BULB_STEP, BLOCK_COPPER_BULB_PLACE, BLOCK_COPPER_BULB_HIT, BLOCK_COPPER_BULB_FALL);
-    public static final RegistryObject<SoundEvent> COPPER_BULB_TURN_ON = registerSoundEvent("block.copper_bulb.turn_on");
-    public static final RegistryObject<SoundEvent> COPPER_BULB_TURN_OFF = registerSoundEvent("block.copper_bulb.turn_off");
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_DOOR_CLOSE = registerSoundEvent("block.copper_door.close");
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_DOOR_OPEN = registerSoundEvent("block.copper_door.open");
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_GRATE_BREAK = registerSoundEvent("block.copper_grate.break");
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_GRATE_STEP = registerSoundEvent("block.copper_grate.step");
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_GRATE_PLACE = registerSoundEvent("block.copper_grate.place");
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_GRATE_HIT = registerSoundEvent("block.copper_grate.hit");
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_GRATE_FALL = registerSoundEvent("block.copper_grate.fall");
-    public static final ForgeSoundType COPPER_GRATE = new ForgeSoundType(1.0F, 1.0F, BLOCK_COPPER_GRATE_BREAK, BLOCK_COPPER_GRATE_STEP, BLOCK_COPPER_GRATE_PLACE, BLOCK_COPPER_GRATE_HIT, BLOCK_COPPER_GRATE_FALL);
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_TRAPDOOR_CLOSE = registerSoundEvent("block.copper_trapdoor.close");
-    public static final RegistryObject<SoundEvent> BLOCK_COPPER_TRAPDOOR_OPEN = registerSoundEvent("block.copper_trapdoor.open");
+    //Moons
+    public static final RegistryObject<SoundEvent> BLOOD_MOON = registerSoundEvent("blood_moon");
+    public static final RegistryObject<SoundEvent> BLUE_MOON = registerSoundEvent("blue_moon");
+    public static final RegistryObject<SoundEvent> HARVEST_MOON = registerSoundEvent("harvest_moon");
     
     //Faded
     public static final RegistryObject<SoundEvent> FADED_EFFECT_BEGIN = registerSoundEvent("potion_effect_begin");

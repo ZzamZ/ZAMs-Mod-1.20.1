@@ -4,10 +4,13 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.zam.zammod.ZAMMod;
+import net.zam.zammod.integrations.ForgeItemTags;
 import net.zam.zammod.registry.ZAMItems;
+import net.zam.zammod.registry.ZAMTags;
 
 import javax.annotation.Nullable;
 import java.util.concurrent.CompletableFuture;
@@ -34,8 +37,15 @@ public class ZAMItemTags extends ItemTagsProvider {
              //  .add(ZAMItems.POKEMON_NS_CASTLE.get())
              //  .add(ZAMItems.POKEMON_VOLO.get());
 
+        this.tag(ForgeItemTags.OPAL).add(ZAMItems.OPAL.get());
+        this.tag(ForgeItemTags.AQUAMARINE).add(ZAMItems.AQUAMARINE.get());
 
-
+        this.tag(ZAMTags.TRIMMABLE_TOOLS)
+                .add(Items.NETHERITE_SWORD)
+                .add(Items.NETHERITE_AXE)
+                .add(Items.NETHERITE_PICKAXE)
+                .add(Items.NETHERITE_SHOVEL)
+                .add(Items.NETHERITE_HOE);
     }
 
     @Override

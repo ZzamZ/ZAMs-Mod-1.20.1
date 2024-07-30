@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/door_bottom_right_open",
-  "textures": {
-    "bottom": "zammod:block/weathered_copper_door_bottom",
-    "top": "zammod:block/weathered_copper_door_top"
-  }
-}

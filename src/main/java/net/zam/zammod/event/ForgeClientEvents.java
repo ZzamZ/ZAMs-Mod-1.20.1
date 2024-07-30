@@ -55,7 +55,7 @@ public class ForgeClientEvents {
 
             try {
                 // Handle FADED shader
-                if (ZAMConfig.fadedShader) {
+                if (ZAMConfig.COMMON.fadedShader.get()) { // Accessing the configuration value correctly
                     if (fadedEffectActive && renderer.currentEffect() == null) {
                         renderer.loadEffect(FADED);
                     }

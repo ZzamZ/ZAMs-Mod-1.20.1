@@ -2,14 +2,20 @@ package net.zam.zammod.datagen;
 
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.FinishedRecipe;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.zam.zammod.ZAMMod;
+import net.zam.zammod.integrations.ForgeItemTags;
 import net.zam.zammod.registry.ZAMBlocks;
 import net.zam.zammod.registry.ZAMItems;
+import net.zam.zammod.registry.ZAMTags;
 
 import java.util.function.Consumer;
 
@@ -247,12 +253,6 @@ public class ZAMRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('C', Blocks.PACKED_ICE)
                 .unlockedBy("has_concrete", inventoryTrigger(ItemPredicate.Builder.item().
                         of(Blocks.PACKED_ICE).build())).save(pWriter);
-        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ZAMBlocks.EMERALD_CRYSTAL_BLOCK.get(),1)
-                .pattern("CC ")
-                .pattern("CC ")
-                .define('C', ZAMItems.EMERALD_SHARD.get())
-                .unlockedBy("has_emerald_shard", inventoryTrigger(ItemPredicate.Builder.item().
-                        of(ZAMItems.EMERALD_SHARD.get()).build())).save(pWriter);
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ZAMBlocks.ARCADE_MACHINE.get(),1)
                 .pattern("IRI")
                 .pattern("ESE")
@@ -265,6 +265,16 @@ public class ZAMRecipeProvider extends RecipeProvider implements IConditionBuild
                         of(ZAMItems.STARDROP.get()).build())).save(pWriter);
 
 
+        smithingTools(pWriter, Items.NETHERITE_SWORD, ZAMItems.STARDEW_SWORD.get(), ZAMItems.STARDEW_SMITHING_TEMPLATE.get(), ForgeItemTags.OPAL, RecipeCategory.TOOLS, new ResourceLocation("zammod", "stardew_sword_trim"));
+        smithingTools(pWriter, Items.NETHERITE_AXE, ZAMItems.STARDEW_AXE.get(), ZAMItems.STARDEW_SMITHING_TEMPLATE.get(), ForgeItemTags.OPAL, RecipeCategory.TOOLS, new ResourceLocation("zammod", "stardew_axe_trim"));
+        smithingTools(pWriter, Items.NETHERITE_PICKAXE, ZAMItems.STARDEW_PICKAXE.get(), ZAMItems.STARDEW_SMITHING_TEMPLATE.get(), ForgeItemTags.OPAL, RecipeCategory.TOOLS, new ResourceLocation("zammod", "stardew_pickaxe_trim"));
+        smithingTools(pWriter, Items.NETHERITE_SHOVEL, ZAMItems.STARDEW_SHOVEL.get(), ZAMItems.STARDEW_SMITHING_TEMPLATE.get(), ForgeItemTags.OPAL, RecipeCategory.TOOLS, new ResourceLocation("zammod", "stardew_shovel_trim"));
+        smithingTools(pWriter, Items.NETHERITE_HOE, ZAMItems.STARDEW_HOE.get(), ZAMItems.STARDEW_SMITHING_TEMPLATE.get(), ForgeItemTags.OPAL, RecipeCategory.TOOLS, new ResourceLocation("zammod", "stardew_hoe_trim"));
+    }
 
+    protected static void smithingTools(Consumer<FinishedRecipe> consumer, Item baseItem, Item resultItem, Item templateItem, TagKey<Item> trimMaterial, RecipeCategory category, ResourceLocation recipeId) {
+        SmithingTransformRecipeBuilder.smithing(Ingredient.of(templateItem), Ingredient.of(baseItem), Ingredient.of(trimMaterial), category, resultItem)
+                .unlocks("has_" + templateItem.getDescriptionId(), has(templateItem))
+                .save(consumer, recipeId);
     }
 }

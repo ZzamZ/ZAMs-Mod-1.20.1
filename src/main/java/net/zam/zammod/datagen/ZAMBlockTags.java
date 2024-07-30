@@ -19,10 +19,12 @@ public class ZAMBlockTags extends BlockTagsProvider {
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
 
+
         this.tag(BlockTags.CLIMBABLE)
                 .add(ZAMBlocks.SCAFFINITY.get());
 
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(ZAMBlocks.GRIMM_SOIL.get())
                 .add(ZAMBlocks.SAND_STAIRS.get())
                 .add(ZAMBlocks.SAND_SLAB.get());
 
@@ -65,7 +67,6 @@ public class ZAMBlockTags extends BlockTagsProvider {
 
                 ZAMBlocks.LOST_BOUNTY.get(),
 
-                ZAMBlocks.EMERALD_CRYSTAL_BLOCK.get(),
 
                 ZAMBlocks.WHITE_CONCRETE_STAIRS.get(),
                 ZAMBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get(),
@@ -84,48 +85,27 @@ public class ZAMBlockTags extends BlockTagsProvider {
                 ZAMBlocks.MAGENTA_CONCRETE_STAIRS.get(),
                 ZAMBlocks.PINK_CONCRETE_STAIRS.get(),
 
-                ZAMBlocks.CHISELED_COPPER.get(),
-                ZAMBlocks.EXPOSED_CHISELED_COPPER.get(),
-                ZAMBlocks.WEATHERED_CHISELED_COPPER.get(),
-                ZAMBlocks.OXIDIZED_CHISELED_COPPER.get(),
-                ZAMBlocks.WAXED_CHISELED_COPPER.get(),
-                ZAMBlocks.WAXED_EXPOSED_CHISELED_COPPER.get(),
-                ZAMBlocks.WAXED_WEATHERED_CHISELED_COPPER.get(),
-                ZAMBlocks.WAXED_OXIDIZED_CHISELED_COPPER.get(),
-                ZAMBlocks.COPPER_GRATE.get(),
-                ZAMBlocks.EXPOSED_COPPER_GRATE.get(),
-                ZAMBlocks.WEATHERED_COPPER_GRATE.get(),
-                ZAMBlocks.OXIDIZED_COPPER_GRATE.get(),
-                ZAMBlocks.WAXED_COPPER_GRATE.get(),
-                ZAMBlocks.WAXED_EXPOSED_COPPER_GRATE.get(),
-                ZAMBlocks.WAXED_WEATHERED_COPPER_GRATE.get(),
-                ZAMBlocks.WAXED_OXIDIZED_COPPER_GRATE.get(),
-                ZAMBlocks.COPPER_BULB.get(),
-                ZAMBlocks.EXPOSED_COPPER_BULB.get(),
-                ZAMBlocks.WEATHERED_COPPER_BULB.get(),
-                ZAMBlocks.OXIDIZED_COPPER_BULB.get(),
-                ZAMBlocks.WAXED_COPPER_BULB.get(),
-                ZAMBlocks.WAXED_EXPOSED_COPPER_BULB.get(),
-                ZAMBlocks.WAXED_WEATHERED_COPPER_BULB.get(),
-                ZAMBlocks.WAXED_OXIDIZED_COPPER_BULB.get(),
-                ZAMBlocks.COPPER_DOOR.get(),
-                ZAMBlocks.EXPOSED_COPPER_DOOR.get(),
-                ZAMBlocks.WEATHERED_COPPER_DOOR.get(),
-                ZAMBlocks.OXIDIZED_COPPER_DOOR.get(),
-                ZAMBlocks.WAXED_COPPER_DOOR.get(),
-                ZAMBlocks.WAXED_EXPOSED_COPPER_DOOR.get(),
-                ZAMBlocks.WAXED_WEATHERED_COPPER_DOOR.get(),
-                ZAMBlocks.WAXED_OXIDIZED_COPPER_DOOR.get(),
-                ZAMBlocks.COPPER_TRAPDOOR.get(),
-                ZAMBlocks.EXPOSED_COPPER_TRAPDOOR.get(),
-                ZAMBlocks.WEATHERED_COPPER_TRAPDOOR.get(),
-                ZAMBlocks.OXIDIZED_COPPER_TRAPDOOR.get(),
-                ZAMBlocks.WAXED_COPPER_TRAPDOOR.get(),
-                ZAMBlocks.WAXED_EXPOSED_COPPER_TRAPDOOR.get(),
-                ZAMBlocks.WAXED_WEATHERED_COPPER_TRAPDOOR.get(),
-                ZAMBlocks.WAXED_OXIDIZED_COPPER_TRAPDOOR.get(),
+                ZAMBlocks.OPAL_ORE.get(),
+                ZAMBlocks.DEEPSLATE_OPAL_ORE.get(),
+                ZAMBlocks.OPAL_BLOCK.get(),
+                ZAMBlocks.AQUAMARINE_ORE.get(),
+                ZAMBlocks.DEEPSLATE_AQUAMARINE_ORE.get(),
+                ZAMBlocks.AQUAMARINE_BLOCK.get(),
+
 
                 ZAMBlocks.PACKED_ICE_SLAB.get(),
                 ZAMBlocks.PACKED_ICE_STAIRS.get());
+
+
+                this.tag(BlockTags.FIRE).add(
+                        ZAMBlocks.GRIMM_FIRE.get());
+
+                this.tag(BlockTags.NEEDS_IRON_TOOL).add(
+                        ZAMBlocks.OPAL_ORE.get(),
+                        ZAMBlocks.DEEPSLATE_OPAL_ORE.get(),
+                        ZAMBlocks.AQUAMARINE_ORE.get(),
+                        ZAMBlocks.DEEPSLATE_AQUAMARINE_ORE.get());
+
+
     }
 }

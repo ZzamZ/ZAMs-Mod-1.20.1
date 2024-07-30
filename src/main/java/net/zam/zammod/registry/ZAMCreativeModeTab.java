@@ -17,6 +17,7 @@ public class ZAMCreativeModeTab {
     public static RegistryObject<CreativeModeTab> AQUATIC_TAB = CREATIVE_MODE_TABS.register("aquatic_tab", () ->
             CreativeModeTab.builder().icon(() -> new ItemStack(ZAMItems.GUARDIAN_CHESTPLATE.get())).title(Component.literal("ZAM Aquatic Additions")).displayItems((displayParameters, output) -> {
                 output.accept(ZAMBlocks.LOST_BOUNTY.get());
+                output.accept(ZAMBlocks.SHIPPING_BIN_BLOCK.get());
                 output.accept(ZAMItems.STARDROP.get());
                 output.accept(ZAMItems.DOUBLOON.get());
                 output.accept(ZAMItems.LOST_KEY.get());
@@ -59,13 +60,16 @@ public class ZAMCreativeModeTab {
 
 
 
-                output.accept(ZAMBlocks.EMERALD_CRYSTAL_BLOCK.get());
-                output.accept(ZAMBlocks.BUDDING_EMERALD.get());
-                output.accept(ZAMBlocks.EMERALD_CLUSTER.get());
-                output.accept(ZAMBlocks.LARGE_EMERALD_BUD.get());
-                output.accept(ZAMBlocks.MEDIUM_EMERALD_BUD.get());
-                output.accept(ZAMBlocks.SMALL_EMERALD_BUD.get());
                 output.accept(ZAMItems.EMERALD_SHARD.get());
+
+                output.accept(ZAMItems.OPAL.get());
+                output.accept(ZAMBlocks.OPAL_ORE.get());
+                output.accept(ZAMBlocks.DEEPSLATE_OPAL_ORE.get());
+                output.accept(ZAMBlocks.OPAL_BLOCK.get());
+                output.accept(ZAMItems.AQUAMARINE.get());
+                output.accept(ZAMBlocks.AQUAMARINE_ORE.get());
+                output.accept(ZAMBlocks.DEEPSLATE_AQUAMARINE_ORE.get());
+                output.accept(ZAMBlocks.AQUAMARINE_BLOCK.get());
 
                 output.accept(ZAMBlocks.AZURE_FROGLIGHT.get());
                 output.accept(ZAMBlocks.RUDDY_FROGLIGHT.get());
@@ -109,54 +113,6 @@ public class ZAMCreativeModeTab {
                 output.accept(ZAMBlocks.MAGENTA_CONCRETE_STAIRS.get());
                 output.accept(ZAMBlocks.PINK_CONCRETE_STAIRS.get());
 
-                output.accept(ZAMBlocks.CHISELED_COPPER.get());
-                output.accept(ZAMBlocks.COPPER_DOOR.get());
-                output.accept(ZAMBlocks.COPPER_TRAPDOOR.get());
-                output.accept(ZAMBlocks.COPPER_GRATE.get());
-                output.accept(ZAMBlocks.COPPER_BULB.get());
-
-                output.accept(ZAMBlocks.EXPOSED_CHISELED_COPPER.get());
-                output.accept(ZAMBlocks.EXPOSED_COPPER_DOOR.get());
-                output.accept(ZAMBlocks.EXPOSED_COPPER_TRAPDOOR.get());
-                output.accept(ZAMBlocks.EXPOSED_COPPER_GRATE.get());
-                output.accept(ZAMBlocks.EXPOSED_COPPER_BULB.get());
-
-                output.accept(ZAMBlocks.WEATHERED_CHISELED_COPPER.get());
-                output.accept(ZAMBlocks.WEATHERED_COPPER_DOOR.get());
-                output.accept(ZAMBlocks.WEATHERED_COPPER_TRAPDOOR.get());
-                output.accept(ZAMBlocks.WEATHERED_COPPER_GRATE.get());
-                output.accept(ZAMBlocks.WEATHERED_COPPER_BULB.get());
-
-                output.accept(ZAMBlocks.OXIDIZED_CHISELED_COPPER.get());
-                output.accept(ZAMBlocks.OXIDIZED_COPPER_DOOR.get());
-                output.accept(ZAMBlocks.OXIDIZED_COPPER_TRAPDOOR.get());
-                output.accept(ZAMBlocks.OXIDIZED_COPPER_GRATE.get());
-                output.accept(ZAMBlocks.OXIDIZED_COPPER_BULB.get());
-
-                output.accept(ZAMBlocks.WAXED_CHISELED_COPPER.get());
-                output.accept(ZAMBlocks.WAXED_COPPER_DOOR.get());
-                output.accept(ZAMBlocks.WAXED_COPPER_TRAPDOOR.get());
-                output.accept(ZAMBlocks.WAXED_COPPER_GRATE.get());
-                output.accept(ZAMBlocks.WAXED_COPPER_BULB.get());
-
-                output.accept(ZAMBlocks.WAXED_EXPOSED_CHISELED_COPPER.get());
-                output.accept(ZAMBlocks.WAXED_EXPOSED_COPPER_DOOR.get());
-                output.accept(ZAMBlocks.WAXED_EXPOSED_COPPER_TRAPDOOR.get());
-                output.accept(ZAMBlocks.WAXED_EXPOSED_COPPER_GRATE.get());
-                output.accept(ZAMBlocks.WAXED_EXPOSED_COPPER_BULB.get());
-
-                output.accept(ZAMBlocks.WAXED_WEATHERED_CHISELED_COPPER.get());
-                output.accept(ZAMBlocks.WAXED_WEATHERED_COPPER_DOOR.get());
-                output.accept(ZAMBlocks.WAXED_WEATHERED_COPPER_TRAPDOOR.get());
-                output.accept(ZAMBlocks.WAXED_WEATHERED_COPPER_GRATE.get());
-                output.accept(ZAMBlocks.WAXED_WEATHERED_COPPER_BULB.get());
-
-                output.accept(ZAMBlocks.WAXED_OXIDIZED_CHISELED_COPPER.get());
-                output.accept(ZAMBlocks.WAXED_OXIDIZED_COPPER_DOOR.get());
-                output.accept(ZAMBlocks.WAXED_OXIDIZED_COPPER_TRAPDOOR.get());
-                output.accept(ZAMBlocks.WAXED_OXIDIZED_COPPER_GRATE.get());
-                output.accept(ZAMBlocks.WAXED_OXIDIZED_COPPER_BULB.get());
-
                 output.accept(ZAMBlocks.PACKED_ICE_SLAB.get());
                 output.accept(ZAMBlocks.PACKED_ICE_STAIRS.get());
 
@@ -196,6 +152,17 @@ public class ZAMCreativeModeTab {
 
              //   output.accept(ZAMBlocks.AVOCADO_PLANKS.get());
 
+                output.accept(ZAMBlocks.GRIMM_SOIL.get());
+
+
+
+                output.accept(ZAMItems.STARDEW_SMITHING_TEMPLATE.get());
+                output.accept(ZAMItems.STARDEW_SWORD.get());
+                output.accept(ZAMItems.STARDEW_AXE.get());
+                output.accept(ZAMItems.STARDEW_PICKAXE.get());
+                output.accept(ZAMItems.STARDEW_SHOVEL.get());
+                output.accept(ZAMItems.STARDEW_HOE.get());
+
 
 
             }).build());
@@ -222,9 +189,6 @@ public class ZAMCreativeModeTab {
                 output.accept(ZAMItems.MUG_OF_STARDROP_SPARKLE.get());
                 output.accept(ZAMBlocks.KEG.get());
             }).build());
-
-
-
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
