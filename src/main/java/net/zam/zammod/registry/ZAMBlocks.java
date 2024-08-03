@@ -23,7 +23,6 @@ import net.zam.zammod.block.beer.workstations.Keg;
 import net.zam.zammod.block.chest.LostBounty;
 import net.zam.zammod.block.grimm.GrimmFireBlock;
 import net.zam.zammod.block.grimm.GrimmSoilBlock;
-import net.zam.zammod.block.sellingbin.bins.ShippingBinBlock;
 import net.zam.zammod.item.renderer.BlockItemWithoutLevelRenderer;
 
 import javax.annotation.Nonnull;
@@ -36,6 +35,8 @@ public class ZAMBlocks {
     //Arcade
     public static final RegistryObject<Block> ARCADE_MACHINE = registerBlock("arcade_machine", () -> new ArcadeMachineBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).mapColor(MapColor.METAL).strength(2.0F).sound(SoundType.METAL).noOcclusion()));
 
+
+    public static final RegistryObject<Block> CONVERSION_TABLE = registerBlock("conversion_table", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SMITHING_TABLE)));
 
     //Ocean
     public static final RegistryObject<Block> LOST_BOUNTY = registerWithRenderer(LostBounty::new, "lost_bounty", new Item.Properties());
@@ -90,7 +91,6 @@ public class ZAMBlocks {
 
 
     //Selling Bins
-    public static final RegistryObject<Block> SHIPPING_BIN_BLOCK = BLOCKS.register("shipping_bin", () -> new ShippingBinBlock(Block.Properties.copy(Blocks.OAK_PLANKS).requiresCorrectToolForDrops().strength(2.0F)));
 
 
 

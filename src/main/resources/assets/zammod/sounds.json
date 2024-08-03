@@ -16,7 +16,58 @@
   "pokemon_castelia_city": {"sounds": [{"name": "zammod:pokemon/pokemon_castelia_city", "stream": true}]},
   "pokemon_mistralton_city": {"sounds": [{"name": "zammod:pokemon/pokemon_mistralton_city", "stream": true}]},
 
-
+  "cast": {
+    "sounds": [
+      "zammod:cast"
+    ]
+  },
+  "complete": {
+    "sounds": [
+      "zammod:complete"
+    ]
+  },
+  "dwop": {
+    "sounds": [
+      "zammod:dwop"
+    ]
+  },
+  "fish_bite": {
+    "sounds": [
+      "zammod:fish_bite"
+    ]
+  },
+  "fish_escape": {
+    "sounds": [
+      "zammod:fish_escape"
+    ]
+  },
+  "fish_hit": {
+    "sounds": [
+      "zammod:fish_hit"
+    ]
+  },
+  "pull_item": {
+    "sounds": [
+      "zammod:pull_item"
+    ]
+  },
+  "reel_creak": {
+    "sounds": [
+      "zammod:reel_creak1",
+      "zammod:reel_creak2",
+      "zammod:reel_creak3"
+    ]
+  },
+  "reel_fast": {
+    "sounds": [
+      "zammod:reel_fast"
+    ]
+  },
+  "reel_slow": {
+    "sounds": [
+      "zammod:reel_slow"
+    ]
+  },
 
 
 

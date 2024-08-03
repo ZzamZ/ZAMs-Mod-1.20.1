@@ -21,10 +21,16 @@ public class ZAMSounds {
     public static final RegistryObject<SoundEvent> OTTER_SWIM = registerSoundEvent("entity.otter.swim");
     public static final RegistryObject<SoundEvent> BITE_ATTACK = registerSoundEvent("entity.bite_attack");
 
-    //Moons
-    public static final RegistryObject<SoundEvent> BLOOD_MOON = registerSoundEvent("blood_moon");
-    public static final RegistryObject<SoundEvent> BLUE_MOON = registerSoundEvent("blue_moon");
-    public static final RegistryObject<SoundEvent> HARVEST_MOON = registerSoundEvent("harvest_moon");
+    public static final RegistryObject<SoundEvent> CAST = registerSoundEvent("cast");
+    public static final RegistryObject<SoundEvent> COMPLETE = registerSoundEvent("complete");
+    public static final RegistryObject<SoundEvent> DWOP = registerSoundEvent("dwop");
+    public static final RegistryObject<SoundEvent> FISH_ESCAPE = registerSoundEvent("fish_escape");
+    public static final RegistryObject<SoundEvent> FISH_BITE = registerSoundEvent("fish_bite");
+    public static final RegistryObject<SoundEvent> FISH_HIT = registerSoundEvent("fish_hit");
+    public static final RegistryObject<SoundEvent> PULL_ITEM = registerSoundEvent("pull_item");
+    public static final RegistryObject<SoundEvent> REEL_CREAK = registerSoundEvent("reel_creak");
+    public static final RegistryObject<SoundEvent> REEL_FAST = registerSoundEvent("reel_fast");
+    public static final RegistryObject<SoundEvent> REEL_SLOW = registerSoundEvent("reel_slow");
     
     //Faded
     public static final RegistryObject<SoundEvent> FADED_EFFECT_BEGIN = registerSoundEvent("potion_effect_begin");

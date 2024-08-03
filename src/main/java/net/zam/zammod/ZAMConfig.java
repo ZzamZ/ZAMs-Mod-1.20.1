@@ -9,8 +9,10 @@ public class ZAMConfig {
     public static final Common COMMON;
     public static final ForgeConfigSpec COMMON_SPEC;
     public static final ForgeConfigSpec spec; // Define spec here
+    private static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
 
-    public static final LostOptions LOST_OPTIONS;
+
+   // public static final LostOptions LOST_OPTIONS;
 
     static {
         Pair<Common, ForgeConfigSpec> commonSpecPair = new ForgeConfigSpec.Builder().configure(Common::new);
@@ -18,8 +20,9 @@ public class ZAMConfig {
         COMMON = commonSpecPair.getLeft();
         spec = COMMON_SPEC; // Assign spec here
 
-        LOST_OPTIONS = new LostOptions(new ForgeConfigSpec.Builder());
+     //   LOST_OPTIONS = new LostOptions(new ForgeConfigSpec.Builder());
     }
+
 
     public static void loadConfig() {
         final CommentedFileConfig configData = CommentedFileConfig.builder("config/zammod.toml").sync().autosave().writingMode(WritingMode.REPLACE).build();

@@ -46,6 +46,9 @@ public class ZAMItemTags extends ItemTagsProvider {
                 .add(Items.NETHERITE_PICKAXE)
                 .add(Items.NETHERITE_SHOVEL)
                 .add(Items.NETHERITE_HOE);
+
+        this.tag(ZAMTags.STARTS_MINIGAME)
+                .addTag(ItemTags.FISHES);
     }
 
     @Override

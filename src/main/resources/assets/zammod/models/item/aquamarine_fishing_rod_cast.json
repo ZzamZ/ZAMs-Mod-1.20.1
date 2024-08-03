@@ -1,0 +1,6 @@
+{
+  "parent": "zammod:item/aquamarine_fishing_rod",
+  "textures": {
+    "layer0": "zammod:item/aquamarine_fishing_rod_cast"
+  }
+}

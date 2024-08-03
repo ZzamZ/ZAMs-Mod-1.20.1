@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "zammod:block/conversion_table_bottom",
+    "east": "zammod:block/conversion_table_right",
+    "north": "zammod:block/conversion_table_left",
+    "particle": "zammod:block/conversion_table_right",
+    "south": "zammod:block/conversion_table_left",
+    "up": "zammod:block/conversion_table_top",
+    "west": "zammod:block/conversion_table_right"
+  }
+}

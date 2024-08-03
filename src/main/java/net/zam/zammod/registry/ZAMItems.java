@@ -12,7 +12,6 @@ import net.zam.zammod.ZAMMod;
 import net.zam.zammod.item.*;
 //import net.zam.zammod.item.records.cases.PokemonAlbumCase;
 import net.zam.zammod.item.records.sets.pokemon.PokemonBlackWhiteCollection;
-import net.zam.zammod.loot.ZAMLootTables;
 import net.zam.zammod.misc.ZAMBeerProperties;
 
 import javax.annotation.Nonnull;
@@ -22,6 +21,8 @@ import java.util.function.Supplier;
 
 public class ZAMItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, ZAMMod.MOD_ID);
+    public static final DeferredRegister<Item> VANILLA_QUALITY = DeferredRegister.create(ForgeRegistries.ITEMS, ZAMMod.MOD_ID);
+
     public static final Collection<RegistryObject<Item>> ITEMS_FOR_TAB_LIST = new ArrayList<>();
 
     //Aquatic Utilities
@@ -30,7 +31,7 @@ public class ZAMItems {
     public static final RegistryObject<Item> EMERALD_SHARD = ITEMS.register("emerald_shard", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).effect(() -> new MobEffectInstance(ZAMEffects.FADED_EFFECT.get(), 2400), 1.0F).alwaysEat().build())));
    // public static final RegistryObject<Item> OLD_RECORD_BOX = registerWithTab(() -> new LootBoxItem(ZAMLootTables.OLD_RECORD_BOX), "old_record_box");
     public static final RegistryObject<Item> MUSIC_DISC_LOOT_BOX = ITEMS.register("music_disc_loot_box", () -> new MusicDiscLootBoxItem(new Item.Properties()));
-
+    public static final RegistryObject<Item> AQUAMARINE_FISHING_ROD = ITEMS.register("aquamarine_fishing_rod", () -> new AquamarineFishingRodItem(new Item.Properties().durability(334).rarity(Rarity.RARE)));
     //Food
     public static final RegistryObject<Item> CORAL_FRUIT = ITEMS.register("coral_fruit", () -> new CoralFruitItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.0F).alwaysEat().build()), true));
   //  public static final RegistryObject<Item> KRABBY_PATTY = ITEMS.register("krabby_patty", () -> new KrabbyPattyItem(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).build()));
@@ -38,6 +39,8 @@ public class ZAMItems {
     public static final RegistryObject<Item> STARDROP = ITEMS.register("stardrop", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationMod(1.2F).effect(() -> new MobEffectInstance(ZAMEffects.STARDROP.get(), 3600), 1.0F).alwaysEat().build()).rarity(Rarity.EPIC)));
     public static final RegistryObject<Item> DOUBLOON = ITEMS.register("doubloon", () -> new Item(new Item.Properties().rarity(Rarity.UNCOMMON)));
     public static final RegistryObject<Item> LOST_KEY = ITEMS.register("lost_key", () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
+
+
 
 
     //Stardew Valley Template & Tools
@@ -61,8 +64,6 @@ public class ZAMItems {
     public static final RegistryObject<Item> AQUAMARINE = ITEMS.register("aquamarine", () -> new Item(new Item.Properties()));
 
 
-    //Selling Bins
-    public static final RegistryObject<Item> SHIPPING_BIN_BLOCK_ITEM = ITEMS.register("shipping_bin", () -> new BlockItem(ZAMBlocks.SHIPPING_BIN_BLOCK.get(), new Item.Properties()));
 
 
 
@@ -396,6 +397,9 @@ public class ZAMItems {
 
 
 
+
+
+
     public static RegistryObject<Item> registerWithTab(@Nonnull Supplier<Item> initializer, @Nonnull String name) {
         RegistryObject<Item> registryObject = register(initializer, name);
         ITEMS_FOR_TAB_LIST.add(registryObject);
@@ -407,5 +411,10 @@ public class ZAMItems {
     }
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }

@@ -7,6 +7,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.zam.zammod.ZAMMod;
 
 import java.util.Locale;
@@ -14,7 +15,7 @@ import java.util.Locale;
 public class ZAMTags {
     public static final TagKey<Block> GRIMM_FIRE_BASE_BLOCKS = createBlock("grimm_fire_base_blocks");
     public static final TagKey<Item> TRIMMABLE_TOOLS = createItem("trimmable_tools");
-    public static final TagKey<Item> HARVEST_MOON_CROPS = createItem("harvest_moon_crops");
+    public static final TagKey<Item> STARTS_MINIGAME = TagKey.create(ForgeRegistries.ITEMS.getRegistryKey(), new ResourceLocation(ZAMMod.MOD_ID, "starts_minigame"));
 
     public static class Biomes {
         public static final TagKey<Biome> SPAWNS_ANCIENT_VARIANT_FROGS = tag("spawns_ancient_variant_frogs");

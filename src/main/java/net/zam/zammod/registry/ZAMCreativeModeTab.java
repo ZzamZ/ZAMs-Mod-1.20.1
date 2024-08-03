@@ -17,10 +17,11 @@ public class ZAMCreativeModeTab {
     public static RegistryObject<CreativeModeTab> AQUATIC_TAB = CREATIVE_MODE_TABS.register("aquatic_tab", () ->
             CreativeModeTab.builder().icon(() -> new ItemStack(ZAMItems.GUARDIAN_CHESTPLATE.get())).title(Component.literal("ZAM Aquatic Additions")).displayItems((displayParameters, output) -> {
                 output.accept(ZAMBlocks.LOST_BOUNTY.get());
-                output.accept(ZAMBlocks.SHIPPING_BIN_BLOCK.get());
                 output.accept(ZAMItems.STARDROP.get());
                 output.accept(ZAMItems.DOUBLOON.get());
                 output.accept(ZAMItems.LOST_KEY.get());
+                output.accept(ZAMItems.AQUAMARINE_FISHING_ROD.get());
+
                 //   output.accept(ZAMItems.OLD_RECORD_BOX.get());
                 output.accept(ZAMBlocks.ARCADE_MACHINE.get());
                 output.accept(ZAMBlocks.SCAFFINITY.get());
