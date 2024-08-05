@@ -12,6 +12,8 @@ import net.minecraft.world.item.Items;
 import net.zam.zammod.registry.ZAMMenuTypes;
 import net.zam.zammod.util.Rarity;
 import net.zam.zammod.util.RarityItem;
+import net.zam.zammod.util.network.NetworkHandler;
+import net.zam.zammod.util.network.packet.ConsumeLootBoxItemsPacket;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,9 +68,10 @@ public class MusicDiscLootBoxMenu extends AbstractContainerMenu {
                 stack.shrink(caseItem.getCount());
                 caseConsumed = true;
             }
+
             if (keyConsumed && caseConsumed) {
-                if (player instanceof ServerPlayer) {
-                    ((ServerPlayer) player).inventoryMenu.broadcastChanges(); // Sync inventory after consuming items
+                if (player.level().isClientSide()) {
+                    NetworkHandler.sendToServer(new ConsumeLootBoxItemsPacket(keyItem, caseItem));
                 }
                 return true;
             }

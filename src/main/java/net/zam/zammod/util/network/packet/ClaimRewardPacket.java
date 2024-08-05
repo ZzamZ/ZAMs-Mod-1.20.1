@@ -29,7 +29,7 @@ public class ClaimRewardPacket {
         ctx.get().enqueueWork(() -> {
             ServerPlayer player = ctx.get().getSender();
             if (player != null) {
-                player.getInventory().placeItemBackInInventory(reward.getItemStack().copy());
+                player.getInventory().placeItemBackInInventory(reward.getItemStack().copy(), true);
             }
         });
         ctx.get().setPacketHandled(true);

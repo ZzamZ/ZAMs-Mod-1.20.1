@@ -25,8 +25,8 @@ public class NetworkHandler {
 
 
     public static void register() {
-        CHANNEL.messageBuilder(ClaimRewardPacket.class, 0).encoder(ClaimRewardPacket::toBytes).decoder(ClaimRewardPacket::new).consumerMainThread(ClaimRewardPacket::handle).add();
-        CHANNEL.messageBuilder(SyncInventoryPacket.class, 1).encoder(SyncInventoryPacket::toBytes).decoder(SyncInventoryPacket::new).consumerMainThread(SyncInventoryPacket::handle).add();
+        CHANNEL.registerMessage(0, ClaimRewardPacket.class, ClaimRewardPacket::toBytes, ClaimRewardPacket::new, ClaimRewardPacket::handle);
+        CHANNEL.messageBuilder(ConsumeLootBoxItemsPacket.class, 1).encoder(ConsumeLootBoxItemsPacket::toBytes).decoder(ConsumeLootBoxItemsPacket::new).consumerMainThread(ConsumeLootBoxItemsPacket::handle).add();
         CHANNEL.registerMessage(2, S2CStartMinigamePacket.class, S2CStartMinigamePacket::encode, S2CStartMinigamePacket::new, S2CStartMinigamePacket::handle);
         CHANNEL.registerMessage(3, C2SCompleteMinigamePacket.class, C2SCompleteMinigamePacket::encode, C2SCompleteMinigamePacket::decode, C2SCompleteMinigamePacket::handle);
     }
