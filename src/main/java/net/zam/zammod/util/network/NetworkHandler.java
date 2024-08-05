@@ -10,11 +10,7 @@ import net.zam.zammod.util.network.packet.*;
 
 public class NetworkHandler {
     private static final String PROTOCOL_VERSION = "1";
-    private static int packetId = 0;
 
-    private static int id() {
-        return packetId++;
-    }
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
             ZAMMod.id("network"),
             () -> PROTOCOL_VERSION,
@@ -29,11 +25,10 @@ public class NetworkHandler {
 
 
     public static void register() {
-        int id = 0;
-        CHANNEL.messageBuilder(ClaimRewardPacket.class, id++).encoder(ClaimRewardPacket::toBytes).decoder(ClaimRewardPacket::new).consumerMainThread(ClaimRewardPacket::handle).add();
-        CHANNEL.messageBuilder(SyncInventoryPacket.class, id++).encoder(SyncInventoryPacket::toBytes).decoder(SyncInventoryPacket::new).consumerMainThread(SyncInventoryPacket::handle).add();
-        CHANNEL.registerMessage(id(), S2CStartMinigamePacket.class, S2CStartMinigamePacket::encode, S2CStartMinigamePacket::new, S2CStartMinigamePacket::handle);
-        CHANNEL.registerMessage(id(), C2SCompleteMinigamePacket.class, C2SCompleteMinigamePacket::encode, C2SCompleteMinigamePacket::decode, C2SCompleteMinigamePacket::handle);
+        CHANNEL.messageBuilder(ClaimRewardPacket.class, 0).encoder(ClaimRewardPacket::toBytes).decoder(ClaimRewardPacket::new).consumerMainThread(ClaimRewardPacket::handle).add();
+        CHANNEL.messageBuilder(SyncInventoryPacket.class, 1).encoder(SyncInventoryPacket::toBytes).decoder(SyncInventoryPacket::new).consumerMainThread(SyncInventoryPacket::handle).add();
+        CHANNEL.registerMessage(2, S2CStartMinigamePacket.class, S2CStartMinigamePacket::encode, S2CStartMinigamePacket::new, S2CStartMinigamePacket::handle);
+        CHANNEL.registerMessage(3, C2SCompleteMinigamePacket.class, C2SCompleteMinigamePacket::encode, C2SCompleteMinigamePacket::decode, C2SCompleteMinigamePacket::handle);
     }
 
 

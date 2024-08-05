@@ -64,8 +64,7 @@ public class MusicDiscLootBoxRewardScreen extends Screen {
             sendClaimRewardPacket();
             announceReward();
             this.rewardClaimed = true;
-            NetworkHandler.CHANNEL.sendToServer(new SyncInventoryPacket());
-            this.minecraft.setScreen(null);
+            this.onClose();
         }).bounds(buttonX, buttonY, 100, 20).build();
 
         this.addRenderableWidget(this.claimButton);
