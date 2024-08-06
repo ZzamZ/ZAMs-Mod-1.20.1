@@ -1,4 +1,4 @@
-package net.zam.zammod.item;
+package net.zam.zammod.item.aquamarinetools;
 
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;

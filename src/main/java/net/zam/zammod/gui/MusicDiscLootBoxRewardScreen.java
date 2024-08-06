@@ -14,7 +14,6 @@ import net.zam.zammod.ZAMMod;
 import net.zam.zammod.util.RarityItem;
 import net.zam.zammod.util.network.NetworkHandler;
 import net.zam.zammod.util.network.packet.ClaimRewardPacket;
-import net.zam.zammod.util.network.packet.SyncInventoryPacket;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -64,8 +63,7 @@ public class MusicDiscLootBoxRewardScreen extends Screen {
             sendClaimRewardPacket();
             announceReward();
             this.rewardClaimed = true;
-            NetworkHandler.CHANNEL.sendToServer(new SyncInventoryPacket());
-            this.minecraft.setScreen(null);
+            this.onClose();
         }).bounds(buttonX, buttonY, 100, 20).build();
 
         this.addRenderableWidget(this.claimButton);

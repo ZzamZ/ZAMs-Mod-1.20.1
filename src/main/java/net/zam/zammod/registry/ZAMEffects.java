@@ -35,8 +35,8 @@ public class ZAMEffects {
 
     public static final RegistryObject<MobEffect> FLIGHT = MOB_EFFECTS.register("flight",
             () -> new FlightEffect(MobEffectCategory.BENEFICIAL, rawColorFromRGB(199, 183, 255)));
-    public static final RegistryObject<MobEffect> STARDROP = MOB_EFFECTS.register("stardrop", StardropEffect::new);
 
+    public static final RegistryObject<MobEffect> STARDROP = MOB_EFFECTS.register("stardrop", StardropEffect::new);
 
     public static final RegistryObject<MobEffect> FADED_EFFECT = MOB_EFFECTS.register("faded", FadedEffect::new);
 

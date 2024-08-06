@@ -12,7 +12,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.zam.zammod.ZAMMod;
 import net.zam.zammod.gui.minigame.FishingScreen;
-import net.zam.zammod.item.AquamarineFishingRodItem;
+import net.zam.zammod.item.aquamarinetools.AquamarineFishingRodItem;
 import net.zam.zammod.registry.ZAMSounds;
 import net.zam.zammod.util.network.FishBehavior;
 

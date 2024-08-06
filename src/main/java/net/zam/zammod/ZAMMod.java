@@ -103,14 +103,14 @@ public class ZAMMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
+            ZAMCompat.registerCompat();
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD, Items.PRISMARINE_CRYSTALS, ZAMPotions.MINING_FATIGUE_POTION.get()));
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ZAMPotions.MINING_FATIGUE_POTION.get(), Items.REDSTONE, ZAMPotions.LONG_MINING_FATIGUE_POTION.get()));
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(Potions.AWKWARD, ZAMItems.EMERALD_SHARD.get(), ZAMPotions.HASTE_POTION.get()));
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ZAMPotions.HASTE_POTION.get(), Items.REDSTONE, ZAMPotions.LONG_HASTE_POTION.get()));
             BrewingRecipeRegistry.addRecipe(new BetterBrewingRecipe(ZAMPotions.HASTE_POTION.get(), Items.GLOWSTONE, ZAMPotions.POWERFUL_HASTE_POTION.get()));
         });
-
-        ZAMConfig.loadConfig(); // Ensure configuration is loaded here
+        ZAMConfig.loadConfig();
     }
 
     public static ResourceLocation id(String s) {

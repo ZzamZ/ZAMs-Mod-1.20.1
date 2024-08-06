@@ -1,8 +1,11 @@
 package net.zam.zammod.registry;
 
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -11,6 +14,7 @@ import net.minecraftforge.registries.RegistryObject;
 import net.zam.zammod.ZAMMod;
 import net.zam.zammod.item.*;
 //import net.zam.zammod.item.records.cases.PokemonAlbumCase;
+import net.zam.zammod.item.aquamarinetools.*;
 import net.zam.zammod.item.records.sets.pokemon.PokemonBlackWhiteCollection;
 import net.zam.zammod.misc.ZAMBeerProperties;
 
@@ -29,9 +33,18 @@ public class ZAMItems {
     public static final RegistryObject<Item> MARLIN_LANCE = ITEMS.register("marlin_lance", MarlinLanceItem::new);
     public static final RegistryObject<Item> MARINE_BUBBLE = ITEMS.register("marine_bubble", () -> new MarineBubbleItem(new Item.Properties()));
     public static final RegistryObject<Item> EMERALD_SHARD = ITEMS.register("emerald_shard", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.3F).effect(() -> new MobEffectInstance(ZAMEffects.FADED_EFFECT.get(), 2400), 1.0F).alwaysEat().build())));
-   // public static final RegistryObject<Item> OLD_RECORD_BOX = registerWithTab(() -> new LootBoxItem(ZAMLootTables.OLD_RECORD_BOX), "old_record_box");
     public static final RegistryObject<Item> MUSIC_DISC_LOOT_BOX = ITEMS.register("music_disc_loot_box", () -> new MusicDiscLootBoxItem(new Item.Properties()));
     public static final RegistryObject<Item> AQUAMARINE_FISHING_ROD = ITEMS.register("aquamarine_fishing_rod", () -> new AquamarineFishingRodItem(new Item.Properties().durability(334).rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> AQUAMARINE_HOE = ITEMS.register("aquamarine_hoe", () -> new AquamarineHoe(Tiers.DIAMOND, -3, 0.0F));
+
+    //Buckets
+    public static final RegistryObject<Item> AQUAMARINE_BUCKET = ITEMS.register("aquamarine_bucket", () -> new AquamarineBucketItem(() -> Fluids.EMPTY, new Item.Properties().stacksTo(16)));
+    public static final RegistryObject<Item> AQUAMARINE_WATER_BUCKET = ITEMS.register("aquamarine_water_bucket", () -> new AquamarineBucketItem(() -> Fluids.WATER, new Item.Properties().craftRemainder(AQUAMARINE_BUCKET.get()).stacksTo(1)));
+    public static final RegistryObject<Item> AQUAMARINE_LAVA_BUCKET = ITEMS.register("aquamarine_lava_bucket", () -> new AquamarineBucketItem(() -> Fluids.LAVA, new Item.Properties().craftRemainder(AQUAMARINE_BUCKET.get()).stacksTo(1)));
+    public static final RegistryObject<Item> AQUAMARINE_POWDER_SNOW_BUCKET = ITEMS.register("aquamarine_powder_snow_bucket", () -> new AquamarineSolidBucketItem(Blocks.POWDER_SNOW, SoundEvents.POWDER_SNOW_PLACE, new Item.Properties().craftRemainder(AQUAMARINE_BUCKET.get()).stacksTo(1)));
+    public static final RegistryObject<Item> AQUAMARINE_MILK_BUCKET = ITEMS.register("aquamarine_milk_bucket", () -> new AquamarineMilkBucketItem(new Item.Properties().craftRemainder(AQUAMARINE_BUCKET.get()).stacksTo(1)));
+
+
     //Food
     public static final RegistryObject<Item> CORAL_FRUIT = ITEMS.register("coral_fruit", () -> new CoralFruitItem(new Item.Properties().food(new FoodProperties.Builder().nutrition(3).saturationMod(0.0F).alwaysEat().build()), true));
   //  public static final RegistryObject<Item> KRABBY_PATTY = ITEMS.register("krabby_patty", () -> new KrabbyPattyItem(new FoodProperties.Builder().nutrition(8).saturationMod(0.8F).build()));
