@@ -2,6 +2,8 @@ package net.zam.zammod.util.network.packet;
 
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.network.NetworkEvent;
 import net.zam.zammod.util.Rarity;
 import net.zam.zammod.util.RarityItem;
@@ -29,7 +31,19 @@ public class ClaimRewardPacket {
         ctx.get().enqueueWork(() -> {
             ServerPlayer player = ctx.get().getSender();
             if (player != null) {
-                player.getInventory().placeItemBackInInventory(reward.getItemStack().copy(), true);
+                player.closeContainer();
+                ItemStack stack = reward.getItemStack().copy();
+                boolean added = player.getInventory().add(stack);
+                if(added && stack.isEmpty()) {
+                    player.inventoryMenu.broadcastChanges();
+                } else {
+                    ItemEntity itemEntity;
+                    itemEntity = player.drop(stack, false);
+                    if (itemEntity != null) {
+                        itemEntity.setNoPickUpDelay();
+                        itemEntity.setTarget(player.getUUID());
+                    }
+                }
             }
         });
         ctx.get().setPacketHandled(true);

@@ -5,6 +5,7 @@ import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
@@ -26,11 +27,6 @@ public class CommonEvents {
         public static void onAddReloadListeners(final AddReloadListenerEvent event) {
             event.addListener(FishBehaviorReloadListener.create());
         }
-
-        @SubscribeEvent
-        public static void onItemPickup(final PlayerEvent.ItemPickupEvent event) {
-            // Fix issue with item disappear after picking it up in the client side (probably an issue caused by another mod)
-            event.getEntity().inventoryMenu.broadcastChanges();
-        }
+        
     }
 }
