@@ -135,6 +135,8 @@ public class ZAMBlocks {
     public static final RegistryObject<Block> GRIMM_SOIL = registerBlock("grimm_soil", () -> new GrimmSoilBlock(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_RED).instrument(NoteBlockInstrument.COW_BELL).requiresCorrectToolForDrops().strength(1.25F, 4.2F).sound(SoundType.SOUL_SOIL)));
     public static final RegistryObject<Block> GRIMM_FIRE = registerBlock("grimm_fire", () -> new GrimmFireBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_RED).replaceable().noCollission().instabreak().lightLevel((p_152605_) -> 8).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY)));
 
+    //Farmland
+    public static final RegistryObject<Block> FARMLAND = registerBlock("farmland", FarmlandMoistBlock::new);
 
     //Ore Blocks
     public static final RegistryObject<Block> OPAL_ORE = registerBlock("opal_ore", () -> new DropExperienceBlock(BlockBehaviour.Properties.of().mapColor(MapColor.STONE).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(3.0F, 3.0F), UniformInt.of(3, 7)));

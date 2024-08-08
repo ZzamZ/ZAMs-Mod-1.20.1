@@ -25,7 +25,6 @@ public class ZAMPotions {
     public static final RegistryObject<Potion> LONG_HASTE_POTION = POTIONS.register("long_haste_potion",
             () -> new Potion(new MobEffectInstance(MobEffects.DIG_SPEED, 9600, 1)));
 
-
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);
     }

@@ -5,7 +5,10 @@ import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.PacketDistributor;
 import net.minecraftforge.network.simple.SimpleChannel;
 import net.zam.zammod.ZAMMod;
-import net.zam.zammod.util.network.packet.*;
+import net.zam.zammod.util.network.packet.C2SCompleteMinigamePacket;
+import net.zam.zammod.util.network.packet.ClaimRewardPacket;
+import net.zam.zammod.util.network.packet.ConsumeLootBoxItemsPacket;
+import net.zam.zammod.util.network.packet.S2CStartMinigamePacket;
 
 
 public class NetworkHandler {
@@ -17,13 +20,7 @@ public class NetworkHandler {
             PROTOCOL_VERSION::equals,
             PROTOCOL_VERSION::equals
 
-
-
-
     );
-
-
-
     public static void register() {
         CHANNEL.registerMessage(0, ClaimRewardPacket.class, ClaimRewardPacket::toBytes, ClaimRewardPacket::new, ClaimRewardPacket::handle);
         CHANNEL.messageBuilder(ConsumeLootBoxItemsPacket.class, 1).encoder(ConsumeLootBoxItemsPacket::toBytes).decoder(ConsumeLootBoxItemsPacket::new).consumerMainThread(ConsumeLootBoxItemsPacket::handle).add();

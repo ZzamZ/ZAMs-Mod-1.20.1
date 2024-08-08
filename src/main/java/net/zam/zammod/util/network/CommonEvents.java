@@ -5,11 +5,8 @@ import net.minecraft.world.entity.projectile.FishingHook;
 import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
-import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.zam.zammod.ZAMMod;
 import net.zam.zammod.util.server.FishBehaviorReloadListener;
 
@@ -27,6 +24,6 @@ public class CommonEvents {
         public static void onAddReloadListeners(final AddReloadListenerEvent event) {
             event.addListener(FishBehaviorReloadListener.create());
         }
-        
+
     }
 }
