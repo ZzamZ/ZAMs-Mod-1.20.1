@@ -13,6 +13,7 @@ import net.zam.zammod.util.network.packet.S2CStartMinigamePacket;
 
 public class NetworkHandler {
     private static final String PROTOCOL_VERSION = "1";
+
     public static final SimpleChannel CHANNEL = NetworkRegistry.newSimpleChannel(
             ZAMMod.id("network"),
             () -> PROTOCOL_VERSION,

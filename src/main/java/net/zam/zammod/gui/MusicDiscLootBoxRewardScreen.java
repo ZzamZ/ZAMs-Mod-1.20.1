@@ -62,8 +62,7 @@ public class MusicDiscLootBoxRewardScreen extends Screen {
         this.claimButton = Button.builder(Component.literal("Claim"), button -> {
             sendClaimRewardPacket();
             announceReward();
-            this.rewardClaimed = true;
-            this.onClose();
+            rewardClaimed = true;
         }).bounds(buttonX, buttonY, 100, 20).build();
 
         this.addRenderableWidget(this.claimButton);

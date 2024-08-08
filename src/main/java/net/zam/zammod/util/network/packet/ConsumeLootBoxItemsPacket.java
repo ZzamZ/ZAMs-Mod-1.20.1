@@ -9,6 +9,7 @@ import net.zam.zammod.gui.MusicDiscLootBoxMenu;
 import java.util.function.Supplier;
 
 public class ConsumeLootBoxItemsPacket {
+
     private final ItemStack keyItem;
     private final ItemStack caseItem;
 

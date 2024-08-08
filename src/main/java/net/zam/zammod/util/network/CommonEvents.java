@@ -24,10 +24,5 @@ public class CommonEvents {
         public static void onAddReloadListeners(final AddReloadListenerEvent event) {
             event.addListener(FishBehaviorReloadListener.create());
         }
-
-        @SubscribeEvent
-        public static void onItemPickup(final PlayerEvent.ItemPickupEvent event) {
-            event.getEntity().inventoryMenu.broadcastChanges();
-        }
     }
 }
